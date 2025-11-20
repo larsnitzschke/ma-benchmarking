@@ -74,49 +74,48 @@ with open(f"{path_to_examples}/examples-list.txt", "r") as file:
 modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
 limit_examples = None  # Set to an integer to limit number of examples for testing
 repititions = 5
-
-# Main Loop
-results = []
-keyboard_interrupt = False
-for example in examples[:limit_examples]:
-    if keyboard_interrupt:
-        break
-    for mode in modes:
-        if keyboard_interrupt:
-            break
-        for run_number in range(repititions):
-            gc.collect()
-            print(f"Running benchmark for example: {example.name} with mode: {mode}")
-            try:
-                result = subprocess.run(["/usr/bin/time", "-v", wvm_gradle, "run", f"--args={mode} {example.path}"],
-                                    capture_output=True, text=True,
-                                    cwd=path_to_whilestar,
-                                    timeout=60)
-            except subprocess.TimeoutExpired as e:
-                print(f"Timeout expired for example: {example.name} with mode: {mode}")
-                results.append([example.name, mode, run_number, "TIMEOUT", None, None, None, None, None, None, None, " ".join(example.tags)])
-                continue
-            except KeyboardInterrupt:
-                print("Benchmarking interrupted by user.")
-                keyboard_interrupt = True
-                break
-
-            metrics = extract_metrics(result)
-            results.append([example.name, mode, run_number,
-                            metrics["verification_result"], metrics["num_smt_calls"],
-                            metrics["user_time_sec"], metrics["system_time_sec"],
-                            metrics["cpu_percent"], metrics["elapsed_time"],
-                            metrics["max_memory_kb"],
-                            classification(metrics["verification_result"], example.expected_safety),
-                            " ".join(example.tags)])
-
 csv_filename = f"benchmark_results_{datetime.now().strftime('%Y%m%d-%H%M%S')}.csv"
-with open(csv_filename, "w", newline="") as csvfile:
+with open(csv_filename, "a", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["Example", "Run Number", "Mode", "Safe", "NumberOfSMTCalls",
                      "UserTimeSec", "SystemTimeSec", "CPUPercent",
                      "ElapsedTime", "MaxMemoryKB", "Classification", "Tags"])
-    writer.writerows(results)
+
+    # Main Loop
+    results = []
+    keyboard_interrupt = False
+    for example in examples[:limit_examples]:
+        if keyboard_interrupt:
+            break
+        for mode in modes:
+            if keyboard_interrupt:
+                break
+            for run_number in range(repititions):
+                gc.collect()
+                print(f"Running benchmark for example: {example.name} with mode: {mode}")
+                try:
+                    result = subprocess.run(["/usr/bin/time", "-v", wvm_gradle, "run", f"--args={mode} {example.path}"],
+                                        capture_output=True, text=True,
+                                        cwd=path_to_whilestar,
+                                        timeout=30)
+                except subprocess.TimeoutExpired as e:
+                    print(f"Timeout expired for example: {example.name} with mode: {mode}")
+                    results.append([example.name, mode, run_number, "TIMEOUT", None, None, None, None, None, None, None, " ".join(example.tags)])
+                    continue
+                except KeyboardInterrupt:
+                    print("Benchmarking interrupted by user.")
+                    keyboard_interrupt = True
+                    break
+
+                metrics = extract_metrics(result)
+                results.append([example.name, mode, run_number,
+                                metrics["verification_result"], metrics["num_smt_calls"],
+                                metrics["user_time_sec"], metrics["system_time_sec"],
+                                metrics["cpu_percent"], metrics["elapsed_time"],
+                                metrics["max_memory_kb"],
+                                classification(metrics["verification_result"], example.expected_safety),
+                                " ".join(example.tags)])
+                writer.writerow(results[-1])
 
 print("Benchmarking complete. Results saved to", csv_filename)
 
