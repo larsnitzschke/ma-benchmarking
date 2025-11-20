@@ -3,6 +3,7 @@ import subprocess
 from dataclasses import dataclass
 import csv
 from datetime import datetime
+import gc
 
 @dataclass
 class Example:
@@ -68,12 +69,19 @@ with open(f"{path_to_examples}/examples-list.txt", "r") as file:
 # Benchmarking: Warm-up, BMC, k-induction, BMC+k-ind, WPC-Proof, GPDR, GPDR with boolean evaluation, GPDR with ArrayTransitionSystems, GPDR with SubModelInterpolation
 modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
 limit_examples = None  # Set to an integer to limit number of examples for testing
+repititions = 5
 
 # Main Loop
 results = []
-for mode in modes:
-    for example in examples[:limit_examples]:
-        for run_number in range(5):
+keyboard_interrupt = False
+for example in examples[:limit_examples]:
+    if keyboard_interrupt:
+        break
+    for mode in modes:
+        if keyboard_interrupt:
+            break
+        for run_number in range(repititions):
+            gc.collect()
             print(f"Running benchmark for example: {example.name} with mode: {mode}")
             try:
                 result = subprocess.run(["/usr/bin/time", "-v", wvm_gradle, "run", f"--args={mode} {example.path}"],
@@ -82,8 +90,12 @@ for mode in modes:
                                     timeout=60)
             except subprocess.TimeoutExpired as e:
                 print(f"Timeout expired for example: {example.name} with mode: {mode}")
-                results.append([example.name, mode, "TIMEOUT", None, None, None, None, None, None, None, " ".join(example.tags)])
+                results.append([example.name, mode, run_number, "TIMEOUT", None, None, None, None, None, None, None, " ".join(example.tags)])
                 continue
+            except KeyboardInterrupt:
+                print("Benchmarking interrupted by user.")
+                keyboard_interrupt = True
+                break
 
             metrics = extract_metrics(result)
             results.append([example.name, mode, run_number,
