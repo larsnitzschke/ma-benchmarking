@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import csv
 from datetime import datetime
 import gc
+import time
 
 @dataclass
 class Example:
@@ -56,6 +57,9 @@ wvm_gradle = f"{path_to_whilestar}/gradlew"
 mode = "-k"
 path_to_examples = f"{path_to_whilestar}/examples"
 example = f"{path_to_examples}/array/ex1.w"
+
+# Total benchmarking time
+benchmarking_start_time = time.time()
 
 # Load examples
 with open(f"{path_to_examples}/examples-list.txt", "r") as file:
@@ -115,3 +119,6 @@ with open(csv_filename, "w", newline="") as csvfile:
     writer.writerows(results)
 
 print("Benchmarking complete. Results saved to", csv_filename)
+
+total_benchmarking_time = time.time() - benchmarking_start_time
+print(f"Total benchmarking time: {(total_benchmarking_time/60):.2f} minutes")
