@@ -93,20 +93,12 @@ for example in examples[:limit_examples]:
             gc.collect()
             print(f"Running benchmark for example: {example.name} with mode: {mode}")
             try:
-                benchmarking_process = subprocess.Popen(["/usr/bin/time", "-v", "java", "-jar", "build/libs/wvm-fatJar-verification-benchmarking.jar", *mode.split(" "), example.path],
+                benchmarking_process = subprocess.Popen(["/usr/bin/time", "-v", "timeout", str(timeout), "java", "-jar", "build/libs/wvm-fatJar-verification-benchmarking.jar", *mode.split(" "), example.path],
                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                     text=True,
                                     cwd=path_to_whilestar,
                                     preexec_fn=subprocess.os.setsid)
-                stdout, stderr = benchmarking_process.communicate(timeout=timeout)
-            except subprocess.TimeoutExpired as e:
-                print(f"Timeout expired for example: {example.name} with mode: {mode}")
-                os.killpg(benchmarking_process.pid, subprocess.signal.SIGKILL)  # Timout does not kill java child process, just the time command. We need to kill the whole process group manually.
-                result_line = [example.name, mode, run_number, "TIMEOUT", None, None, None, None, None, None, None, " ".join(example.tags)]
-                with open(csv_filename, "a", newline="") as csvfile:
-                    writer = csv.writer(csvfile)
-                    writer.writerow(result_line)
-                continue
+                stdout, stderr = benchmarking_process.communicate()
             except KeyboardInterrupt:
                 print("Benchmarking interrupted by user.")
                 os.killpg(benchmarking_process.pid, subprocess.signal.SIGKILL)
@@ -114,6 +106,10 @@ for example in examples[:limit_examples]:
                 break
 
             metrics = extract_metrics(stdout, stderr)
+            if benchmarking_process.returncode == 124:  # Timeout return code 124
+                print(f"Timeout expired for example: {example.name} with mode: {mode}")
+                metrics["verification_result"] = "TIMEOUT"
+
             result_line = [example.name, mode, run_number,
                             metrics["verification_result"], metrics["num_smt_calls"],
                             metrics["user_time_sec"], metrics["system_time_sec"],
