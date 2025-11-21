@@ -31,6 +31,10 @@ def extract_metrics(stdout, stderr) -> dict:
     match = re.search(r"# Safe:\s*(\w+)", stdout)
     if match:
         verification_result = match.group(1)
+    else:
+        match = re.search(r"OutOfMemoryError", stderr)
+        if match:
+            verification_result = "OUTOFMEMORY"
 
     user_time = re.search(r"User time \(seconds\):\s*([\d.]+)", stderr)
     system_time = re.search(r"System time \(seconds\):\s*([\d.]+)", stderr)
