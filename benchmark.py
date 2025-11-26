@@ -14,7 +14,7 @@ def classification(result: str, expected_safety: bool) -> str:
     if result == "Proof" and expected_safety:
         return "True Positive"
     elif result == "Counterexample" and not expected_safety:
-        return "False Positive"
+        return "True Negative"
     elif result == "Proof" and not expected_safety:
         return "False Positive"
     elif result == "Counterexample" and expected_safety:
@@ -68,8 +68,9 @@ with open(f"{path_to_examples}/examples-list.txt", "r") as file:
     for line in file:
         line = line.strip()
         split = line.split(" ")
+        expeted_safety = split[2].lower() == "true"
         tags = split[3].split(",") if len(split) > 3 else []
-        examples.append(Example(f"{path_to_examples}/{split[0]}", split[1], bool(split[2]), tags))
+        examples.append(Example(f"{path_to_examples}/{split[0]}", split[1], expeted_safety, tags))
 
 # Benchmarking: Warm-up, BMC, k-induction, BMC+k-ind, WPC-Proof, GPDR, GPDR with boolean evaluation, GPDR with ArrayTransitionSystems, GPDR with SubModelInterpolation
 modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
