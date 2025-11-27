@@ -63,7 +63,7 @@ example = f"{path_to_examples}/array/ex1.w"
 benchmarking_start_time = datetime.now()
 
 # Load examples
-with open(f"{path_to_examples}/examples-list.txt", "r") as file:
+with open(f"examples-list.txt", "r") as file:
     examples = []
     for line in file:
         line = line.strip()
@@ -130,3 +130,6 @@ print("Benchmarking complete. Results saved to", csv_filename)
 
 total_benchmarking_time = datetime.now() - benchmarking_start_time
 print(f"Total benchmarking time: {(total_benchmarking_time.total_seconds() / 60):.2f} minutes")
+
+# Reasons for no results: Array program without array support
+# GPDR may fail when division function in interpolant result
