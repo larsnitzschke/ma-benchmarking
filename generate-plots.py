@@ -43,13 +43,73 @@ with open("benchmark-results.csv", "r") as csvfile:
         }
         i += repititions
 
+# Calculate Classification metrics
+counts = {
+    "BMC": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "Kind": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "BMC+Kind": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "Hoare": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (ATS + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI + ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI + ATS + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},       
+}
+approach_mapping = {
+    "-b": "BMC",
+    "-k": "Kind",
+    "-bk": "BMC+Kind",
+    "-p": "Hoare",
+    "-g": "GPDR",
+    "-gB": "GPDR (B-Eval)",
+    "-g --gpdr-ats": "GPDR (ATS)",
+    "-gB --gpdr-ats": "GPDR (ATS + B-Eval)",
+    "-g --gpdr-smi": "GPDR (SMI)",
+    "-gB --gpdr-smi": "GPDR (SMI + B-Eval)",
+    "-g --gpdr-smi --gpdr-ats": "GPDR (SMI + ATS)",
+    "-gB --gpdr-smi --gpdr-ats": "GPDR (SMI + ATS + B-Eval)",       
+}
+classification_labels = {
+    "True Positive": "TP",
+    "True Negative": "TN",
+    "False Positive": "FP",
+    "False Negative": "FN",
+}
+for (example_name, mode) in aggregated_results:
+    if mode == "--warmup":
+        continue
+    if aggregated_results[(example_name, mode)]['Classification'] == "":
+        if aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
+            counts[approach_mapping[mode]]["Timeout"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash":
+            counts[approach_mapping[mode]]["Crash"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "NoResult":
+            counts[approach_mapping[mode]]["NoResult"] += 1
+        else:
+            print(f"Warning: Unknown classification for {example_name} in mode {mode}")
+    elif aggregated_results[(example_name, mode)]['Classification'] in classification_labels:
+        label = classification_labels[aggregated_results[(example_name, mode)]['Classification']]
+        counts[approach_mapping[mode]][label] += 1
+    else:
+        print(f"Warning: Unknown classification for {example_name} in mode {mode}")
+
+print(counts)
+exit(0)
+
+
 # Plot -----------------------------------------------------------------------
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 # Wall clock time for number of examples run
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
+
 bmc_results = {}
 kind_results = {}
 bmc_kind_results = {}
@@ -116,8 +176,8 @@ plt.plot(kind, label="Kind")
 plt.plot(bmc_kind, label="BMC + Kind")
 plt.plot(hoare, label="Hoare")
 plt.plot(gpdr, label="GPDR")
-plt.plot(gpdr_boolEval, label="GPDR (Boolean Evaluation)")
-plt.plot(gpdr_ats, label="GPDR (Array Transition Systems)")
+plt.plot(gpdr_boolEval, label="GPDR (B-Eval)")
+plt.plot(gpdr_ats, label="GPDR (ATS)")
 plt.plot(gpdr_ats_boolEval, label="GPDR (ATS + B-Eval)")
 plt.plot(gpdr_smi, label="GPDR (SMI)")
 plt.plot(gpdr_smi_boolEval, label="GPDR (SMI + B-Eval)")
@@ -131,14 +191,18 @@ plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([1, 5, 10, 50], [1, 5, 10, 50])
 
-plt.xlabel("# of Examples")
+plt.xlabel("\# of Examples")
 plt.ylabel("Wall Clock Time (s)")
 
 #plt.title("Tool Performance by Number of Examples")
-plt.legend(ncol=2, fontsize=9)
+#plt.legend(ncol=2, fontsize=9)
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
+          fancybox=True, ncol=4, fontsize=9)
 
 plt.tight_layout()
-plt.show()
+plt.savefig("plots/wall_clock_time.png", dpi=300)
+#plt.show()
 
 
 # Relevant numbers:
@@ -157,5 +221,17 @@ plt.show()
 # Classification (TP, TN, FP, FN) for each tool + Precision, Recall, F1-score + Timeouts / Neither
 # Appendix: All results in a big table
 
-import tikzplotlib
-tikzplotlib.save("benchmark_plots.tex")
+import matplot2tikz
+matplot2tikz.save("plots/wall_clock_time.tex")
+
+
+
+# Tables:
+
+from jinja2 import Template
+rows = [("BMC", 1,1,1,1,1,1,1,1,1,1)]
+
+
+with open("tables/table_template.tex") as f:
+    template = Template(f.read())
+    print(template.render(rows=rows))
