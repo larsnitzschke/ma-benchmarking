@@ -1,0 +1,2008 @@
+Example,Mode,Run Number,Safe,NumberOfSMTCalls,UserTimeSec,SystemTimeSec,CPUPercent,ElapsedTime,MaxMemoryKB,Classification,Tags
+Array_DynMem,--warmup,0,,,0.52,0.05,200,00.28,74868,,array
+Array_DynMem,--warmup,1,,,0.52,0.04,192,00.29,75516,,array
+Array_DynMem,--warmup,2,,,0.49,0.04,186,00.28,75588,,array
+Array_DynMem,--warmup,3,,,0.47,0.05,174,00.30,75820,,array
+Array_DynMem,--warmup,4,,,0.48,0.04,188,00.28,75192,,array
+Array_DynMem,-b,0,TIMEOUT,,33.98,0.23,113,30.12,328336,,array
+Array_DynMem,-b,1,TIMEOUT,,33.42,0.21,111,30.04,328192,,array
+Array_DynMem,-b,2,TIMEOUT,,33.6,0.23,112,30.08,325364,,array
+Array_DynMem,-b,3,TIMEOUT,,34.07,0.3,113,30.36,328764,,array
+Array_DynMem,-b,4,TIMEOUT,,33.17,0.23,111,30.02,322576,,array
+Array_DynMem,-k,0,Proof,4,1.28,0.11,203,00.68,132348,True Positive,array
+Array_DynMem,-k,1,Proof,4,1.31,0.11,209,00.68,130164,True Positive,array
+Array_DynMem,-k,2,Proof,4,1.33,0.1,209,00.68,131592,True Positive,array
+Array_DynMem,-k,3,Proof,4,1.31,0.1,205,00.69,130496,True Positive,array
+Array_DynMem,-k,4,Proof,4,1.34,0.12,209,00.70,131856,True Positive,array
+Array_DynMem,-bk,0,Proof,5,1.35,0.11,201,00.72,131960,True Positive,array
+Array_DynMem,-bk,1,Proof,5,1.31,0.1,200,00.70,130760,True Positive,array
+Array_DynMem,-bk,2,Proof,5,1.36,0.12,208,00.71,131860,True Positive,array
+Array_DynMem,-bk,3,Proof,5,1.29,0.12,206,00.69,131492,True Positive,array
+Array_DynMem,-bk,4,Proof,5,1.33,0.09,203,00.70,131360,True Positive,array
+Array_DynMem,-p,0,Proof,5,1.45,0.1,217,00.71,147820,True Positive,array
+Array_DynMem,-p,1,Proof,5,1.36,0.12,212,00.70,145424,True Positive,array
+Array_DynMem,-p,2,Proof,5,1.35,0.11,205,00.71,140084,True Positive,array
+Array_DynMem,-p,3,Proof,5,1.41,0.11,219,00.69,143988,True Positive,array
+Array_DynMem,-p,4,Proof,5,1.31,0.11,212,00.67,141992,True Positive,array
+Array_DynMem,-g,0,Crash,3,1.06,0.11,188,00.62,121924,,array
+Array_DynMem,-g,1,Crash,3,1.02,0.13,184,00.62,122192,,array
+Array_DynMem,-g,2,Crash,3,1.06,0.11,185,00.63,121276,,array
+Array_DynMem,-g,3,Crash,3,1.02,0.13,183,00.62,122008,,array
+Array_DynMem,-g,4,Crash,3,1.05,0.13,185,00.64,120564,,array
+Array_DynMem,-gB,0,Crash,3,1.1,0.11,193,00.62,122264,,array
+Array_DynMem,-gB,1,Crash,3,1.06,0.1,185,00.62,120984,,array
+Array_DynMem,-gB,2,Crash,3,1.08,0.1,188,00.63,122040,,array
+Array_DynMem,-gB,3,Crash,3,1.06,0.1,188,00.62,121148,,array
+Array_DynMem,-gB,4,Crash,3,1.04,0.12,183,00.63,121228,,array
+Array_DynMem,-g --gpdr-smi,0,Crash,3,1.02,0.13,187,00.61,121708,,array
+Array_DynMem,-g --gpdr-smi,1,Crash,3,1.05,0.12,184,00.63,122432,,array
+Array_DynMem,-g --gpdr-smi,2,Crash,3,0.99,0.12,178,00.63,121080,,array
+Array_DynMem,-g --gpdr-smi,3,Crash,3,1.02,0.12,184,00.62,120516,,array
+Array_DynMem,-g --gpdr-smi,4,Crash,3,1.04,0.12,186,00.62,122028,,array
+Array_DynMem,-gB --gpdr-smi,0,Crash,3,1.02,0.12,182,00.62,123476,,array
+Array_DynMem,-gB --gpdr-smi,1,Crash,3,1.08,0.1,192,00.61,121668,,array
+Array_DynMem,-gB --gpdr-smi,2,Crash,3,1.07,0.11,194,00.61,122636,,array
+Array_DynMem,-gB --gpdr-smi,3,Crash,3,1.08,0.11,187,00.63,123064,,array
+Array_DynMem,-gB --gpdr-smi,4,Crash,3,1.05,0.11,188,00.62,121212,,array
+Array_DynMem,-g --gpdr-ats,0,TIMEOUT,,34.07,0.93,116,30.06,323136,,array
+Array_DynMem,-g --gpdr-ats,1,TIMEOUT,,33.54,0.93,114,30.07,309536,,array
+Array_DynMem,-g --gpdr-ats,2,TIMEOUT,,34.0,0.92,116,30.07,325860,,array
+Array_DynMem,-g --gpdr-ats,3,TIMEOUT,,34.2,0.92,116,30.05,320592,,array
+Array_DynMem,-g --gpdr-ats,4,TIMEOUT,,33.38,0.96,114,30.05,312348,,array
+Array_DynMem,-gB --gpdr-ats,0,TIMEOUT,,35.33,0.77,120,30.06,607560,,array
+Array_DynMem,-gB --gpdr-ats,1,TIMEOUT,,35.08,0.73,119,30.07,619600,,array
+Array_DynMem,-gB --gpdr-ats,2,TIMEOUT,,35.2,0.71,119,30.04,616156,,array
+Array_DynMem,-gB --gpdr-ats,3,TIMEOUT,,35.12,0.74,119,30.06,636196,,array
+Array_DynMem,-gB --gpdr-ats,4,TIMEOUT,,35.14,0.75,119,30.07,625420,,array
+Array_DynMem,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.6,0.25,112,30.03,308652,,array
+Array_DynMem,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.51,0.21,112,30.03,306516,,array
+Array_DynMem,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.54,0.28,112,30.09,311116,,array
+Array_DynMem,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.76,0.29,113,30.06,310028,,array
+Array_DynMem,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.81,0.27,113,30.08,312636,,array
+Array_DynMem,-gB --gpdr-smi --gpdr-ats,0,OUTOFMEMORY,,117.19,1.81,462,25.70,4169636,,array
+Array_DynMem,-gB --gpdr-smi --gpdr-ats,1,OUTOFMEMORY,,105.38,1.83,452,23.71,4175492,,array
+Array_DynMem,-gB --gpdr-smi --gpdr-ats,2,OUTOFMEMORY,,137.5,1.82,477,29.15,4185820,,array
+Array_DynMem,-gB --gpdr-smi --gpdr-ats,3,OUTOFMEMORY,,129.82,1.89,462,28.47,4170332,,array
+Array_DynMem,-gB --gpdr-smi --gpdr-ats,4,OUTOFMEMORY,,111.36,1.81,454,24.92,4168736,,array
+Array_Ex1,--warmup,0,,,0.53,0.05,201,00.29,75116,,array
+Array_Ex1,--warmup,1,,,0.54,0.05,214,00.27,74992,,array
+Array_Ex1,--warmup,2,,,0.5,0.06,196,00.28,75608,,array
+Array_Ex1,--warmup,3,,,0.53,0.06,207,00.28,75440,,array
+Array_Ex1,--warmup,4,,,0.55,0.05,211,00.28,75008,,array
+Array_Ex1,-b,0,NoResult,101,7.44,0.26,170,04.52,349220,,array
+Array_Ex1,-b,1,NoResult,101,7.28,0.25,166,04.51,349664,,array
+Array_Ex1,-b,2,NoResult,101,7.45,0.23,170,04.50,354564,,array
+Array_Ex1,-b,3,NoResult,101,7.35,0.23,169,04.47,347532,,array
+Array_Ex1,-b,4,NoResult,101,7.09,0.22,163,04.47,346936,,array
+Array_Ex1,-k,0,Proof,29,2.12,0.13,204,01.10,143224,True Positive,array
+Array_Ex1,-k,1,Proof,29,2.08,0.14,198,01.12,143860,True Positive,array
+Array_Ex1,-k,2,Proof,29,2.08,0.15,202,01.10,143812,True Positive,array
+Array_Ex1,-k,3,Proof,29,2.1,0.13,205,01.09,144200,True Positive,array
+Array_Ex1,-k,4,Proof,29,2.07,0.13,201,01.09,144576,True Positive,array
+Array_Ex1,-bk,0,Proof,28,2.18,0.13,208,01.10,141868,True Positive,array
+Array_Ex1,-bk,1,Proof,28,2.2,0.12,208,01.11,144176,True Positive,array
+Array_Ex1,-bk,2,Proof,28,2.09,0.14,198,01.12,138896,True Positive,array
+Array_Ex1,-bk,3,Proof,28,2.2,0.13,208,01.12,152924,True Positive,array
+Array_Ex1,-bk,4,Proof,28,2.14,0.13,199,01.14,140152,True Positive,array
+Array_Ex1,-p,0,NoResult,2,1.07,0.1,191,00.62,125240,,array
+Array_Ex1,-p,1,NoResult,2,1.04,0.11,185,00.62,124884,,array
+Array_Ex1,-p,2,NoResult,2,1.06,0.12,190,00.62,125024,,array
+Array_Ex1,-p,3,NoResult,2,1.04,0.11,189,00.61,125504,,array
+Array_Ex1,-p,4,NoResult,2,1.01,0.11,185,00.60,125076,,array
+Array_Ex1,-g,0,Crash,0,0.69,0.07,204,00.37,83268,,array
+Array_Ex1,-g,1,Crash,0,0.72,0.06,211,00.37,83372,,array
+Array_Ex1,-g,2,Crash,0,0.69,0.05,214,00.35,83264,,array
+Array_Ex1,-g,3,Crash,0,0.66,0.08,205,00.36,83956,,array
+Array_Ex1,-g,4,Crash,0,0.67,0.06,195,00.37,84132,,array
+Array_Ex1,-gB,0,Crash,0,0.69,0.08,204,00.38,83628,,array
+Array_Ex1,-gB,1,Crash,0,0.69,0.06,211,00.35,83620,,array
+Array_Ex1,-gB,2,Crash,0,0.69,0.06,205,00.36,82876,,array
+Array_Ex1,-gB,3,Crash,0,0.71,0.06,213,00.36,83148,,array
+Array_Ex1,-gB,4,Crash,0,0.7,0.07,207,00.37,83228,,array
+Array_Ex1,-g --gpdr-smi,0,Crash,0,0.7,0.07,209,00.36,83112,,array
+Array_Ex1,-g --gpdr-smi,1,Crash,0,0.71,0.05,206,00.37,82820,,array
+Array_Ex1,-g --gpdr-smi,2,Crash,0,0.69,0.06,207,00.36,83104,,array
+Array_Ex1,-g --gpdr-smi,3,Crash,0,0.69,0.05,206,00.36,83472,,array
+Array_Ex1,-g --gpdr-smi,4,Crash,0,0.68,0.07,203,00.37,83464,,array
+Array_Ex1,-gB --gpdr-smi,0,Crash,0,0.71,0.07,204,00.38,82896,,array
+Array_Ex1,-gB --gpdr-smi,1,Crash,0,0.69,0.05,208,00.36,83240,,array
+Array_Ex1,-gB --gpdr-smi,2,Crash,0,0.66,0.08,206,00.36,83004,,array
+Array_Ex1,-gB --gpdr-smi,3,Crash,0,0.67,0.06,205,00.36,84540,,array
+Array_Ex1,-gB --gpdr-smi,4,Crash,0,0.72,0.06,199,00.39,83392,,array
+Array_Ex1,-g --gpdr-ats,0,TIMEOUT,,34.23,1.32,118,30.03,309236,,array
+Array_Ex1,-g --gpdr-ats,1,TIMEOUT,,34.47,1.35,119,30.06,305648,,array
+Array_Ex1,-g --gpdr-ats,2,TIMEOUT,,34.87,1.2,120,30.05,309116,,array
+Array_Ex1,-g --gpdr-ats,3,TIMEOUT,,34.23,1.29,118,30.05,309512,,array
+Array_Ex1,-g --gpdr-ats,4,TIMEOUT,,34.47,1.25,118,30.05,310552,,array
+Array_Ex1,-gB --gpdr-ats,0,TIMEOUT,,34.35,1.3,118,30.05,357212,,array
+Array_Ex1,-gB --gpdr-ats,1,TIMEOUT,,34.47,1.33,119,30.05,360464,,array
+Array_Ex1,-gB --gpdr-ats,2,TIMEOUT,,34.43,1.3,118,30.05,312556,,array
+Array_Ex1,-gB --gpdr-ats,3,TIMEOUT,,34.46,1.29,118,30.06,305612,,array
+Array_Ex1,-gB --gpdr-ats,4,TIMEOUT,,34.34,1.29,118,30.04,363276,,array
+Array_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,34.05,0.29,114,30.06,293392,,array
+Array_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,34.15,0.28,114,30.03,299500,,array
+Array_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,34.25,0.26,114,30.06,295176,,array
+Array_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,34.09,0.25,114,30.03,296052,,array
+Array_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,34.2,0.26,114,30.06,297156,,array
+Array_Ex1,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.97,0.24,113,30.04,296528,,array
+Array_Ex1,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.91,0.25,113,30.06,293072,,array
+Array_Ex1,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,34.07,0.22,114,30.03,295036,,array
+Array_Ex1,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.72,0.27,113,30.04,295428,,array
+Array_Ex1,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.84,0.24,113,30.06,294380,,array
+Array_Ex2,--warmup,0,,,0.58,0.06,203,00.32,81092,,array
+Array_Ex2,--warmup,1,,,0.6,0.06,222,00.30,79932,,array
+Array_Ex2,--warmup,2,,,0.54,0.07,204,00.30,80972,,array
+Array_Ex2,--warmup,3,,,0.56,0.07,213,00.29,80140,,array
+Array_Ex2,--warmup,4,,,0.57,0.06,207,00.30,80880,,array
+Array_Ex2,-b,0,TIMEOUT,,34.22,0.35,113,30.37,478712,,array
+Array_Ex2,-b,1,TIMEOUT,,34.12,0.36,114,30.07,472896,,array
+Array_Ex2,-b,2,TIMEOUT,,34.13,0.34,114,30.08,472352,,array
+Array_Ex2,-b,3,TIMEOUT,,33.95,0.33,114,30.06,472404,,array
+Array_Ex2,-b,4,TIMEOUT,,34.45,0.32,114,30.37,472744,,array
+Array_Ex2,-k,0,Crash,24,3.72,0.16,220,01.76,217688,,array
+Array_Ex2,-k,1,Crash,24,3.59,0.16,213,01.76,207568,,array
+Array_Ex2,-k,2,Crash,24,3.74,0.17,226,01.72,216200,,array
+Array_Ex2,-k,3,Crash,24,3.78,0.16,224,01.75,214652,,array
+Array_Ex2,-k,4,Crash,24,3.92,0.16,227,01.79,218256,,array
+Array_Ex2,-bk,0,Crash,28,4.08,0.16,197,02.15,203556,,array
+Array_Ex2,-bk,1,Crash,28,3.99,0.16,192,02.15,206064,,array
+Array_Ex2,-bk,2,Crash,28,4.12,0.17,196,02.19,203728,,array
+Array_Ex2,-bk,3,Crash,28,4.22,0.17,199,02.20,209476,,array
+Array_Ex2,-bk,4,Crash,28,3.97,0.15,191,02.16,207772,,array
+Array_Ex2,-p,0,Proof,13,1.36,0.1,194,00.75,125416,True Positive,array
+Array_Ex2,-p,1,Proof,13,1.36,0.12,194,00.76,127124,True Positive,array
+Array_Ex2,-p,2,Proof,13,1.34,0.09,190,00.75,126208,True Positive,array
+Array_Ex2,-p,3,Proof,13,1.37,0.11,196,00.75,126332,True Positive,array
+Array_Ex2,-p,4,Proof,13,1.33,0.13,191,00.77,126848,True Positive,array
+Array_Ex2,-g,0,Crash,3,1.03,0.1,187,00.60,121528,,array
+Array_Ex2,-g,1,Crash,3,1.01,0.11,178,00.63,122120,,array
+Array_Ex2,-g,2,Crash,3,1.11,0.09,196,00.61,122672,,array
+Array_Ex2,-g,3,Crash,3,1.05,0.11,188,00.61,121692,,array
+Array_Ex2,-g,4,Crash,3,1.03,0.11,183,00.63,120700,,array
+Array_Ex2,-gB,0,Crash,3,1.07,0.1,189,00.61,122828,,array
+Array_Ex2,-gB,1,Crash,3,1.08,0.1,190,00.62,121860,,array
+Array_Ex2,-gB,2,Crash,3,1.1,0.11,192,00.63,123196,,array
+Array_Ex2,-gB,3,Crash,3,1.06,0.12,187,00.63,122140,,array
+Array_Ex2,-gB,4,Crash,3,1.07,0.1,185,00.63,122440,,array
+Array_Ex2,-g --gpdr-smi,0,Crash,3,1.04,0.1,186,00.61,120776,,array
+Array_Ex2,-g --gpdr-smi,1,Crash,3,1.07,0.09,189,00.61,122244,,array
+Array_Ex2,-g --gpdr-smi,2,Crash,3,1.04,0.11,185,00.63,123532,,array
+Array_Ex2,-g --gpdr-smi,3,Crash,3,1.05,0.11,184,00.63,122860,,array
+Array_Ex2,-g --gpdr-smi,4,Crash,3,1.1,0.11,189,00.64,122672,,array
+Array_Ex2,-gB --gpdr-smi,0,Crash,3,1.09,0.11,189,00.63,124108,,array
+Array_Ex2,-gB --gpdr-smi,1,Crash,3,1.08,0.1,190,00.62,121180,,array
+Array_Ex2,-gB --gpdr-smi,2,Crash,3,1.05,0.11,186,00.62,122256,,array
+Array_Ex2,-gB --gpdr-smi,3,Crash,3,1.08,0.12,189,00.63,123216,,array
+Array_Ex2,-gB --gpdr-smi,4,Crash,3,1.11,0.12,191,00.64,121904,,array
+Array_Ex2,-g --gpdr-ats,0,TIMEOUT,,34.06,1.16,117,30.06,313832,,array
+Array_Ex2,-g --gpdr-ats,1,TIMEOUT,,34.1,1.16,117,30.05,312500,,array
+Array_Ex2,-g --gpdr-ats,2,TIMEOUT,,34.17,1.07,117,30.04,314328,,array
+Array_Ex2,-g --gpdr-ats,3,TIMEOUT,,34.48,1.11,118,30.04,310852,,array
+Array_Ex2,-g --gpdr-ats,4,TIMEOUT,,34.47,1.13,118,30.05,317464,,array
+Array_Ex2,-gB --gpdr-ats,0,TIMEOUT,,35.14,1.03,120,30.05,420084,,array
+Array_Ex2,-gB --gpdr-ats,1,TIMEOUT,,35.26,1.03,120,30.03,360604,,array
+Array_Ex2,-gB --gpdr-ats,2,TIMEOUT,,35.17,1.05,120,30.06,367116,,array
+Array_Ex2,-gB --gpdr-ats,3,TIMEOUT,,35.11,1.03,120,30.03,367144,,array
+Array_Ex2,-gB --gpdr-ats,4,TIMEOUT,,34.68,1.09,118,30.07,363684,,array
+Array_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.79,0.26,113,30.06,296704,,array
+Array_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.57,0.25,112,30.04,293648,,array
+Array_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.98,0.26,113,30.05,305848,,array
+Array_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.74,0.27,113,30.06,300660,,array
+Array_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.59,0.25,112,30.05,299440,,array
+Array_Ex2,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,49.01,2.52,171,30.06,2184712,,array
+Array_Ex2,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,50.94,2.73,178,30.05,2602488,,array
+Array_Ex2,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,49.96,2.89,175,30.05,2503980,,array
+Array_Ex2,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,50.61,2.24,175,30.05,2308844,,array
+Array_Ex2,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,51.0,2.28,177,30.05,2306484,,array
+Array_Ex3,--warmup,0,,,0.5,0.05,190,00.29,74920,,array
+Array_Ex3,--warmup,1,,,0.53,0.04,198,00.29,75408,,array
+Array_Ex3,--warmup,2,,,0.51,0.04,196,00.28,74916,,array
+Array_Ex3,--warmup,3,,,0.54,0.05,202,00.29,75000,,array
+Array_Ex3,--warmup,4,,,0.54,0.05,205,00.29,75160,,array
+Array_Ex3,-b,0,Counterexample,4,1.14,0.1,189,00.66,126292,False Negative,array
+Array_Ex3,-b,1,Counterexample,4,1.09,0.11,187,00.64,125820,False Negative,array
+Array_Ex3,-b,2,Counterexample,4,1.12,0.1,189,00.65,127864,False Negative,array
+Array_Ex3,-b,3,Counterexample,4,1.14,0.09,194,00.64,126488,False Negative,array
+Array_Ex3,-b,4,Counterexample,4,1.11,0.1,188,00.64,125764,False Negative,array
+Array_Ex3,-k,0,Counterexample,14,1.41,0.12,192,00.80,129940,False Negative,array
+Array_Ex3,-k,1,Counterexample,14,1.38,0.12,189,00.79,129800,False Negative,array
+Array_Ex3,-k,2,Counterexample,14,1.39,0.12,188,00.80,130212,False Negative,array
+Array_Ex3,-k,3,Counterexample,14,1.39,0.1,188,00.79,130244,False Negative,array
+Array_Ex3,-k,4,Counterexample,14,1.4,0.11,192,00.79,129948,False Negative,array
+Array_Ex3,-bk,0,Counterexample,8,1.18,0.11,186,00.70,126072,False Negative,array
+Array_Ex3,-bk,1,Counterexample,8,1.28,0.11,200,00.69,126068,False Negative,array
+Array_Ex3,-bk,2,Counterexample,8,1.25,0.08,191,00.69,127136,False Negative,array
+Array_Ex3,-bk,3,Counterexample,8,1.3,0.1,193,00.72,130196,False Negative,array
+Array_Ex3,-bk,4,Counterexample,8,1.23,0.1,181,00.73,129820,False Negative,array
+Array_Ex3,-p,0,NoResult,3,1.0,0.11,175,00.63,125556,,array
+Array_Ex3,-p,1,NoResult,3,1.05,0.11,156,00.75,124716,,array
+Array_Ex3,-p,2,NoResult,3,1.15,0.12,124,01.02,124916,,array
+Array_Ex3,-p,3,NoResult,3,1.13,0.1,126,00.97,124024,,array
+Array_Ex3,-p,4,NoResult,3,1.18,0.11,118,01.10,125340,,array
+Array_Ex3,-g,0,Crash,3,1.15,0.1,128,00.98,122108,,array
+Array_Ex3,-g,1,Crash,3,1.04,0.12,154,00.75,122932,,array
+Array_Ex3,-g,2,Crash,3,1.06,0.13,146,00.81,121116,,array
+Array_Ex3,-g,3,Crash,3,1.11,0.13,148,00.84,121524,,array
+Array_Ex3,-g,4,Crash,3,1.11,0.11,134,00.91,120300,,array
+Array_Ex3,-gB,0,Crash,3,1.04,0.11,161,00.72,121028,,array
+Array_Ex3,-gB,1,Crash,3,1.09,0.11,156,00.77,121844,,array
+Array_Ex3,-gB,2,Crash,3,1.15,0.11,144,00.87,123448,,array
+Array_Ex3,-gB,3,Crash,3,1.0,0.12,160,00.70,122576,,array
+Array_Ex3,-gB,4,Crash,3,1.02,0.1,164,00.68,123024,,array
+Array_Ex3,-g --gpdr-smi,0,Crash,3,1.06,0.11,142,00.83,122132,,array
+Array_Ex3,-g --gpdr-smi,1,Crash,3,0.98,0.1,170,00.63,121036,,array
+Array_Ex3,-g --gpdr-smi,2,Crash,3,1.01,0.11,171,00.65,122400,,array
+Array_Ex3,-g --gpdr-smi,3,Crash,3,0.99,0.1,174,00.62,122200,,array
+Array_Ex3,-g --gpdr-smi,4,Crash,3,0.97,0.08,172,00.61,121664,,array
+Array_Ex3,-gB --gpdr-smi,0,Crash,3,1.02,0.1,160,00.70,121544,,array
+Array_Ex3,-gB --gpdr-smi,1,Crash,3,1.0,0.08,169,00.64,121720,,array
+Array_Ex3,-gB --gpdr-smi,2,Crash,3,0.97,0.11,172,00.62,122760,,array
+Array_Ex3,-gB --gpdr-smi,3,Crash,3,1.01,0.11,182,00.61,122608,,array
+Array_Ex3,-gB --gpdr-smi,4,Crash,3,1.01,0.1,175,00.63,122024,,array
+Array_Ex3,-g --gpdr-ats,0,TIMEOUT,,33.59,1.36,116,30.05,302840,,array
+Array_Ex3,-g --gpdr-ats,1,TIMEOUT,,33.59,1.23,115,30.05,305172,,array
+Array_Ex3,-g --gpdr-ats,2,TIMEOUT,,33.39,1.3,115,30.05,303848,,array
+Array_Ex3,-g --gpdr-ats,3,TIMEOUT,,34.16,1.2,117,30.04,303708,,array
+Array_Ex3,-g --gpdr-ats,4,TIMEOUT,,32.8,1.22,113,30.05,298116,,array
+Array_Ex3,-gB --gpdr-ats,0,TIMEOUT,,34.37,1.18,118,30.03,361612,,array
+Array_Ex3,-gB --gpdr-ats,1,TIMEOUT,,33.8,1.15,116,30.03,305308,,array
+Array_Ex3,-gB --gpdr-ats,2,TIMEOUT,,33.73,1.03,115,30.04,304692,,array
+Array_Ex3,-gB --gpdr-ats,3,TIMEOUT,,34.03,1.08,116,30.04,308672,,array
+Array_Ex3,-gB --gpdr-ats,4,TIMEOUT,,34.16,1.07,117,30.05,307156,,array
+Array_Ex3,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.24,0.26,111,30.03,284832,,array
+Array_Ex3,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.67,0.69,111,30.05,290768,,array
+Array_Ex3,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.39,0.3,112,30.03,284240,,array
+Array_Ex3,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.27,0.27,111,30.05,286640,,array
+Array_Ex3,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.33,0.29,111,30.05,284768,,array
+Array_Ex3,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.58,0.26,112,30.04,291772,,array
+Array_Ex3,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.13,0.27,111,30.04,293240,,array
+Array_Ex3,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.26,0.28,111,30.04,291960,,array
+Array_Ex3,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.23,0.25,111,30.04,290912,,array
+Array_Ex3,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.03,0.35,111,30.04,289768,,array
+Array_Ex4,--warmup,0,,,0.51,0.06,178,00.32,75908,,array
+Array_Ex4,--warmup,1,,,0.52,0.06,183,00.31,76820,,array
+Array_Ex4,--warmup,2,,,0.52,0.06,181,00.32,75880,,array
+Array_Ex4,--warmup,3,,,0.53,0.06,181,00.33,75468,,array
+Array_Ex4,--warmup,4,,,0.53,0.06,173,00.34,75516,,array
+Array_Ex4,-b,0,NoResult,101,6.34,0.23,177,03.70,339004,,array
+Array_Ex4,-b,1,NoResult,101,6.12,0.22,170,03.72,286216,,array
+Array_Ex4,-b,2,NoResult,101,6.6,0.23,181,03.76,337920,,array
+Array_Ex4,-b,3,NoResult,101,6.2,0.22,174,03.67,281776,,array
+Array_Ex4,-b,4,NoResult,101,6.4,0.27,175,03.80,334860,,array
+Array_Ex4,-k,0,Proof,1,0.98,0.1,175,00.62,120336,True Positive,array
+Array_Ex4,-k,1,Proof,1,1.0,0.1,174,00.63,120436,True Positive,array
+Array_Ex4,-k,2,Proof,1,0.99,0.1,173,00.63,119384,True Positive,array
+Array_Ex4,-k,3,Proof,1,1.0,0.1,176,00.63,121284,True Positive,array
+Array_Ex4,-k,4,Proof,1,0.97,0.11,171,00.63,121344,True Positive,array
+Array_Ex4,-bk,0,Proof,13,1.38,0.14,174,00.87,130084,True Positive,array
+Array_Ex4,-bk,1,Proof,13,1.4,0.11,176,00.86,130208,True Positive,array
+Array_Ex4,-bk,2,Proof,13,1.4,0.13,172,00.88,130552,True Positive,array
+Array_Ex4,-bk,3,Proof,13,1.4,0.12,176,00.86,130900,True Positive,array
+Array_Ex4,-bk,4,Proof,13,1.43,0.12,178,00.87,129020,True Positive,array
+Array_Ex4,-p,0,Proof,2,1.01,0.11,167,00.67,121924,True Positive,array
+Array_Ex4,-p,1,Proof,2,1.0,0.1,173,00.64,121900,True Positive,array
+Array_Ex4,-p,2,Proof,2,0.99,0.13,170,00.66,122312,True Positive,array
+Array_Ex4,-p,3,Proof,2,0.99,0.14,169,00.67,120784,True Positive,array
+Array_Ex4,-p,4,Proof,2,1.0,0.14,169,00.67,121324,True Positive,array
+Array_Ex4,-g,0,Crash,0,0.7,0.09,188,00.42,83864,,array
+Array_Ex4,-g,1,Crash,0,0.69,0.1,181,00.43,84172,,array
+Array_Ex4,-g,2,Crash,0,0.67,0.1,188,00.41,83076,,array
+Array_Ex4,-g,3,Crash,0,0.7,0.08,189,00.41,83704,,array
+Array_Ex4,-g,4,Crash,0,0.68,0.08,193,00.39,83656,,array
+Array_Ex4,-gB,0,Crash,0,0.66,0.09,183,00.41,83924,,array
+Array_Ex4,-gB,1,Crash,0,0.68,0.08,186,00.41,84640,,array
+Array_Ex4,-gB,2,Crash,0,0.67,0.09,182,00.42,83584,,array
+Array_Ex4,-gB,3,Crash,0,0.68,0.08,190,00.40,84044,,array
+Array_Ex4,-gB,4,Crash,0,0.69,0.07,186,00.41,83708,,array
+Array_Ex4,-g --gpdr-smi,0,Crash,0,0.63,0.11,186,00.40,82384,,array
+Array_Ex4,-g --gpdr-smi,1,Crash,0,0.67,0.09,181,00.42,82376,,array
+Array_Ex4,-g --gpdr-smi,2,Crash,0,0.69,0.07,188,00.40,83568,,array
+Array_Ex4,-g --gpdr-smi,3,Crash,0,0.68,0.08,182,00.42,83572,,array
+Array_Ex4,-g --gpdr-smi,4,Crash,0,0.71,0.08,176,00.45,84364,,array
+Array_Ex4,-gB --gpdr-smi,0,Crash,0,0.75,0.07,188,00.44,83108,,array
+Array_Ex4,-gB --gpdr-smi,1,Crash,0,0.69,0.08,184,00.42,84056,,array
+Array_Ex4,-gB --gpdr-smi,2,Crash,0,0.69,0.08,182,00.42,82608,,array
+Array_Ex4,-gB --gpdr-smi,3,Crash,0,0.66,0.08,175,00.42,83756,,array
+Array_Ex4,-gB --gpdr-smi,4,Crash,0,0.7,0.06,182,00.42,83020,,array
+Array_Ex4,-g --gpdr-ats,0,Proof,6,1.15,0.13,164,00.78,123204,True Positive,array
+Array_Ex4,-g --gpdr-ats,1,Proof,6,1.15,0.13,171,00.75,123704,True Positive,array
+Array_Ex4,-g --gpdr-ats,2,Proof,6,1.14,0.11,166,00.75,123708,True Positive,array
+Array_Ex4,-g --gpdr-ats,3,Proof,6,1.13,0.12,172,00.73,123708,True Positive,array
+Array_Ex4,-g --gpdr-ats,4,Proof,6,1.16,0.13,173,00.74,126196,True Positive,array
+Array_Ex4,-gB --gpdr-ats,0,Proof,6,1.23,0.13,181,00.75,129184,True Positive,array
+Array_Ex4,-gB --gpdr-ats,1,Proof,6,1.2,0.13,178,00.74,129624,True Positive,array
+Array_Ex4,-gB --gpdr-ats,2,Proof,6,1.17,0.12,170,00.76,128044,True Positive,array
+Array_Ex4,-gB --gpdr-ats,3,Proof,6,1.2,0.12,167,00.79,128212,True Positive,array
+Array_Ex4,-gB --gpdr-ats,4,Proof,6,1.24,0.12,175,00.77,129188,True Positive,array
+Array_Ex4,-g --gpdr-smi --gpdr-ats,0,Proof,6,1.11,0.14,166,00.76,124244,True Positive,array
+Array_Ex4,-g --gpdr-smi --gpdr-ats,1,Proof,6,1.12,0.13,168,00.75,122680,True Positive,array
+Array_Ex4,-g --gpdr-smi --gpdr-ats,2,Proof,6,1.15,0.12,173,00.73,122480,True Positive,array
+Array_Ex4,-g --gpdr-smi --gpdr-ats,3,Proof,6,1.15,0.14,167,00.77,124740,True Positive,array
+Array_Ex4,-g --gpdr-smi --gpdr-ats,4,Proof,6,1.15,0.13,176,00.72,125788,True Positive,array
+Array_Ex4,-gB --gpdr-smi --gpdr-ats,0,Proof,6,1.24,0.11,176,00.77,128116,True Positive,array
+Array_Ex4,-gB --gpdr-smi --gpdr-ats,1,Proof,6,1.24,0.12,182,00.74,128596,True Positive,array
+Array_Ex4,-gB --gpdr-smi --gpdr-ats,2,Proof,6,1.23,0.11,181,00.74,128452,True Positive,array
+Array_Ex4,-gB --gpdr-smi --gpdr-ats,3,Proof,6,1.21,0.12,172,00.78,128644,True Positive,array
+Array_Ex4,-gB --gpdr-smi --gpdr-ats,4,Proof,6,1.26,0.11,177,00.77,128288,True Positive,array
+Array_Nesting,--warmup,0,,,0.47,0.06,179,00.29,75440,,array
+Array_Nesting,--warmup,1,,,0.51,0.06,188,00.30,74156,,array
+Array_Nesting,--warmup,2,,,0.49,0.06,182,00.30,74240,,array
+Array_Nesting,--warmup,3,,,0.5,0.07,180,00.32,74408,,array
+Array_Nesting,--warmup,4,,,0.51,0.05,182,00.31,73644,,array
+Array_Nesting,-b,0,,,0.99,0.1,175,00.62,120396,,array
+Array_Nesting,-b,1,,,0.95,0.1,167,00.63,120224,,array
+Array_Nesting,-b,2,,,0.96,0.08,165,00.63,120716,,array
+Array_Nesting,-b,3,,,0.99,0.12,171,00.64,121728,,array
+Array_Nesting,-b,4,,,0.97,0.1,170,00.62,120636,,array
+Array_Nesting,-k,0,Crash,3,1.06,0.1,163,00.71,123676,,array
+Array_Nesting,-k,1,Crash,3,1.02,0.11,161,00.70,124268,,array
+Array_Nesting,-k,2,Crash,3,1.03,0.12,167,00.69,125184,,array
+Array_Nesting,-k,3,Crash,3,1.05,0.13,170,00.69,124640,,array
+Array_Nesting,-k,4,Crash,3,1.05,0.11,169,00.68,125572,,array
+Array_Nesting,-bk,0,Crash,1,0.94,0.09,167,00.62,120704,,array
+Array_Nesting,-bk,1,Crash,1,0.91,0.12,167,00.61,121088,,array
+Array_Nesting,-bk,2,Crash,1,0.96,0.1,168,00.63,120792,,array
+Array_Nesting,-bk,3,Crash,1,0.99,0.09,170,00.63,121168,,array
+Array_Nesting,-bk,4,Crash,1,0.94,0.11,168,00.62,120056,,array
+Array_Nesting,-p,0,,,0.49,0.05,181,00.30,74968,,array
+Array_Nesting,-p,1,,,0.51,0.05,182,00.31,74688,,array
+Array_Nesting,-p,2,,,0.49,0.06,171,00.32,75144,,array
+Array_Nesting,-p,3,,,0.51,0.05,182,00.31,75024,,array
+Array_Nesting,-p,4,,,0.52,0.05,167,00.34,74212,,array
+Array_Nesting,-g,0,,,1.0,0.11,166,00.66,121584,,array
+Array_Nesting,-g,1,,,1.01,0.11,165,00.68,122012,,array
+Array_Nesting,-g,2,,,0.98,0.13,165,00.67,121248,,array
+Array_Nesting,-g,3,,,0.99,0.12,168,00.66,122060,,array
+Array_Nesting,-g,4,,,1.01,0.11,168,00.66,120928,,array
+Array_Nesting,-gB,0,,,1.01,0.12,163,00.70,122400,,array
+Array_Nesting,-gB,1,,,0.98,0.11,160,00.68,122392,,array
+Array_Nesting,-gB,2,,,1.01,0.11,157,00.71,122672,,array
+Array_Nesting,-gB,3,,,1.01,0.1,162,00.68,122024,,array
+Array_Nesting,-gB,4,,,0.98,0.12,163,00.68,121632,,array
+Array_Nesting,-g --gpdr-smi,0,,,1.04,0.09,169,00.66,122544,,array
+Array_Nesting,-g --gpdr-smi,1,,,1.01,0.13,164,00.69,121280,,array
+Array_Nesting,-g --gpdr-smi,2,,,0.96,0.12,159,00.68,121868,,array
+Array_Nesting,-g --gpdr-smi,3,,,0.98,0.1,164,00.66,121860,,array
+Array_Nesting,-g --gpdr-smi,4,,,0.96,0.1,157,00.68,122204,,array
+Array_Nesting,-gB --gpdr-smi,0,,,1.02,0.12,164,00.69,121104,,array
+Array_Nesting,-gB --gpdr-smi,1,,,1.03,0.12,159,00.73,120512,,array
+Array_Nesting,-gB --gpdr-smi,2,,,0.99,0.11,163,00.68,120792,,array
+Array_Nesting,-gB --gpdr-smi,3,,,1.01,0.11,164,00.68,123196,,array
+Array_Nesting,-gB --gpdr-smi,4,,,1.01,0.11,168,00.67,121308,,array
+Array_Nesting,-g --gpdr-ats,0,Crash,3,1.02,0.11,171,00.66,120704,,array
+Array_Nesting,-g --gpdr-ats,1,Crash,3,0.98,0.13,164,00.67,122112,,array
+Array_Nesting,-g --gpdr-ats,2,Crash,3,0.98,0.12,166,00.66,122360,,array
+Array_Nesting,-g --gpdr-ats,3,Crash,3,0.99,0.09,168,00.65,122260,,array
+Array_Nesting,-g --gpdr-ats,4,Crash,3,1.02,0.12,168,00.67,122400,,array
+Array_Nesting,-gB --gpdr-ats,0,Crash,3,1.06,0.11,167,00.70,125052,,array
+Array_Nesting,-gB --gpdr-ats,1,Crash,3,1.04,0.13,172,00.68,124800,,array
+Array_Nesting,-gB --gpdr-ats,2,Crash,3,1.04,0.11,169,00.68,125600,,array
+Array_Nesting,-gB --gpdr-ats,3,Crash,3,1.04,0.14,167,00.70,125700,,array
+Array_Nesting,-gB --gpdr-ats,4,Crash,3,1.09,0.1,170,00.69,125752,,array
+Array_Nesting,-g --gpdr-smi --gpdr-ats,0,Crash,3,1.0,0.11,167,00.67,121560,,array
+Array_Nesting,-g --gpdr-smi --gpdr-ats,1,Crash,3,1.03,0.12,164,00.70,121908,,array
+Array_Nesting,-g --gpdr-smi --gpdr-ats,2,Crash,3,0.99,0.11,163,00.67,122596,,array
+Array_Nesting,-g --gpdr-smi --gpdr-ats,3,Crash,3,0.96,0.11,163,00.66,121628,,array
+Array_Nesting,-g --gpdr-smi --gpdr-ats,4,Crash,3,0.99,0.12,164,00.67,122804,,array
+Array_Nesting,-gB --gpdr-smi --gpdr-ats,0,Crash,3,1.06,0.13,167,00.71,124784,,array
+Array_Nesting,-gB --gpdr-smi --gpdr-ats,1,Crash,3,1.06,0.1,169,00.69,124512,,array
+Array_Nesting,-gB --gpdr-smi --gpdr-ats,2,Crash,3,1.05,0.11,164,00.70,125320,,array
+Array_Nesting,-gB --gpdr-smi --gpdr-ats,3,Crash,3,1.04,0.12,170,00.68,125452,,array
+Array_Nesting,-gB --gpdr-smi --gpdr-ats,4,Crash,3,1.09,0.1,169,00.70,125144,,array
+Array_Selectionsort,--warmup,0,,,0.51,0.07,178,00.32,80452,,array
+Array_Selectionsort,--warmup,1,,,0.56,0.05,199,00.31,80136,,array
+Array_Selectionsort,--warmup,2,,,0.56,0.05,182,00.33,80388,,array
+Array_Selectionsort,--warmup,3,,,0.52,0.06,181,00.32,80012,,array
+Array_Selectionsort,--warmup,4,,,0.55,0.05,187,00.32,79204,,array
+Array_Selectionsort,-b,0,TIMEOUT,,33.49,0.28,111,30.36,338708,,array
+Array_Selectionsort,-b,1,TIMEOUT,,33.05,0.3,111,30.04,337996,,array
+Array_Selectionsort,-b,2,TIMEOUT,,33.28,0.3,110,30.36,340008,,array
+Array_Selectionsort,-b,3,TIMEOUT,,33.05,0.28,110,30.03,343588,,array
+Array_Selectionsort,-b,4,TIMEOUT,,33.73,0.3,112,30.35,339852,,array
+Array_Selectionsort,-k,0,Crash,24,3.29,0.14,195,01.76,187040,,array
+Array_Selectionsort,-k,1,Crash,24,3.34,0.17,201,01.75,186856,,array
+Array_Selectionsort,-k,2,Crash,24,3.42,0.16,197,01.82,186060,,array
+Array_Selectionsort,-k,3,Crash,24,3.33,0.17,198,01.76,186836,,array
+Array_Selectionsort,-k,4,Crash,24,3.3,0.15,198,01.74,183892,,array
+Array_Selectionsort,-bk,0,Crash,35,4.72,0.17,177,02.76,208164,,array
+Array_Selectionsort,-bk,1,Crash,35,4.81,0.19,173,02.87,208676,,array
+Array_Selectionsort,-bk,2,Crash,35,4.71,0.18,171,02.84,208848,,array
+Array_Selectionsort,-bk,3,Crash,35,4.69,0.18,174,02.80,208660,,array
+Array_Selectionsort,-bk,4,Crash,35,4.62,0.16,169,02.81,205740,,array
+Array_Selectionsort,-p,0,Proof,9,1.26,0.14,165,00.85,126460,True Positive,array
+Array_Selectionsort,-p,1,Proof,9,1.24,0.14,165,00.84,122632,True Positive,array
+Array_Selectionsort,-p,2,Proof,9,1.3,0.13,168,00.85,126872,True Positive,array
+Array_Selectionsort,-p,3,Proof,9,1.26,0.12,169,00.82,125572,True Positive,array
+Array_Selectionsort,-p,4,Proof,9,1.27,0.13,166,00.84,125192,True Positive,array
+Array_Selectionsort,-g,0,Crash,0,0.77,0.06,183,00.45,83184,,array
+Array_Selectionsort,-g,1,Crash,0,0.75,0.07,183,00.45,83836,,array
+Array_Selectionsort,-g,2,Crash,0,0.73,0.07,187,00.43,83852,,array
+Array_Selectionsort,-g,3,Crash,0,0.81,0.08,172,00.51,84124,,array
+Array_Selectionsort,-g,4,Crash,0,0.74,0.08,178,00.46,84364,,array
+Array_Selectionsort,-gB,0,Crash,0,0.74,0.07,180,00.45,83772,,array
+Array_Selectionsort,-gB,1,Crash,0,0.74,0.06,184,00.43,84652,,array
+Array_Selectionsort,-gB,2,Crash,0,0.74,0.07,183,00.44,83432,,array
+Array_Selectionsort,-gB,3,Crash,0,0.74,0.07,172,00.47,83724,,array
+Array_Selectionsort,-gB,4,Crash,0,0.72,0.07,184,00.43,84132,,array
+Array_Selectionsort,-g --gpdr-smi,0,Crash,0,0.72,0.08,184,00.43,83420,,array
+Array_Selectionsort,-g --gpdr-smi,1,Crash,0,0.74,0.08,185,00.44,84452,,array
+Array_Selectionsort,-g --gpdr-smi,2,Crash,0,0.77,0.06,175,00.47,84164,,array
+Array_Selectionsort,-g --gpdr-smi,3,Crash,0,0.75,0.07,185,00.44,84020,,array
+Array_Selectionsort,-g --gpdr-smi,4,Crash,0,0.77,0.06,190,00.44,83396,,array
+Array_Selectionsort,-gB --gpdr-smi,0,Crash,0,0.73,0.07,186,00.43,84336,,array
+Array_Selectionsort,-gB --gpdr-smi,1,Crash,0,0.76,0.06,186,00.44,84368,,array
+Array_Selectionsort,-gB --gpdr-smi,2,Crash,0,0.76,0.07,182,00.45,84308,,array
+Array_Selectionsort,-gB --gpdr-smi,3,Crash,0,0.76,0.08,187,00.44,83040,,array
+Array_Selectionsort,-gB --gpdr-smi,4,Crash,0,0.75,0.08,185,00.45,84048,,array
+Array_Selectionsort,-g --gpdr-ats,0,TIMEOUT,,34.15,0.92,116,30.03,416008,,array
+Array_Selectionsort,-g --gpdr-ats,1,TIMEOUT,,33.9,1.22,116,30.04,359116,,array
+Array_Selectionsort,-g --gpdr-ats,2,TIMEOUT,,33.7,0.99,115,30.03,355664,,array
+Array_Selectionsort,-g --gpdr-ats,3,TIMEOUT,,34.59,0.95,118,30.04,361928,,array
+Array_Selectionsort,-g --gpdr-ats,4,TIMEOUT,,34.12,0.98,116,30.06,358184,,array
+Array_Selectionsort,-gB --gpdr-ats,0,,,1.46,0.12,165,00.95,133368,,array
+Array_Selectionsort,-gB --gpdr-ats,1,,,1.48,0.11,167,00.95,132416,,array
+Array_Selectionsort,-gB --gpdr-ats,2,,,1.45,0.14,162,00.98,131020,,array
+Array_Selectionsort,-gB --gpdr-ats,3,,,1.44,0.14,166,00.94,132564,,array
+Array_Selectionsort,-gB --gpdr-ats,4,,,1.44,0.12,168,00.93,133288,,array
+Array_Selectionsort,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,35.26,0.86,119,30.12,1693912,,array
+Array_Selectionsort,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,35.5,0.9,120,30.11,1688736,,array
+Array_Selectionsort,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,34.83,0.93,118,30.12,1737464,,array
+Array_Selectionsort,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,35.4,0.83,120,30.11,1669644,,array
+Array_Selectionsort,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,35.2,0.9,119,30.11,1666812,,array
+Array_Selectionsort,-gB --gpdr-smi --gpdr-ats,0,,,1.45,0.12,165,00.95,131652,,array
+Array_Selectionsort,-gB --gpdr-smi --gpdr-ats,1,,,1.41,0.12,166,00.92,131800,,array
+Array_Selectionsort,-gB --gpdr-smi --gpdr-ats,2,,,1.44,0.12,166,00.94,132904,,array
+Array_Selectionsort,-gB --gpdr-smi --gpdr-ats,3,,,1.45,0.13,168,00.94,130948,,array
+Array_Selectionsort,-gB --gpdr-smi --gpdr-ats,4,,,1.45,0.13,171,00.92,132460,,array
+Array_Size,--warmup,0,,,0.52,0.05,160,00.36,75680,,array
+Array_Size,--warmup,1,,,0.52,0.07,174,00.34,75976,,array
+Array_Size,--warmup,2,,,0.51,0.06,171,00.33,74832,,array
+Array_Size,--warmup,3,,,0.53,0.06,172,00.34,75268,,array
+Array_Size,--warmup,4,,,0.52,0.06,174,00.33,75416,,array
+Array_Size,-b,0,NoResult,101,8.01,0.28,158,05.23,338696,,array
+Array_Size,-b,1,NoResult,101,8.05,0.29,160,05.19,338296,,array
+Array_Size,-b,2,NoResult,101,7.44,0.22,149,05.11,338816,,array
+Array_Size,-b,3,NoResult,101,7.42,0.23,151,05.06,335884,,array
+Array_Size,-b,4,NoResult,101,8.37,0.24,164,05.23,346332,,array
+Array_Size,-k,0,Proof,4,1.21,0.15,168,00.81,130872,True Positive,array
+Array_Size,-k,1,Proof,4,1.23,0.11,171,00.78,132004,True Positive,array
+Array_Size,-k,2,Proof,4,1.27,0.11,178,00.77,130716,True Positive,array
+Array_Size,-k,3,Proof,4,1.22,0.12,170,00.79,130592,True Positive,array
+Array_Size,-k,4,Proof,4,1.26,0.13,168,00.83,131032,True Positive,array
+Array_Size,-bk,0,Proof,5,1.25,0.13,170,00.81,130292,True Positive,array
+Array_Size,-bk,1,Proof,5,1.29,0.12,174,00.81,129824,True Positive,array
+Array_Size,-bk,2,Proof,5,1.25,0.11,170,00.80,129408,True Positive,array
+Array_Size,-bk,3,Proof,5,1.25,0.13,170,00.81,130432,True Positive,array
+Array_Size,-bk,4,Proof,5,1.25,0.15,171,00.81,130972,True Positive,array
+Array_Size,-p,0,Proof,1,1.07,0.11,168,00.70,123332,True Positive,array
+Array_Size,-p,1,Proof,1,1.06,0.1,169,00.69,122296,True Positive,array
+Array_Size,-p,2,Proof,1,1.07,0.15,166,00.73,121228,True Positive,array
+Array_Size,-p,3,Proof,1,1.1,0.1,168,00.71,122272,True Positive,array
+Array_Size,-p,4,Proof,1,1.07,0.09,171,00.68,121516,True Positive,array
+Array_Size,-g,0,Crash,3,0.98,0.1,157,00.69,122228,,array
+Array_Size,-g,1,Crash,3,0.97,0.12,156,00.70,121672,,array
+Array_Size,-g,2,Crash,3,0.98,0.1,159,00.68,121040,,array
+Array_Size,-g,3,Crash,3,1.04,0.1,166,00.69,121132,,array
+Array_Size,-g,4,Crash,3,1.02,0.11,165,00.69,120364,,array
+Array_Size,-gB,0,Crash,3,1.02,0.11,159,00.71,121452,,array
+Array_Size,-gB,1,Crash,3,1.05,0.12,155,00.76,121460,,array
+Array_Size,-gB,2,Crash,3,1.04,0.11,159,00.72,122684,,array
+Array_Size,-gB,3,Crash,3,1.0,0.12,157,00.71,120932,,array
+Array_Size,-gB,4,Crash,3,1.02,0.12,153,00.74,121000,,array
+Array_Size,-g --gpdr-smi,0,Crash,3,1.01,0.13,163,00.70,122172,,array
+Array_Size,-g --gpdr-smi,1,Crash,3,0.96,0.13,160,00.69,120588,,array
+Array_Size,-g --gpdr-smi,2,Crash,3,0.99,0.12,154,00.72,121536,,array
+Array_Size,-g --gpdr-smi,3,Crash,3,0.95,0.17,157,00.71,122088,,array
+Array_Size,-g --gpdr-smi,4,Crash,3,0.95,0.14,161,00.67,120572,,array
+Array_Size,-gB --gpdr-smi,0,Crash,3,1.0,0.12,155,00.72,122196,,array
+Array_Size,-gB --gpdr-smi,1,Crash,3,0.98,0.14,161,00.69,121932,,array
+Array_Size,-gB --gpdr-smi,2,Crash,3,0.98,0.14,154,00.73,121176,,array
+Array_Size,-gB --gpdr-smi,3,Crash,3,1.0,0.13,160,00.71,121908,,array
+Array_Size,-gB --gpdr-smi,4,Crash,3,1.0,0.16,167,00.69,122336,,array
+Array_Size,-g --gpdr-ats,0,TIMEOUT,,33.3,0.95,113,30.09,358016,,array
+Array_Size,-g --gpdr-ats,1,TIMEOUT,,33.52,0.68,113,30.07,339712,,array
+Array_Size,-g --gpdr-ats,2,TIMEOUT,,33.22,0.67,112,30.07,336596,,array
+Array_Size,-g --gpdr-ats,3,TIMEOUT,,33.46,0.7,113,30.05,340532,,array
+Array_Size,-g --gpdr-ats,4,TIMEOUT,,32.58,1.69,114,30.06,337972,,array
+Array_Size,-gB --gpdr-ats,0,TIMEOUT,,34.42,1.2,118,30.09,732168,,array
+Array_Size,-gB --gpdr-ats,1,TIMEOUT,,34.42,1.12,118,30.06,651352,,array
+Array_Size,-gB --gpdr-ats,2,TIMEOUT,,34.9,0.77,118,30.07,654856,,array
+Array_Size,-gB --gpdr-ats,3,TIMEOUT,,35.08,0.82,119,30.07,690628,,array
+Array_Size,-gB --gpdr-ats,4,TIMEOUT,,34.24,1.19,117,30.06,738008,,array
+Array_Size,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.9,0.27,110,30.08,334372,,array
+Array_Size,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.21,0.28,111,30.11,322400,,array
+Array_Size,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.1,1.36,111,30.09,331388,,array
+Array_Size,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.04,0.24,110,30.04,332724,,array
+Array_Size,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,31.82,1.27,110,30.06,324892,,array
+Array_Size,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.6,0.31,112,30.04,365384,,array
+Array_Size,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.98,1.09,113,30.04,343680,,array
+Array_Size,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.85,1.08,112,30.06,341708,,array
+Array_Size,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.89,0.34,113,30.06,346212,,array
+Array_Size,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.08,1.07,113,30.05,340992,,array
+Assert_Ex1,--warmup,0,,,0.5,0.06,188,00.30,75376,,false
+Assert_Ex1,--warmup,1,,,0.52,0.06,193,00.30,75136,,false
+Assert_Ex1,--warmup,2,,,0.52,0.06,204,00.28,74928,,false
+Assert_Ex1,--warmup,3,,,0.48,0.06,191,00.28,75400,,false
+Assert_Ex1,--warmup,4,,,0.51,0.05,192,00.29,74424,,false
+Assert_Ex1,-b,0,Counterexample,4,1.08,0.12,186,00.64,122784,False Negative,false
+Assert_Ex1,-b,1,Counterexample,4,1.05,0.11,175,00.66,123768,False Negative,false
+Assert_Ex1,-b,2,Counterexample,4,1.04,0.11,159,00.72,122332,False Negative,false
+Assert_Ex1,-b,3,Counterexample,4,1.06,0.1,174,00.67,122632,False Negative,false
+Assert_Ex1,-b,4,Counterexample,4,1.1,0.12,170,00.72,123952,False Negative,false
+Assert_Ex1,-k,0,Counterexample,14,1.27,0.1,180,00.76,127700,False Negative,false
+Assert_Ex1,-k,1,Counterexample,14,1.26,0.11,170,00.81,129612,False Negative,false
+Assert_Ex1,-k,2,Counterexample,14,1.32,0.1,177,00.80,128412,False Negative,false
+Assert_Ex1,-k,3,Counterexample,14,1.29,0.13,175,00.81,128688,False Negative,false
+Assert_Ex1,-k,4,Counterexample,14,1.33,0.1,178,00.80,129188,False Negative,false
+Assert_Ex1,-bk,0,Counterexample,8,1.25,0.12,190,00.72,126996,False Negative,false
+Assert_Ex1,-bk,1,Counterexample,8,1.16,0.12,173,00.73,126268,False Negative,false
+Assert_Ex1,-bk,2,Counterexample,8,1.21,0.09,182,00.71,125636,False Negative,false
+Assert_Ex1,-bk,3,Counterexample,8,1.2,0.09,188,00.69,126456,False Negative,false
+Assert_Ex1,-bk,4,Counterexample,8,1.21,0.1,186,00.70,126196,False Negative,false
+Assert_Ex1,-p,0,NoResult,3,1.02,0.11,173,00.65,123764,,false
+Assert_Ex1,-p,1,NoResult,3,1.03,0.09,179,00.62,122160,,false
+Assert_Ex1,-p,2,NoResult,3,1.03,0.12,182,00.63,122212,,false
+Assert_Ex1,-p,3,NoResult,3,1.01,0.11,181,00.62,123888,,false
+Assert_Ex1,-p,4,NoResult,3,0.98,0.11,175,00.62,124452,,false
+Assert_Ex1,-g,0,TIMEOUT,,33.05,1.45,114,30.05,296600,,false
+Assert_Ex1,-g,1,TIMEOUT,,32.83,1.44,114,30.05,290720,,false
+Assert_Ex1,-g,2,TIMEOUT,,33.16,1.36,114,30.06,294476,,false
+Assert_Ex1,-g,3,TIMEOUT,,32.68,1.44,113,30.05,294456,,false
+Assert_Ex1,-g,4,TIMEOUT,,32.71,1.3,113,30.04,294124,,false
+Assert_Ex1,-gB,0,Proof,6,1.02,0.11,179,00.63,123236,True Positive,false
+Assert_Ex1,-gB,1,Proof,6,1.07,0.09,162,00.72,121680,True Positive,false
+Assert_Ex1,-gB,2,Proof,6,1.05,0.1,177,00.65,121016,True Positive,false
+Assert_Ex1,-gB,3,Proof,6,1.09,0.11,177,00.68,121736,True Positive,false
+Assert_Ex1,-gB,4,Proof,6,1.06,0.12,174,00.67,122076,True Positive,false
+Assert_Ex1,-g --gpdr-smi,0,TIMEOUT,,32.76,0.25,109,30.05,278120,,false
+Assert_Ex1,-g --gpdr-smi,1,TIMEOUT,,32.59,0.22,109,30.05,278540,,false
+Assert_Ex1,-g --gpdr-smi,2,TIMEOUT,,32.38,0.28,108,30.03,280756,,false
+Assert_Ex1,-g --gpdr-smi,3,TIMEOUT,,32.98,0.28,110,30.04,284988,,false
+Assert_Ex1,-g --gpdr-smi,4,TIMEOUT,,32.41,0.33,108,30.05,281712,,false
+Assert_Ex1,-gB --gpdr-smi,0,Proof,6,1.05,0.11,176,00.66,122720,True Positive,false
+Assert_Ex1,-gB --gpdr-smi,1,Proof,6,1.08,0.09,170,00.69,122576,True Positive,false
+Assert_Ex1,-gB --gpdr-smi,2,Proof,6,1.11,0.11,179,00.68,122964,True Positive,false
+Assert_Ex1,-gB --gpdr-smi,3,Proof,6,1.13,0.11,187,00.66,123512,True Positive,false
+Assert_Ex1,-gB --gpdr-smi,4,Proof,6,1.07,0.11,176,00.67,122616,True Positive,false
+Assert_Ex1,-g --gpdr-ats,0,TIMEOUT,,33.03,1.27,114,30.06,299424,,false
+Assert_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.12,1.34,114,30.04,297904,,false
+Assert_Ex1,-g --gpdr-ats,2,TIMEOUT,,32.93,1.31,114,30.03,291556,,false
+Assert_Ex1,-g --gpdr-ats,3,TIMEOUT,,32.73,1.66,114,30.05,297856,,false
+Assert_Ex1,-g --gpdr-ats,4,TIMEOUT,,32.61,1.56,113,30.03,295168,,false
+Assert_Ex1,-gB --gpdr-ats,0,Proof,56,2.52,0.17,184,01.45,141468,True Positive,false
+Assert_Ex1,-gB --gpdr-ats,1,Proof,56,2.46,0.15,182,01.43,139032,True Positive,false
+Assert_Ex1,-gB --gpdr-ats,2,Proof,56,2.43,0.15,179,01.43,141424,True Positive,false
+Assert_Ex1,-gB --gpdr-ats,3,Proof,56,2.35,0.16,174,01.44,139356,True Positive,false
+Assert_Ex1,-gB --gpdr-ats,4,Proof,56,2.48,0.14,177,01.48,139672,True Positive,false
+Assert_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.9,0.25,110,30.03,280508,,false
+Assert_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.82,0.23,110,30.03,280484,,false
+Assert_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.48,0.25,112,30.05,280948,,false
+Assert_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.16,0.25,111,30.03,282604,,false
+Assert_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.28,0.24,111,30.03,282764,,false
+Assert_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,74,2.55,0.13,155,01.72,132780,True Positive,false
+Assert_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,74,2.56,0.09,151,01.75,132492,True Positive,false
+Assert_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,74,2.58,0.13,155,01.75,134360,True Positive,false
+Assert_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,74,2.61,0.13,158,01.73,133416,True Positive,false
+Assert_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,74,2.61,0.12,157,01.74,133932,True Positive,false
+Assert_Ex2,--warmup,0,,,0.52,0.05,180,00.32,75696,,true
+Assert_Ex2,--warmup,1,,,0.52,0.05,186,00.31,75156,,true
+Assert_Ex2,--warmup,2,,,0.52,0.05,186,00.30,75660,,true
+Assert_Ex2,--warmup,3,,,0.48,0.06,176,00.31,75776,,true
+Assert_Ex2,--warmup,4,,,0.54,0.05,191,00.31,74980,,true
+Assert_Ex2,-b,0,NoResult,101,9.93,0.2,141,07.16,350744,,true
+Assert_Ex2,-b,1,NoResult,101,10.17,0.23,146,07.10,303244,,true
+Assert_Ex2,-b,2,NoResult,101,9.77,0.21,142,06.98,298796,,true
+Assert_Ex2,-b,3,NoResult,101,9.79,0.23,141,07.11,352244,,true
+Assert_Ex2,-b,4,NoResult,101,10.18,0.25,145,07.15,350888,,true
+Assert_Ex2,-k,0,Proof,14,1.45,0.13,183,00.86,131140,True Positive,true
+Assert_Ex2,-k,1,Proof,14,1.45,0.11,184,00.85,130880,True Positive,true
+Assert_Ex2,-k,2,Proof,14,1.42,0.13,171,00.90,129212,True Positive,true
+Assert_Ex2,-k,3,Proof,14,1.42,0.13,158,00.98,130752,True Positive,true
+Assert_Ex2,-k,4,Proof,14,1.41,0.12,164,00.93,130796,True Positive,true
+Assert_Ex2,-bk,0,Proof,15,1.45,0.11,178,00.88,130236,True Positive,true
+Assert_Ex2,-bk,1,Proof,15,1.51,0.11,180,00.90,131600,True Positive,true
+Assert_Ex2,-bk,2,Proof,15,1.54,0.11,185,00.89,129252,True Positive,true
+Assert_Ex2,-bk,3,Proof,15,1.46,0.11,175,00.89,131052,True Positive,true
+Assert_Ex2,-bk,4,Proof,15,1.51,0.13,183,00.90,130652,True Positive,true
+Assert_Ex2,-p,0,Proof,2,0.96,0.11,169,00.63,123656,True Positive,true
+Assert_Ex2,-p,1,Proof,2,0.98,0.09,170,00.63,123900,True Positive,true
+Assert_Ex2,-p,2,Proof,2,0.98,0.12,178,00.62,124508,True Positive,true
+Assert_Ex2,-p,3,Proof,2,0.99,0.1,179,00.61,125564,True Positive,true
+Assert_Ex2,-p,4,Proof,2,1.03,0.1,181,00.62,124120,True Positive,true
+Assert_Ex2,-g,0,TIMEOUT,,33.33,1.25,115,30.04,297224,,true
+Assert_Ex2,-g,1,TIMEOUT,,32.71,1.37,113,30.06,297824,,true
+Assert_Ex2,-g,2,TIMEOUT,,32.9,1.43,114,30.04,297792,,true
+Assert_Ex2,-g,3,TIMEOUT,,33.04,1.2,113,30.06,290012,,true
+Assert_Ex2,-g,4,TIMEOUT,,32.83,1.2,113,30.03,290404,,true
+Assert_Ex2,-gB,0,TIMEOUT,,32.73,1.27,113,30.04,303940,,true
+Assert_Ex2,-gB,1,TIMEOUT,,33.2,1.24,114,30.06,312168,,true
+Assert_Ex2,-gB,2,TIMEOUT,,32.56,1.19,112,30.04,298004,,true
+Assert_Ex2,-gB,3,TIMEOUT,,32.81,1.11,112,30.04,303352,,true
+Assert_Ex2,-gB,4,TIMEOUT,,33.21,1.02,113,30.04,309592,,true
+Assert_Ex2,-g --gpdr-smi,0,TIMEOUT,,32.26,0.27,108,30.04,278132,,true
+Assert_Ex2,-g --gpdr-smi,1,TIMEOUT,,32.36,0.44,109,30.05,278080,,true
+Assert_Ex2,-g --gpdr-smi,2,TIMEOUT,,32.1,0.67,109,30.03,283016,,true
+Assert_Ex2,-g --gpdr-smi,3,TIMEOUT,,32.33,0.28,108,30.05,278256,,true
+Assert_Ex2,-g --gpdr-smi,4,TIMEOUT,,32.68,0.25,109,30.03,278752,,true
+Assert_Ex2,-gB --gpdr-smi,0,TIMEOUT,,31.87,0.28,107,30.03,283844,,true
+Assert_Ex2,-gB --gpdr-smi,1,TIMEOUT,,31.96,0.28,107,30.05,284788,,true
+Assert_Ex2,-gB --gpdr-smi,2,TIMEOUT,,31.92,0.28,107,30.05,284520,,true
+Assert_Ex2,-gB --gpdr-smi,3,TIMEOUT,,31.98,0.26,107,30.03,298812,,true
+Assert_Ex2,-gB --gpdr-smi,4,TIMEOUT,,32.15,0.3,107,30.05,295028,,true
+Assert_Ex2,-g --gpdr-ats,0,TIMEOUT,,33.41,1.06,114,30.06,309028,,true
+Assert_Ex2,-g --gpdr-ats,1,TIMEOUT,,33.66,1.08,115,30.04,320252,,true
+Assert_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.22,1.06,114,30.04,298164,,true
+Assert_Ex2,-g --gpdr-ats,3,TIMEOUT,,33.04,1.23,114,30.04,301660,,true
+Assert_Ex2,-g --gpdr-ats,4,TIMEOUT,,33.26,1.05,114,30.05,295480,,true
+Assert_Ex2,-gB --gpdr-ats,0,,,8.34,0.36,159,05.47,286940,,true
+Assert_Ex2,-gB --gpdr-ats,1,,,8.31,0.38,156,05.54,288604,,true
+Assert_Ex2,-gB --gpdr-ats,2,,,8.24,0.37,157,05.45,287440,,true
+Assert_Ex2,-gB --gpdr-ats,3,,,8.19,0.35,152,05.59,285368,,true
+Assert_Ex2,-gB --gpdr-ats,4,,,8.04,0.37,154,05.44,290860,,true
+Assert_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.92,0.26,110,30.03,287216,,true
+Assert_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.26,0.25,111,30.04,289096,,true
+Assert_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.96,0.29,110,30.03,287996,,true
+Assert_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.12,0.3,111,30.05,286820,,true
+Assert_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.22,0.25,111,30.04,288096,,true
+Assert_Ex2,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.5,0.25,109,30.04,296272,,true
+Assert_Ex2,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.26,0.3,108,30.03,293184,,true
+Assert_Ex2,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.53,0.26,109,30.04,295444,,true
+Assert_Ex2,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.37,0.27,108,30.04,285444,,true
+Assert_Ex2,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.55,0.25,109,30.04,291788,,true
+Assert_Ex3,--warmup,0,,,0.57,0.06,165,00.38,74976,,true
+Assert_Ex3,--warmup,1,,,0.57,0.06,165,00.38,75760,,true
+Assert_Ex3,--warmup,2,,,0.55,0.06,169,00.36,74420,,true
+Assert_Ex3,--warmup,3,,,0.54,0.08,162,00.38,74364,,true
+Assert_Ex3,--warmup,4,,,0.58,0.05,165,00.38,75176,,true
+Assert_Ex3,-b,0,NoResult,101,11.48,0.28,138,08.52,352032,,true
+Assert_Ex3,-b,1,NoResult,101,11.17,0.31,135,08.45,350272,,true
+Assert_Ex3,-b,2,NoResult,101,11.2,0.29,137,08.38,350956,,true
+Assert_Ex3,-b,3,NoResult,101,10.9,0.27,136,08.18,354592,,true
+Assert_Ex3,-b,4,NoResult,101,11.56,0.23,142,08.27,299792,,true
+Assert_Ex3,-k,0,Proof,14,1.39,0.13,156,00.97,130132,True Positive,true
+Assert_Ex3,-k,1,Proof,14,1.38,0.13,154,00.98,129704,True Positive,true
+Assert_Ex3,-k,2,Proof,14,1.51,0.14,148,01.11,130724,True Positive,true
+Assert_Ex3,-k,3,Proof,14,1.44,0.15,153,01.04,129640,True Positive,true
+Assert_Ex3,-k,4,Proof,14,1.47,0.11,154,01.02,130612,True Positive,true
+Assert_Ex3,-bk,0,Proof,15,1.51,0.14,156,01.05,130024,True Positive,true
+Assert_Ex3,-bk,1,Proof,15,1.59,0.13,153,01.13,130252,True Positive,true
+Assert_Ex3,-bk,2,Proof,15,1.48,0.13,158,01.02,131864,True Positive,true
+Assert_Ex3,-bk,3,Proof,15,1.52,0.11,159,01.02,131404,True Positive,true
+Assert_Ex3,-bk,4,Proof,15,1.51,0.1,162,01.00,130124,True Positive,true
+Assert_Ex3,-p,0,Proof,2,1.02,0.12,152,00.75,125208,True Positive,true
+Assert_Ex3,-p,1,Proof,2,1.05,0.1,154,00.75,123780,True Positive,true
+Assert_Ex3,-p,2,Proof,2,1.08,0.13,153,00.79,124232,True Positive,true
+Assert_Ex3,-p,3,Proof,2,1.03,0.1,157,00.72,123496,True Positive,true
+Assert_Ex3,-p,4,Proof,2,1.07,0.11,154,00.76,125340,True Positive,true
+Assert_Ex3,-g,0,TIMEOUT,,32.2,0.99,110,30.03,293796,,true
+Assert_Ex3,-g,1,TIMEOUT,,32.54,0.99,111,30.04,298456,,true
+Assert_Ex3,-g,2,TIMEOUT,,32.53,1.03,111,30.04,298220,,true
+Assert_Ex3,-g,3,TIMEOUT,,32.93,1.0,112,30.04,298304,,true
+Assert_Ex3,-g,4,TIMEOUT,,32.91,1.01,112,30.06,303140,,true
+Assert_Ex3,-gB,0,TIMEOUT,,32.64,1.08,112,30.04,309528,,true
+Assert_Ex3,-gB,1,TIMEOUT,,32.27,1.2,111,30.05,301968,,true
+Assert_Ex3,-gB,2,TIMEOUT,,32.81,1.13,113,30.04,302052,,true
+Assert_Ex3,-gB,3,TIMEOUT,,32.36,1.09,111,30.05,297228,,true
+Assert_Ex3,-gB,4,TIMEOUT,,32.53,1.18,112,30.06,299696,,true
+Assert_Ex3,-g --gpdr-smi,0,TIMEOUT,,30.87,2.05,109,30.03,281812,,true
+Assert_Ex3,-g --gpdr-smi,1,TIMEOUT,,33.01,0.28,110,30.06,299172,,true
+Assert_Ex3,-g --gpdr-smi,2,TIMEOUT,,32.6,0.25,109,30.04,278080,,true
+Assert_Ex3,-g --gpdr-smi,3,TIMEOUT,,32.58,0.26,109,30.03,279136,,true
+Assert_Ex3,-g --gpdr-smi,4,TIMEOUT,,32.6,0.28,109,30.04,279592,,true
+Assert_Ex3,-gB --gpdr-smi,0,TIMEOUT,,32.41,0.3,108,30.04,301516,,true
+Assert_Ex3,-gB --gpdr-smi,1,TIMEOUT,,32.06,0.29,107,30.03,289340,,true
+Assert_Ex3,-gB --gpdr-smi,2,TIMEOUT,,32.17,0.35,108,30.05,293580,,true
+Assert_Ex3,-gB --gpdr-smi,3,TIMEOUT,,32.0,0.29,107,30.03,284268,,true
+Assert_Ex3,-gB --gpdr-smi,4,TIMEOUT,,32.08,0.3,107,30.04,300552,,true
+Assert_Ex3,-g --gpdr-ats,0,TIMEOUT,,33.66,1.12,115,30.06,306456,,true
+Assert_Ex3,-g --gpdr-ats,1,TIMEOUT,,33.58,1.1,115,30.04,302956,,true
+Assert_Ex3,-g --gpdr-ats,2,TIMEOUT,,32.66,1.43,113,30.05,294504,,true
+Assert_Ex3,-g --gpdr-ats,3,TIMEOUT,,33.04,1.08,113,30.03,295672,,true
+Assert_Ex3,-g --gpdr-ats,4,TIMEOUT,,33.22,1.09,114,30.04,298760,,true
+Assert_Ex3,-gB --gpdr-ats,0,TIMEOUT,,33.9,1.05,116,30.03,307092,,true
+Assert_Ex3,-gB --gpdr-ats,1,TIMEOUT,,33.78,1.13,116,30.06,305480,,true
+Assert_Ex3,-gB --gpdr-ats,2,TIMEOUT,,34.0,1.02,116,30.04,301640,,true
+Assert_Ex3,-gB --gpdr-ats,3,TIMEOUT,,33.7,1.06,115,30.03,307392,,true
+Assert_Ex3,-gB --gpdr-ats,4,TIMEOUT,,33.64,1.18,115,30.06,303856,,true
+Assert_Ex3,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.85,0.21,113,30.03,286772,,true
+Assert_Ex3,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.5,0.3,112,30.06,296292,,true
+Assert_Ex3,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.38,0.4,112,30.06,298680,,true
+Assert_Ex3,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.49,0.3,112,30.05,289620,,true
+Assert_Ex3,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.82,0.28,113,30.06,298140,,true
+Assert_Ex3,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.08,0.24,110,30.05,297716,,true
+Assert_Ex3,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.26,0.25,111,30.05,296832,,true
+Assert_Ex3,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.11,0.27,111,30.05,293524,,true
+Assert_Ex3,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.3,0.27,111,30.04,296600,,true
+Assert_Ex3,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.27,0.21,111,30.03,291916,,true
+Assignment_Ex1,--warmup,0,,,0.54,0.04,214,00.27,74600,,
+Assignment_Ex1,--warmup,1,,,0.49,0.06,203,00.27,75580,,
+Assignment_Ex1,--warmup,2,,,0.5,0.04,193,00.28,75304,,
+Assignment_Ex1,--warmup,3,,,0.56,0.05,219,00.28,74664,,
+Assignment_Ex1,--warmup,4,,,0.51,0.04,202,00.27,75056,,
+Assignment_Ex1,-b,0,NoResult,101,4.98,0.18,200,02.58,283808,,
+Assignment_Ex1,-b,1,NoResult,101,4.88,0.18,192,02.63,275432,,
+Assignment_Ex1,-b,2,NoResult,101,5.19,0.21,202,02.67,288052,,
+Assignment_Ex1,-b,3,NoResult,101,4.83,0.18,194,02.58,275268,,
+Assignment_Ex1,-b,4,NoResult,101,4.8,0.18,193,02.58,276352,,
+Assignment_Ex1,-k,0,Proof,4,1.09,0.1,186,00.64,125588,True Positive,
+Assignment_Ex1,-k,1,Proof,4,1.08,0.1,190,00.62,125544,True Positive,
+Assignment_Ex1,-k,2,Proof,4,0.99,0.13,173,00.65,126024,True Positive,
+Assignment_Ex1,-k,3,Proof,4,1.04,0.11,180,00.64,125244,True Positive,
+Assignment_Ex1,-k,4,Proof,4,1.11,0.12,189,00.65,123624,True Positive,
+Assignment_Ex1,-bk,0,Proof,5,1.09,0.11,186,00.64,125232,True Positive,
+Assignment_Ex1,-bk,1,Proof,5,1.09,0.11,188,00.64,125884,True Positive,
+Assignment_Ex1,-bk,2,Proof,5,1.09,0.11,185,00.65,125472,True Positive,
+Assignment_Ex1,-bk,3,Proof,5,1.09,0.12,181,00.67,124520,True Positive,
+Assignment_Ex1,-bk,4,Proof,5,1.14,0.09,189,00.65,124452,True Positive,
+Assignment_Ex1,-p,0,Proof,1,0.96,0.12,190,00.57,120008,True Positive,
+Assignment_Ex1,-p,1,Proof,1,1.01,0.09,183,00.60,119996,True Positive,
+Assignment_Ex1,-p,2,Proof,1,0.94,0.1,188,00.55,119972,True Positive,
+Assignment_Ex1,-p,3,Proof,1,0.97,0.09,189,00.56,120176,True Positive,
+Assignment_Ex1,-p,4,Proof,1,0.98,0.1,189,00.57,120016,True Positive,
+Assignment_Ex1,-g,0,Proof,46,1.95,0.13,176,01.18,130296,True Positive,
+Assignment_Ex1,-g,1,Proof,46,1.95,0.16,174,01.20,130180,True Positive,
+Assignment_Ex1,-g,2,Proof,46,1.95,0.14,178,01.17,129776,True Positive,
+Assignment_Ex1,-g,3,Proof,46,1.87,0.16,173,01.17,130268,True Positive,
+Assignment_Ex1,-g,4,Proof,46,1.93,0.15,175,01.18,129744,True Positive,
+Assignment_Ex1,-gB,0,Proof,6,1.11,0.09,182,00.66,131524,True Positive,
+Assignment_Ex1,-gB,1,Proof,6,1.08,0.12,181,00.66,131796,True Positive,
+Assignment_Ex1,-gB,2,Proof,6,1.11,0.11,184,00.66,130256,True Positive,
+Assignment_Ex1,-gB,3,Proof,6,1.1,0.12,190,00.64,130672,True Positive,
+Assignment_Ex1,-gB,4,Proof,6,1.09,0.12,184,00.65,131884,True Positive,
+Assignment_Ex1,-g --gpdr-smi,0,TIMEOUT,,32.47,0.24,108,30.03,273724,,
+Assignment_Ex1,-g --gpdr-smi,1,TIMEOUT,,32.6,0.24,109,30.03,273708,,
+Assignment_Ex1,-g --gpdr-smi,2,TIMEOUT,,32.55,0.29,109,30.05,276308,,
+Assignment_Ex1,-g --gpdr-smi,3,TIMEOUT,,32.69,0.23,109,30.03,277084,,
+Assignment_Ex1,-g --gpdr-smi,4,TIMEOUT,,32.57,0.23,109,30.03,271968,,
+Assignment_Ex1,-gB --gpdr-smi,0,Proof,6,1.12,0.1,181,00.67,131360,True Positive,
+Assignment_Ex1,-gB --gpdr-smi,1,Proof,6,1.11,0.1,187,00.64,131512,True Positive,
+Assignment_Ex1,-gB --gpdr-smi,2,Proof,6,1.13,0.11,188,00.66,131208,True Positive,
+Assignment_Ex1,-gB --gpdr-smi,3,Proof,6,1.09,0.12,181,00.67,131276,True Positive,
+Assignment_Ex1,-gB --gpdr-smi,4,Proof,6,1.08,0.12,184,00.65,130664,True Positive,
+Assignment_Ex1,-g --gpdr-ats,0,TIMEOUT,,34.25,1.44,118,30.06,309864,,
+Assignment_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.5,1.41,116,30.07,300504,,
+Assignment_Ex1,-g --gpdr-ats,2,TIMEOUT,,33.86,1.38,117,30.06,293856,,
+Assignment_Ex1,-g --gpdr-ats,3,TIMEOUT,,32.47,1.23,112,30.06,289100,,
+Assignment_Ex1,-g --gpdr-ats,4,TIMEOUT,,33.51,1.38,116,30.06,312980,,
+Assignment_Ex1,-gB --gpdr-ats,0,Proof,38,1.9,0.14,164,01.24,134836,True Positive,
+Assignment_Ex1,-gB --gpdr-ats,1,Proof,38,1.89,0.14,171,01.18,134424,True Positive,
+Assignment_Ex1,-gB --gpdr-ats,2,Proof,38,1.92,0.14,169,01.22,134548,True Positive,
+Assignment_Ex1,-gB --gpdr-ats,3,Proof,38,1.88,0.14,157,01.28,135076,True Positive,
+Assignment_Ex1,-gB --gpdr-ats,4,Proof,38,1.96,0.14,167,01.25,135184,True Positive,
+Assignment_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.01,0.26,110,30.05,281032,,
+Assignment_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.31,0.26,111,30.03,281804,,
+Assignment_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.46,0.28,112,30.06,282076,,
+Assignment_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.21,0.27,111,30.03,283924,,
+Assignment_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.01,0.26,110,30.04,280260,,
+Assignment_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,50,1.93,0.13,148,01.39,129804,True Positive,
+Assignment_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,50,2.08,0.12,163,01.34,130812,True Positive,
+Assignment_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,50,1.98,0.14,156,01.36,131276,True Positive,
+Assignment_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,50,1.96,0.1,146,01.41,130056,True Positive,
+Assignment_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,50,2.02,0.13,152,01.42,131196,True Positive,
+Assignment_Ex2,--warmup,0,,,0.5,0.05,192,00.29,75024,,
+Assignment_Ex2,--warmup,1,,,0.48,0.06,176,00.31,75332,,
+Assignment_Ex2,--warmup,2,,,0.5,0.06,164,00.34,74960,,
+Assignment_Ex2,--warmup,3,,,0.49,0.05,169,00.32,74512,,
+Assignment_Ex2,--warmup,4,,,0.5,0.05,154,00.36,75140,,
+Assignment_Ex2,-b,0,NoResult,101,5.78,0.19,171,03.48,292848,,
+Assignment_Ex2,-b,1,NoResult,101,6.06,0.22,182,03.45,292688,,
+Assignment_Ex2,-b,2,NoResult,101,5.89,0.19,172,03.52,289380,,
+Assignment_Ex2,-b,3,NoResult,101,5.76,0.22,174,03.42,290772,,
+Assignment_Ex2,-b,4,NoResult,101,6.11,0.25,185,03.44,290336,,
+Assignment_Ex2,-k,0,Proof,4,1.02,0.11,164,00.69,124496,True Positive,
+Assignment_Ex2,-k,1,Proof,4,1.02,0.15,135,00.86,124244,True Positive,
+Assignment_Ex2,-k,2,Proof,4,0.97,0.25,141,00.87,126304,True Positive,
+Assignment_Ex2,-k,3,Proof,4,0.92,0.22,161,00.71,124712,True Positive,
+Assignment_Ex2,-k,4,Proof,4,0.94,0.15,156,00.70,125276,True Positive,
+Assignment_Ex2,-bk,0,Proof,5,0.86,0.32,145,00.81,125696,True Positive,
+Assignment_Ex2,-bk,1,Proof,5,1.04,0.12,168,00.69,129724,True Positive,
+Assignment_Ex2,-bk,2,Proof,5,1.08,0.12,149,00.81,129612,True Positive,
+Assignment_Ex2,-bk,3,Proof,5,1.05,0.1,158,00.72,126036,True Positive,
+Assignment_Ex2,-bk,4,Proof,5,1.08,0.08,160,00.73,125044,True Positive,
+Assignment_Ex2,-p,0,Proof,1,0.91,0.1,162,00.62,123792,True Positive,
+Assignment_Ex2,-p,1,Proof,1,0.93,0.09,167,00.61,123728,True Positive,
+Assignment_Ex2,-p,2,Proof,1,0.91,0.11,154,00.66,121848,True Positive,
+Assignment_Ex2,-p,3,Proof,1,0.91,0.09,159,00.63,121496,True Positive,
+Assignment_Ex2,-p,4,Proof,1,0.96,0.08,161,00.65,122576,True Positive,
+Assignment_Ex2,-g,0,TIMEOUT,,33.21,1.31,114,30.06,296612,,
+Assignment_Ex2,-g,1,TIMEOUT,,33.06,1.25,114,30.04,298120,,
+Assignment_Ex2,-g,2,TIMEOUT,,33.01,1.3,114,30.03,297996,,
+Assignment_Ex2,-g,3,TIMEOUT,,33.18,1.26,114,30.03,298352,,
+Assignment_Ex2,-g,4,TIMEOUT,,33.37,1.25,115,30.03,302228,,
+Assignment_Ex2,-gB,0,Proof,53,2.32,0.16,170,01.46,143876,True Positive,
+Assignment_Ex2,-gB,1,Proof,53,2.39,0.16,177,01.44,145000,True Positive,
+Assignment_Ex2,-gB,2,Proof,53,2.45,0.16,173,01.50,144188,True Positive,
+Assignment_Ex2,-gB,3,Proof,53,2.35,0.15,176,01.42,144548,True Positive,
+Assignment_Ex2,-gB,4,Proof,53,2.37,0.13,170,01.46,144504,True Positive,
+Assignment_Ex2,-g --gpdr-smi,0,TIMEOUT,,33.14,0.22,111,30.03,285964,,
+Assignment_Ex2,-g --gpdr-smi,1,TIMEOUT,,32.55,0.26,109,30.05,274752,,
+Assignment_Ex2,-g --gpdr-smi,2,TIMEOUT,,32.54,0.25,109,30.04,275372,,
+Assignment_Ex2,-g --gpdr-smi,3,TIMEOUT,,32.41,0.28,108,30.03,271432,,
+Assignment_Ex2,-g --gpdr-smi,4,TIMEOUT,,32.6,0.26,109,30.05,277616,,
+Assignment_Ex2,-gB --gpdr-smi,0,Proof,56,2.06,0.14,154,01.42,139516,True Positive,
+Assignment_Ex2,-gB --gpdr-smi,1,Proof,56,2.07,0.12,155,01.41,139768,True Positive,
+Assignment_Ex2,-gB --gpdr-smi,2,Proof,56,2.05,0.14,148,01.48,140436,True Positive,
+Assignment_Ex2,-gB --gpdr-smi,3,Proof,56,2.25,0.13,138,01.73,139688,True Positive,
+Assignment_Ex2,-gB --gpdr-smi,4,Proof,56,2.04,0.12,151,01.43,139176,True Positive,
+Assignment_Ex2,-g --gpdr-ats,0,TIMEOUT,,33.55,1.2,115,30.06,304472,,
+Assignment_Ex2,-g --gpdr-ats,1,TIMEOUT,,33.96,1.33,117,30.04,301600,,
+Assignment_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.94,1.24,117,30.04,307380,,
+Assignment_Ex2,-g --gpdr-ats,3,TIMEOUT,,34.0,1.34,117,30.03,300640,,
+Assignment_Ex2,-g --gpdr-ats,4,TIMEOUT,,33.12,1.29,114,30.06,304384,,
+Assignment_Ex2,-gB --gpdr-ats,0,Proof,209,7.0,0.34,187,03.91,259100,True Positive,
+Assignment_Ex2,-gB --gpdr-ats,1,Proof,209,7.1,0.29,189,03.91,253780,True Positive,
+Assignment_Ex2,-gB --gpdr-ats,2,Proof,209,6.79,0.3,178,03.99,264852,True Positive,
+Assignment_Ex2,-gB --gpdr-ats,3,Proof,209,6.6,0.29,179,03.83,252768,True Positive,
+Assignment_Ex2,-gB --gpdr-ats,4,Proof,209,6.78,0.29,170,04.14,255196,True Positive,
+Assignment_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.23,0.27,111,30.05,286588,,
+Assignment_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.1,0.25,110,30.05,287376,,
+Assignment_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.27,0.27,111,30.03,290236,,
+Assignment_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.21,0.28,111,30.05,287832,,
+Assignment_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.28,0.33,111,30.03,289412,,
+Assignment_Ex2,-gB --gpdr-smi --gpdr-ats,0,Proof,178,4.92,0.15,148,03.42,161480,True Positive,
+Assignment_Ex2,-gB --gpdr-smi --gpdr-ats,1,Proof,178,4.97,0.14,158,03.22,173640,True Positive,
+Assignment_Ex2,-gB --gpdr-smi --gpdr-ats,2,Proof,178,4.91,0.14,158,03.19,172240,True Positive,
+Assignment_Ex2,-gB --gpdr-smi --gpdr-ats,3,Proof,178,4.88,0.13,162,03.08,175808,True Positive,
+Assignment_Ex2,-gB --gpdr-smi --gpdr-ats,4,Proof,178,4.9,0.15,163,03.10,164684,True Positive,
+Assignment_Ex3,--warmup,0,,,0.5,0.06,197,00.28,75584,,
+Assignment_Ex3,--warmup,1,,,0.52,0.05,205,00.28,74092,,
+Assignment_Ex3,--warmup,2,,,0.54,0.05,208,00.28,74124,,
+Assignment_Ex3,--warmup,3,,,0.51,0.05,209,00.27,74560,,
+Assignment_Ex3,--warmup,4,,,0.51,0.05,186,00.30,73872,,
+Assignment_Ex3,-b,0,NoResult,101,4.9,0.2,202,02.52,286228,,
+Assignment_Ex3,-b,1,NoResult,101,4.77,0.17,200,02.46,288416,,
+Assignment_Ex3,-b,2,NoResult,101,4.85,0.19,196,02.57,284200,,
+Assignment_Ex3,-b,3,NoResult,101,5.14,0.21,196,02.72,279916,,
+Assignment_Ex3,-b,4,NoResult,101,4.79,0.18,194,02.56,285424,,
+Assignment_Ex3,-k,0,Proof,9,1.1,0.11,170,00.71,124124,True Positive,
+Assignment_Ex3,-k,1,Proof,9,1.17,0.1,182,00.69,125944,True Positive,
+Assignment_Ex3,-k,2,Proof,9,1.17,0.11,182,00.70,126092,True Positive,
+Assignment_Ex3,-k,3,Proof,9,1.17,0.11,186,00.69,125980,True Positive,
+Assignment_Ex3,-k,4,Proof,9,1.13,0.11,166,00.74,125604,True Positive,
+Assignment_Ex3,-bk,0,Proof,8,1.16,0.1,180,00.70,126060,True Positive,
+Assignment_Ex3,-bk,1,Proof,8,1.13,0.1,182,00.68,123512,True Positive,
+Assignment_Ex3,-bk,2,Proof,8,1.14,0.11,178,00.70,126632,True Positive,
+Assignment_Ex3,-bk,3,Proof,8,1.12,0.1,158,00.77,122456,True Positive,
+Assignment_Ex3,-bk,4,Proof,8,1.12,0.12,165,00.75,122888,True Positive,
+Assignment_Ex3,-p,0,Proof,1,0.93,0.11,178,00.58,119372,True Positive,
+Assignment_Ex3,-p,1,Proof,1,0.93,0.09,176,00.58,119576,True Positive,
+Assignment_Ex3,-p,2,Proof,1,0.96,0.1,185,00.57,118376,True Positive,
+Assignment_Ex3,-p,3,Proof,1,0.99,0.08,190,00.56,119992,True Positive,
+Assignment_Ex3,-p,4,Proof,1,1.02,0.1,196,00.57,119812,True Positive,
+Assignment_Ex3,-g,0,TIMEOUT,,32.5,1.27,112,30.06,280712,,
+Assignment_Ex3,-g,1,TIMEOUT,,32.38,1.43,112,30.05,281416,,
+Assignment_Ex3,-g,2,TIMEOUT,,32.91,1.41,114,30.06,285588,,
+Assignment_Ex3,-g,3,TIMEOUT,,33.02,1.35,114,30.03,288288,,
+Assignment_Ex3,-g,4,TIMEOUT,,32.71,1.42,113,30.06,288176,,
+Assignment_Ex3,-gB,0,Proof,53,2.25,0.14,177,01.35,138728,True Positive,
+Assignment_Ex3,-gB,1,Proof,53,2.3,0.14,177,01.37,138448,True Positive,
+Assignment_Ex3,-gB,2,Proof,53,2.26,0.15,177,01.36,138628,True Positive,
+Assignment_Ex3,-gB,3,Proof,53,2.3,0.16,180,01.36,137524,True Positive,
+Assignment_Ex3,-gB,4,Proof,53,2.25,0.16,177,01.36,137732,True Positive,
+Assignment_Ex3,-g --gpdr-smi,0,TIMEOUT,,32.53,0.27,109,30.05,274248,,
+Assignment_Ex3,-g --gpdr-smi,1,TIMEOUT,,32.6,0.28,109,30.05,273960,,
+Assignment_Ex3,-g --gpdr-smi,2,TIMEOUT,,32.54,0.25,109,30.03,274120,,
+Assignment_Ex3,-g --gpdr-smi,3,TIMEOUT,,32.45,0.23,108,30.04,273548,,
+Assignment_Ex3,-g --gpdr-smi,4,TIMEOUT,,32.42,0.45,109,30.05,273476,,
+Assignment_Ex3,-gB --gpdr-smi,0,Proof,29,1.58,0.1,170,00.99,138448,True Positive,
+Assignment_Ex3,-gB --gpdr-smi,1,Proof,29,1.52,0.13,170,00.97,138460,True Positive,
+Assignment_Ex3,-gB --gpdr-smi,2,Proof,29,1.52,0.12,166,00.99,138416,True Positive,
+Assignment_Ex3,-gB --gpdr-smi,3,Proof,29,1.47,0.12,149,01.06,137568,True Positive,
+Assignment_Ex3,-gB --gpdr-smi,4,Proof,29,1.51,0.14,163,01.00,138236,True Positive,
+Assignment_Ex3,-g --gpdr-ats,0,TIMEOUT,,33.73,1.33,116,30.05,291624,,
+Assignment_Ex3,-g --gpdr-ats,1,TIMEOUT,,33.53,1.35,116,30.05,295740,,
+Assignment_Ex3,-g --gpdr-ats,2,TIMEOUT,,34.11,1.34,118,30.02,315008,,
+Assignment_Ex3,-g --gpdr-ats,3,TIMEOUT,,33.9,1.36,117,30.04,304576,,
+Assignment_Ex3,-g --gpdr-ats,4,TIMEOUT,,33.43,1.41,115,30.06,290536,,
+Assignment_Ex3,-gB --gpdr-ats,0,Proof,245,7.21,0.34,178,04.24,289836,True Positive,
+Assignment_Ex3,-gB --gpdr-ats,1,Proof,245,6.96,0.31,174,04.18,280648,True Positive,
+Assignment_Ex3,-gB --gpdr-ats,2,Proof,245,7.21,0.31,178,04.21,294040,True Positive,
+Assignment_Ex3,-gB --gpdr-ats,3,Proof,245,7.16,0.35,180,04.17,287152,True Positive,
+Assignment_Ex3,-gB --gpdr-ats,4,Proof,245,7.24,0.34,179,04.21,288340,True Positive,
+Assignment_Ex3,-g --gpdr-smi --gpdr-ats,0,,,1.87,0.12,167,01.19,131372,,
+Assignment_Ex3,-g --gpdr-smi --gpdr-ats,1,,,1.8,0.13,166,01.17,130716,,
+Assignment_Ex3,-g --gpdr-smi --gpdr-ats,2,,,1.84,0.13,168,01.17,130612,,
+Assignment_Ex3,-g --gpdr-smi --gpdr-ats,3,,,1.89,0.13,171,01.17,130848,,
+Assignment_Ex3,-g --gpdr-smi --gpdr-ats,4,,,1.8,0.13,157,01.22,129864,,
+Assignment_Ex3,-gB --gpdr-smi --gpdr-ats,0,Proof,62,2.36,0.12,171,01.44,133316,True Positive,
+Assignment_Ex3,-gB --gpdr-smi --gpdr-ats,1,Proof,62,2.33,0.15,170,01.45,133168,True Positive,
+Assignment_Ex3,-gB --gpdr-smi --gpdr-ats,2,Proof,62,2.3,0.14,170,01.43,132224,True Positive,
+Assignment_Ex3,-gB --gpdr-smi --gpdr-ats,3,Proof,62,2.4,0.14,172,01.47,132516,True Positive,
+Assignment_Ex3,-gB --gpdr-smi --gpdr-ats,4,Proof,62,2.4,0.14,174,01.46,132984,True Positive,
+Assignment_Ex3False,--warmup,0,,,0.49,0.05,191,00.28,74900,,
+Assignment_Ex3False,--warmup,1,,,0.51,0.04,205,00.27,74060,,
+Assignment_Ex3False,--warmup,2,,,0.5,0.05,200,00.27,75324,,
+Assignment_Ex3False,--warmup,3,,,0.48,0.06,192,00.28,75700,,
+Assignment_Ex3False,--warmup,4,,,0.5,0.05,201,00.27,75492,,
+Assignment_Ex3False,-b,0,Counterexample,3,1.03,0.1,181,00.62,124872,False Negative,
+Assignment_Ex3False,-b,1,Counterexample,3,1.05,0.11,186,00.62,125628,False Negative,
+Assignment_Ex3False,-b,2,Counterexample,3,1.04,0.13,188,00.62,124656,False Negative,
+Assignment_Ex3False,-b,3,Counterexample,3,1.07,0.11,182,00.64,125152,False Negative,
+Assignment_Ex3False,-b,4,Counterexample,3,1.05,0.12,185,00.63,125300,False Negative,
+Assignment_Ex3False,-k,0,Counterexample,9,1.16,0.12,182,00.70,125760,False Negative,
+Assignment_Ex3False,-k,1,Counterexample,9,1.21,0.1,185,00.71,125436,False Negative,
+Assignment_Ex3False,-k,2,Counterexample,9,1.13,0.11,178,00.69,126540,False Negative,
+Assignment_Ex3False,-k,3,Counterexample,9,1.18,0.11,181,00.71,126108,False Negative,
+Assignment_Ex3False,-k,4,Counterexample,9,1.11,0.1,172,00.70,125884,False Negative,
+Assignment_Ex3False,-bk,0,Counterexample,3,1.01,0.11,179,00.63,126220,False Negative,
+Assignment_Ex3False,-bk,1,Counterexample,3,1.02,0.12,182,00.63,125424,False Negative,
+Assignment_Ex3False,-bk,2,Counterexample,3,1.01,0.12,176,00.64,125552,False Negative,
+Assignment_Ex3False,-bk,3,Counterexample,3,1.03,0.11,181,00.63,125456,False Negative,
+Assignment_Ex3False,-bk,4,Counterexample,3,1.05,0.12,185,00.63,125508,False Negative,
+Assignment_Ex3False,-p,0,NoResult,2,0.91,0.13,165,00.63,124712,,
+Assignment_Ex3False,-p,1,NoResult,2,0.95,0.1,173,00.61,124236,,
+Assignment_Ex3False,-p,2,NoResult,2,0.95,0.12,176,00.61,124084,,
+Assignment_Ex3False,-p,3,NoResult,2,1.0,0.1,181,00.60,124500,,
+Assignment_Ex3False,-p,4,NoResult,2,0.95,0.11,181,00.59,123472,,
+Assignment_Ex3False,-g,0,TIMEOUT,,32.96,1.43,114,30.07,288932,,
+Assignment_Ex3False,-g,1,TIMEOUT,,33.43,1.32,115,30.06,296244,,
+Assignment_Ex3False,-g,2,TIMEOUT,,33.35,1.35,115,30.05,299440,,
+Assignment_Ex3False,-g,3,TIMEOUT,,33.17,1.37,114,30.04,296976,,
+Assignment_Ex3False,-g,4,TIMEOUT,,32.96,1.4,114,30.04,295552,,
+Assignment_Ex3False,-gB,0,Counterexample,17,1.38,0.13,177,00.85,135492,False Negative,
+Assignment_Ex3False,-gB,1,Counterexample,17,1.36,0.13,180,00.83,134600,False Negative,
+Assignment_Ex3False,-gB,2,Counterexample,17,1.4,0.12,178,00.85,136276,False Negative,
+Assignment_Ex3False,-gB,3,Counterexample,17,1.38,0.13,171,00.88,134800,False Negative,
+Assignment_Ex3False,-gB,4,Counterexample,17,1.4,0.12,177,00.86,136040,False Negative,
+Assignment_Ex3False,-g --gpdr-smi,0,Counterexample,23,1.36,0.12,167,00.89,127644,False Negative,
+Assignment_Ex3False,-g --gpdr-smi,1,Counterexample,23,1.39,0.11,166,00.90,127568,False Negative,
+Assignment_Ex3False,-g --gpdr-smi,2,Counterexample,23,1.36,0.13,148,01.01,126892,False Negative,
+Assignment_Ex3False,-g --gpdr-smi,3,Counterexample,23,1.35,0.09,162,00.89,127040,False Negative,
+Assignment_Ex3False,-g --gpdr-smi,4,Counterexample,23,1.35,0.1,167,00.87,126728,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi,0,Counterexample,24,1.45,0.12,170,00.92,137876,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi,1,Counterexample,24,1.38,0.12,159,00.94,136296,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi,2,Counterexample,24,1.49,0.11,170,00.94,137684,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi,3,Counterexample,24,1.5,0.12,178,00.91,136496,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi,4,Counterexample,24,1.44,0.13,171,00.91,137732,False Negative,
+Assignment_Ex3False,-g --gpdr-ats,0,TIMEOUT,,33.2,1.36,115,30.05,311052,,
+Assignment_Ex3False,-g --gpdr-ats,1,TIMEOUT,,33.64,1.4,116,30.05,297156,,
+Assignment_Ex3False,-g --gpdr-ats,2,TIMEOUT,,33.65,1.3,116,30.05,298928,,
+Assignment_Ex3False,-g --gpdr-ats,3,TIMEOUT,,33.33,1.3,115,30.05,290552,,
+Assignment_Ex3False,-g --gpdr-ats,4,TIMEOUT,,33.66,1.3,116,30.06,302152,,
+Assignment_Ex3False,-gB --gpdr-ats,0,Counterexample,24,1.75,0.12,193,00.97,133036,False Negative,
+Assignment_Ex3False,-gB --gpdr-ats,1,Counterexample,24,1.74,0.12,190,00.97,132472,False Negative,
+Assignment_Ex3False,-gB --gpdr-ats,2,Counterexample,24,1.7,0.13,195,00.93,132728,False Negative,
+Assignment_Ex3False,-gB --gpdr-ats,3,Counterexample,24,1.78,0.14,199,00.96,132848,False Negative,
+Assignment_Ex3False,-gB --gpdr-ats,4,Counterexample,24,1.73,0.12,196,00.95,133912,False Negative,
+Assignment_Ex3False,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.59,0.24,112,30.05,285196,,
+Assignment_Ex3False,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.6,0.3,112,30.05,287580,,
+Assignment_Ex3False,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.63,0.26,112,30.05,287680,,
+Assignment_Ex3False,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.66,0.23,112,30.03,287484,,
+Assignment_Ex3False,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.65,0.25,112,30.03,287352,,
+Assignment_Ex3False,-gB --gpdr-smi --gpdr-ats,0,Counterexample,83,2.89,0.13,173,01.75,136432,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi --gpdr-ats,1,Counterexample,83,2.83,0.13,169,01.74,147408,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi --gpdr-ats,2,Counterexample,83,2.76,0.12,163,01.76,133496,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi --gpdr-ats,3,Counterexample,83,2.79,0.14,164,01.78,147112,False Negative,
+Assignment_Ex3False,-gB --gpdr-smi --gpdr-ats,4,Counterexample,83,2.86,0.11,154,01.93,133360,False Negative,
+Assignment_Ex4,--warmup,0,,,0.53,0.06,165,00.36,75160,,
+Assignment_Ex4,--warmup,1,,,0.51,0.05,160,00.35,75192,,
+Assignment_Ex4,--warmup,2,,,0.53,0.06,165,00.36,76208,,
+Assignment_Ex4,--warmup,3,,,0.51,0.07,143,00.40,76080,,
+Assignment_Ex4,--warmup,4,,,0.5,0.04,164,00.33,74620,,
+Assignment_Ex4,-b,0,NoResult,101,6.8,0.22,156,04.48,343124,,
+Assignment_Ex4,-b,1,NoResult,101,6.82,0.2,157,04.47,297436,,
+Assignment_Ex4,-b,2,NoResult,101,7.16,0.19,164,04.47,298328,,
+Assignment_Ex4,-b,3,NoResult,101,7.47,0.21,173,04.44,296232,,
+Assignment_Ex4,-b,4,NoResult,101,6.85,0.22,163,04.33,290032,,
+Assignment_Ex4,-k,0,Proof,4,1.04,0.12,181,00.64,124944,True Positive,
+Assignment_Ex4,-k,1,Proof,4,1.07,0.1,187,00.62,125588,True Positive,
+Assignment_Ex4,-k,2,Proof,4,1.06,0.09,184,00.62,125720,True Positive,
+Assignment_Ex4,-k,3,Proof,4,1.06,0.1,188,00.61,125752,True Positive,
+Assignment_Ex4,-k,4,Proof,4,1.06,0.11,184,00.63,125208,True Positive,
+Assignment_Ex4,-bk,0,Proof,5,1.14,0.1,191,00.65,125684,True Positive,
+Assignment_Ex4,-bk,1,Proof,5,1.15,0.11,187,00.67,126460,True Positive,
+Assignment_Ex4,-bk,2,Proof,5,1.15,0.09,187,00.66,125320,True Positive,
+Assignment_Ex4,-bk,3,Proof,5,1.12,0.12,191,00.64,125900,True Positive,
+Assignment_Ex4,-bk,4,Proof,5,1.12,0.11,186,00.66,126692,True Positive,
+Assignment_Ex4,-p,0,Proof,1,0.97,0.11,178,00.60,120144,True Positive,
+Assignment_Ex4,-p,1,Proof,1,0.97,0.1,183,00.58,119308,True Positive,
+Assignment_Ex4,-p,2,Proof,1,0.98,0.1,182,00.59,119012,True Positive,
+Assignment_Ex4,-p,3,Proof,1,0.99,0.11,187,00.59,120596,True Positive,
+Assignment_Ex4,-p,4,Proof,1,0.98,0.07,189,00.55,120452,True Positive,
+Assignment_Ex4,-g,0,TIMEOUT,,33.26,1.3,115,30.05,301068,,
+Assignment_Ex4,-g,1,TIMEOUT,,33.3,1.33,115,30.06,300460,,
+Assignment_Ex4,-g,2,TIMEOUT,,33.33,1.29,115,30.07,298576,,
+Assignment_Ex4,-g,3,TIMEOUT,,33.32,1.25,115,30.03,298912,,
+Assignment_Ex4,-g,4,TIMEOUT,,32.92,1.28,113,30.04,296476,,
+Assignment_Ex4,-gB,0,Proof,39,2.08,0.14,191,01.16,139972,True Positive,
+Assignment_Ex4,-gB,1,Proof,39,2.01,0.14,183,01.17,140048,True Positive,
+Assignment_Ex4,-gB,2,Proof,39,2.01,0.15,180,01.20,140956,True Positive,
+Assignment_Ex4,-gB,3,Proof,39,2.02,0.15,187,01.16,140872,True Positive,
+Assignment_Ex4,-gB,4,Proof,39,1.99,0.15,181,01.18,140976,True Positive,
+Assignment_Ex4,-g --gpdr-smi,0,TIMEOUT,,32.57,0.23,109,30.05,277548,,
+Assignment_Ex4,-g --gpdr-smi,1,TIMEOUT,,32.63,0.24,109,30.05,278912,,
+Assignment_Ex4,-g --gpdr-smi,2,TIMEOUT,,32.78,0.26,110,30.03,279928,,
+Assignment_Ex4,-g --gpdr-smi,3,TIMEOUT,,32.4,0.28,108,30.05,280512,,
+Assignment_Ex4,-g --gpdr-smi,4,TIMEOUT,,32.53,0.31,109,30.05,277516,,
+Assignment_Ex4,-gB --gpdr-smi,0,Proof,19,1.39,0.13,176,00.86,138616,True Positive,
+Assignment_Ex4,-gB --gpdr-smi,1,Proof,19,1.43,0.12,185,00.84,137872,True Positive,
+Assignment_Ex4,-gB --gpdr-smi,2,Proof,19,1.45,0.12,186,00.84,138108,True Positive,
+Assignment_Ex4,-gB --gpdr-smi,3,Proof,19,1.38,0.13,178,00.84,138652,True Positive,
+Assignment_Ex4,-gB --gpdr-smi,4,Proof,19,1.4,0.12,182,00.84,137268,True Positive,
+Assignment_Ex4,-g --gpdr-ats,0,TIMEOUT,,33.95,1.31,117,30.04,299952,,
+Assignment_Ex4,-g --gpdr-ats,1,TIMEOUT,,33.7,1.33,116,30.02,298928,,
+Assignment_Ex4,-g --gpdr-ats,2,TIMEOUT,,33.82,1.26,116,30.03,304088,,
+Assignment_Ex4,-g --gpdr-ats,3,TIMEOUT,,33.54,1.26,115,30.03,298664,,
+Assignment_Ex4,-g --gpdr-ats,4,TIMEOUT,,33.26,1.23,114,30.04,301644,,
+Assignment_Ex4,-gB --gpdr-ats,0,Proof,70,3.41,0.17,209,01.71,186260,True Positive,
+Assignment_Ex4,-gB --gpdr-ats,1,Proof,70,3.59,0.19,200,01.89,188496,True Positive,
+Assignment_Ex4,-gB --gpdr-ats,2,Proof,70,3.44,0.19,214,01.69,188684,True Positive,
+Assignment_Ex4,-gB --gpdr-ats,3,Proof,70,3.49,0.17,215,01.70,188332,True Positive,
+Assignment_Ex4,-gB --gpdr-ats,4,Proof,70,3.49,0.17,216,01.69,184840,True Positive,
+Assignment_Ex4,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.49,0.26,112,30.05,288068,,
+Assignment_Ex4,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.03,0.34,111,30.03,287420,,
+Assignment_Ex4,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.29,0.28,111,30.05,287296,,
+Assignment_Ex4,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.27,0.24,111,30.03,289972,,
+Assignment_Ex4,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.24,0.28,111,30.03,304000,,
+Assignment_Ex4,-gB --gpdr-smi --gpdr-ats,0,Proof,44,2.12,0.1,178,01.25,132680,True Positive,
+Assignment_Ex4,-gB --gpdr-smi --gpdr-ats,1,Proof,44,2.09,0.12,179,01.23,132944,True Positive,
+Assignment_Ex4,-gB --gpdr-smi --gpdr-ats,2,Proof,44,2.1,0.13,178,01.25,131836,True Positive,
+Assignment_Ex4,-gB --gpdr-smi --gpdr-ats,3,Proof,44,2.08,0.13,184,01.20,132208,True Positive,
+Assignment_Ex4,-gB --gpdr-smi --gpdr-ats,4,Proof,44,2.03,0.14,166,01.30,133324,True Positive,
+GpdrExamples_Ex1,--warmup,0,,,0.51,0.05,201,00.28,74464,,
+GpdrExamples_Ex1,--warmup,1,,,0.49,0.04,189,00.28,75700,,
+GpdrExamples_Ex1,--warmup,2,,,0.48,0.07,163,00.33,73996,,
+GpdrExamples_Ex1,--warmup,3,,,0.48,0.04,187,00.28,74560,,
+GpdrExamples_Ex1,--warmup,4,,,0.48,0.05,178,00.30,74308,,
+GpdrExamples_Ex1,-b,0,NoResult,101,5.0,0.18,188,02.74,278480,,
+GpdrExamples_Ex1,-b,1,NoResult,101,5.07,0.21,185,02.85,279136,,
+GpdrExamples_Ex1,-b,2,NoResult,101,5.13,0.22,180,02.97,283308,,
+GpdrExamples_Ex1,-b,3,NoResult,101,4.98,0.18,186,02.77,280996,,
+GpdrExamples_Ex1,-b,4,NoResult,101,4.94,0.18,185,02.76,278064,,
+GpdrExamples_Ex1,-k,0,Proof,9,1.14,0.11,175,00.71,125388,True Positive,
+GpdrExamples_Ex1,-k,1,Proof,9,1.15,0.12,176,00.71,125600,True Positive,
+GpdrExamples_Ex1,-k,2,Proof,9,1.16,0.11,179,00.71,126452,True Positive,
+GpdrExamples_Ex1,-k,3,Proof,9,1.21,0.1,185,00.71,126468,True Positive,
+GpdrExamples_Ex1,-k,4,Proof,9,1.17,0.11,176,00.73,124832,True Positive,
+GpdrExamples_Ex1,-bk,0,Proof,10,1.23,0.12,182,00.74,125272,True Positive,
+GpdrExamples_Ex1,-bk,1,Proof,10,1.19,0.11,181,00.72,126468,True Positive,
+GpdrExamples_Ex1,-bk,2,Proof,10,1.18,0.11,178,00.73,126616,True Positive,
+GpdrExamples_Ex1,-bk,3,Proof,10,1.21,0.09,176,00.74,127932,True Positive,
+GpdrExamples_Ex1,-bk,4,Proof,10,1.24,0.09,185,00.72,126392,True Positive,
+GpdrExamples_Ex1,-p,0,Proof,1,0.91,0.1,175,00.57,119536,True Positive,
+GpdrExamples_Ex1,-p,1,Proof,1,0.94,0.09,186,00.55,119476,True Positive,
+GpdrExamples_Ex1,-p,2,Proof,1,0.91,0.1,177,00.57,119200,True Positive,
+GpdrExamples_Ex1,-p,3,Proof,1,0.92,0.09,161,00.63,118432,True Positive,
+GpdrExamples_Ex1,-p,4,Proof,1,0.94,0.11,154,00.68,118244,True Positive,
+GpdrExamples_Ex1,-g,0,TIMEOUT,,33.07,1.31,114,30.06,296400,,
+GpdrExamples_Ex1,-g,1,TIMEOUT,,33.28,1.42,115,30.06,301748,,
+GpdrExamples_Ex1,-g,2,TIMEOUT,,33.04,1.32,114,30.06,287376,,
+GpdrExamples_Ex1,-g,3,TIMEOUT,,33.3,1.42,115,30.06,307432,,
+GpdrExamples_Ex1,-g,4,TIMEOUT,,33.18,1.37,114,30.06,293736,,
+GpdrExamples_Ex1,-gB,0,Proof,96,3.64,0.2,192,02.00,168056,True Positive,
+GpdrExamples_Ex1,-gB,1,Proof,96,3.53,0.2,181,02.06,169848,True Positive,
+GpdrExamples_Ex1,-gB,2,Proof,96,3.71,0.19,194,02.01,173612,True Positive,
+GpdrExamples_Ex1,-gB,3,Proof,96,3.6,0.19,186,02.03,170236,True Positive,
+GpdrExamples_Ex1,-gB,4,Proof,96,3.61,0.21,184,02.07,172124,True Positive,
+GpdrExamples_Ex1,-g --gpdr-smi,0,TIMEOUT,,32.5,0.24,109,30.03,277548,,
+GpdrExamples_Ex1,-g --gpdr-smi,1,TIMEOUT,,32.81,0.24,109,30.05,281196,,
+GpdrExamples_Ex1,-g --gpdr-smi,2,TIMEOUT,,32.87,0.27,110,30.05,283284,,
+GpdrExamples_Ex1,-g --gpdr-smi,3,TIMEOUT,,32.95,0.25,110,30.05,277968,,
+GpdrExamples_Ex1,-g --gpdr-smi,4,TIMEOUT,,32.65,0.26,109,30.03,283136,,
+GpdrExamples_Ex1,-gB --gpdr-smi,0,Proof,130,3.46,0.12,152,02.35,152940,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi,1,Proof,130,3.53,0.1,155,02.35,155456,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi,2,Proof,130,3.55,0.13,157,02.34,154584,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi,3,Proof,130,3.54,0.12,153,02.38,156548,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi,4,Proof,130,3.49,0.13,154,02.35,151460,True Positive,
+GpdrExamples_Ex1,-g --gpdr-ats,0,TIMEOUT,,33.74,1.3,116,30.03,306492,,
+GpdrExamples_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.87,1.33,117,30.03,304296,,
+GpdrExamples_Ex1,-g --gpdr-ats,2,TIMEOUT,,34.18,1.28,118,30.04,307248,,
+GpdrExamples_Ex1,-g --gpdr-ats,3,TIMEOUT,,34.62,1.25,119,30.04,308900,,
+GpdrExamples_Ex1,-g --gpdr-ats,4,TIMEOUT,,34.72,1.4,120,30.05,304900,,
+GpdrExamples_Ex1,-gB --gpdr-ats,0,Proof,641,13.46,0.59,139,10.05,292204,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-ats,1,Proof,641,13.66,0.59,136,10.41,295648,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-ats,2,Proof,641,13.27,0.58,136,10.13,291968,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-ats,3,Proof,641,13.6,0.55,139,10.12,290136,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-ats,4,Proof,641,13.51,0.54,139,10.07,291248,True Positive,
+GpdrExamples_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.71,0.29,113,30.05,285088,,
+GpdrExamples_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.6,0.27,112,30.05,284116,,
+GpdrExamples_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.73,0.25,113,30.04,286448,,
+GpdrExamples_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.52,0.28,112,30.05,284948,,
+GpdrExamples_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.44,0.4,112,30.05,284564,,
+GpdrExamples_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,357,7.67,0.16,144,05.42,199788,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,357,7.62,0.17,143,05.43,192512,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,357,7.71,0.18,143,05.49,188880,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,357,7.7,0.19,144,05.48,193984,True Positive,
+GpdrExamples_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,357,7.78,0.18,146,05.44,193728,True Positive,
+GpdrExamples_Ex2,--warmup,0,,,0.5,0.04,195,00.28,73256,,
+GpdrExamples_Ex2,--warmup,1,,,0.52,0.06,211,00.27,73968,,
+GpdrExamples_Ex2,--warmup,2,,,0.5,0.05,194,00.28,75028,,
+GpdrExamples_Ex2,--warmup,3,,,0.53,0.03,211,00.27,74684,,
+GpdrExamples_Ex2,--warmup,4,,,0.49,0.06,188,00.29,75484,,
+GpdrExamples_Ex2,-b,0,Counterexample,4,1.07,0.12,183,00.65,123712,False Negative,
+GpdrExamples_Ex2,-b,1,Counterexample,4,1.07,0.12,182,00.65,124528,False Negative,
+GpdrExamples_Ex2,-b,2,Counterexample,4,1.07,0.11,184,00.64,125852,False Negative,
+GpdrExamples_Ex2,-b,3,Counterexample,4,1.06,0.11,185,00.63,126412,False Negative,
+GpdrExamples_Ex2,-b,4,Counterexample,4,1.1,0.12,190,00.64,125916,False Negative,
+GpdrExamples_Ex2,-k,0,Counterexample,14,1.24,0.11,177,00.77,127812,False Negative,
+GpdrExamples_Ex2,-k,1,Counterexample,14,1.31,0.11,181,00.78,129300,False Negative,
+GpdrExamples_Ex2,-k,2,Counterexample,14,1.26,0.11,182,00.75,129016,False Negative,
+GpdrExamples_Ex2,-k,3,Counterexample,14,1.27,0.13,176,00.79,129152,False Negative,
+GpdrExamples_Ex2,-k,4,Counterexample,14,1.28,0.11,182,00.76,128040,False Negative,
+GpdrExamples_Ex2,-bk,0,Counterexample,8,1.17,0.1,191,00.67,125780,False Negative,
+GpdrExamples_Ex2,-bk,1,Counterexample,8,1.18,0.1,187,00.68,126568,False Negative,
+GpdrExamples_Ex2,-bk,2,Counterexample,8,1.18,0.09,187,00.68,126780,False Negative,
+GpdrExamples_Ex2,-bk,3,Counterexample,8,1.14,0.11,181,00.69,127044,False Negative,
+GpdrExamples_Ex2,-bk,4,Counterexample,8,1.18,0.11,188,00.68,126176,False Negative,
+GpdrExamples_Ex2,-p,0,NoResult,2,0.96,0.11,184,00.58,125044,,
+GpdrExamples_Ex2,-p,1,NoResult,2,0.98,0.11,179,00.61,123940,,
+GpdrExamples_Ex2,-p,2,NoResult,2,0.97,0.13,177,00.62,124100,,
+GpdrExamples_Ex2,-p,3,NoResult,2,0.95,0.12,180,00.60,124928,,
+GpdrExamples_Ex2,-p,4,NoResult,2,0.97,0.11,183,00.59,125096,,
+GpdrExamples_Ex2,-g,0,TIMEOUT,,33.18,1.34,114,30.06,291128,,
+GpdrExamples_Ex2,-g,1,TIMEOUT,,33.33,1.47,115,30.05,293396,,
+GpdrExamples_Ex2,-g,2,TIMEOUT,,33.31,1.43,115,30.06,290864,,
+GpdrExamples_Ex2,-g,3,TIMEOUT,,33.46,1.41,116,30.05,300480,,
+GpdrExamples_Ex2,-g,4,TIMEOUT,,33.1,1.45,114,30.06,288704,,
+GpdrExamples_Ex2,-gB,0,Counterexample,91,3.52,0.18,197,01.88,171428,False Negative,
+GpdrExamples_Ex2,-gB,1,Counterexample,91,3.53,0.19,199,01.86,174340,False Negative,
+GpdrExamples_Ex2,-gB,2,Counterexample,91,3.44,0.19,193,01.88,168516,False Negative,
+GpdrExamples_Ex2,-gB,3,Counterexample,91,3.36,0.2,188,01.89,159960,False Negative,
+GpdrExamples_Ex2,-gB,4,Counterexample,91,3.35,0.22,186,01.91,163900,False Negative,
+GpdrExamples_Ex2,-g --gpdr-smi,0,TIMEOUT,,33.01,0.26,110,30.05,281788,,
+GpdrExamples_Ex2,-g --gpdr-smi,1,TIMEOUT,,32.88,0.26,110,30.03,277056,,
+GpdrExamples_Ex2,-g --gpdr-smi,2,TIMEOUT,,32.63,0.28,109,30.05,278496,,
+GpdrExamples_Ex2,-g --gpdr-smi,3,TIMEOUT,,32.86,0.28,110,30.05,280804,,
+GpdrExamples_Ex2,-g --gpdr-smi,4,TIMEOUT,,32.96,0.29,110,30.05,281880,,
+GpdrExamples_Ex2,-gB --gpdr-smi,0,Counterexample,86,2.59,0.11,160,01.68,140588,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi,1,Counterexample,86,2.56,0.14,154,01.75,140516,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi,2,Counterexample,86,2.59,0.15,160,01.70,139904,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi,3,Counterexample,86,2.64,0.1,157,01.74,140688,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi,4,Counterexample,86,2.58,0.1,157,01.71,141868,False Negative,
+GpdrExamples_Ex2,-g --gpdr-ats,0,TIMEOUT,,33.91,1.4,117,30.04,307748,,
+GpdrExamples_Ex2,-g --gpdr-ats,1,TIMEOUT,,33.55,1.45,116,30.06,304260,,
+GpdrExamples_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.65,1.39,116,30.06,302380,,
+GpdrExamples_Ex2,-g --gpdr-ats,3,TIMEOUT,,33.67,1.37,116,30.06,305880,,
+GpdrExamples_Ex2,-g --gpdr-ats,4,TIMEOUT,,33.93,1.38,117,30.03,305952,,
+GpdrExamples_Ex2,-gB --gpdr-ats,0,Counterexample,130,4.75,0.21,201,02.46,207364,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-ats,1,Counterexample,130,4.69,0.26,198,02.49,210924,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-ats,2,Counterexample,130,4.75,0.24,199,02.49,208916,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-ats,3,Counterexample,130,4.97,0.23,208,02.49,206540,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-ats,4,Counterexample,130,4.95,0.21,208,02.48,202828,False Negative,
+GpdrExamples_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.41,0.25,112,30.04,284532,,
+GpdrExamples_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.21,0.37,111,30.05,283748,,
+GpdrExamples_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.23,0.28,111,30.05,285356,,
+GpdrExamples_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.18,1.31,111,30.03,284920,,
+GpdrExamples_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.02,0.32,110,30.04,286004,,
+GpdrExamples_Ex2,-gB --gpdr-smi --gpdr-ats,0,Counterexample,146,4.37,0.15,160,02.81,159840,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi --gpdr-ats,1,Counterexample,146,4.62,0.13,166,02.85,162312,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi --gpdr-ats,2,Counterexample,146,4.5,0.15,160,02.91,164836,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi --gpdr-ats,3,Counterexample,146,4.61,0.15,169,02.82,165608,False Negative,
+GpdrExamples_Ex2,-gB --gpdr-smi --gpdr-ats,4,Counterexample,146,4.27,0.15,160,02.76,163976,False Negative,
+GpdrExamples_Ex3Infinite,--warmup,0,,,0.49,0.06,180,00.30,74708,,
+GpdrExamples_Ex3Infinite,--warmup,1,,,0.49,0.05,189,00.29,74364,,
+GpdrExamples_Ex3Infinite,--warmup,2,,,0.51,0.06,192,00.30,75284,,
+GpdrExamples_Ex3Infinite,--warmup,3,,,0.5,0.06,188,00.30,74360,,
+GpdrExamples_Ex3Infinite,--warmup,4,,,0.53,0.05,186,00.31,74352,,
+GpdrExamples_Ex3Infinite,-b,0,NoResult,101,7.09,0.21,152,04.80,296692,,
+GpdrExamples_Ex3Infinite,-b,1,NoResult,101,7.07,0.2,154,04.72,294380,,
+GpdrExamples_Ex3Infinite,-b,2,NoResult,101,7.64,0.22,161,04.88,294936,,
+GpdrExamples_Ex3Infinite,-b,3,NoResult,101,7.14,0.18,154,04.73,295208,,
+GpdrExamples_Ex3Infinite,-b,4,NoResult,101,7.58,0.2,162,04.79,292984,,
+GpdrExamples_Ex3Infinite,-k,0,Proof,16,1.43,0.1,177,00.86,130116,True Positive,
+GpdrExamples_Ex3Infinite,-k,1,Proof,16,1.38,0.13,174,00.86,129684,True Positive,
+GpdrExamples_Ex3Infinite,-k,2,Proof,16,1.35,0.09,167,00.86,130932,True Positive,
+GpdrExamples_Ex3Infinite,-k,3,Proof,16,1.39,0.1,171,00.87,130248,True Positive,
+GpdrExamples_Ex3Infinite,-k,4,Proof,16,1.39,0.11,174,00.86,130220,True Positive,
+GpdrExamples_Ex3Infinite,-bk,0,Proof,30,2.04,0.12,186,01.16,142368,True Positive,
+GpdrExamples_Ex3Infinite,-bk,1,Proof,30,2.01,0.1,175,01.20,138376,True Positive,
+GpdrExamples_Ex3Infinite,-bk,2,Proof,30,1.92,0.12,176,01.16,136772,True Positive,
+GpdrExamples_Ex3Infinite,-bk,3,Proof,30,2.02,0.12,183,01.17,142060,True Positive,
+GpdrExamples_Ex3Infinite,-bk,4,Proof,30,2.03,0.13,186,01.16,135268,True Positive,
+GpdrExamples_Ex3Infinite,-p,0,NoResult,4,1.0,0.11,170,00.66,125452,,
+GpdrExamples_Ex3Infinite,-p,1,NoResult,4,1.06,0.12,172,00.68,125588,,
+GpdrExamples_Ex3Infinite,-p,2,NoResult,4,1.03,0.1,176,00.64,125776,,
+GpdrExamples_Ex3Infinite,-p,3,NoResult,4,1.02,0.13,165,00.70,125188,,
+GpdrExamples_Ex3Infinite,-p,4,NoResult,4,1.02,0.12,168,00.68,125284,,
+GpdrExamples_Ex3Infinite,-g,0,TIMEOUT,,33.3,1.23,114,30.04,300372,,
+GpdrExamples_Ex3Infinite,-g,1,TIMEOUT,,32.91,1.22,113,30.03,297888,,
+GpdrExamples_Ex3Infinite,-g,2,TIMEOUT,,32.94,1.23,113,30.03,296244,,
+GpdrExamples_Ex3Infinite,-g,3,TIMEOUT,,33.0,1.19,113,30.03,299604,,
+GpdrExamples_Ex3Infinite,-g,4,TIMEOUT,,33.07,1.18,114,30.03,291940,,
+GpdrExamples_Ex3Infinite,-gB,0,TIMEOUT,,32.47,1.32,112,30.06,297864,,
+GpdrExamples_Ex3Infinite,-gB,1,TIMEOUT,,32.39,1.44,112,30.06,301308,,
+GpdrExamples_Ex3Infinite,-gB,2,TIMEOUT,,32.64,1.24,112,30.06,302504,,
+GpdrExamples_Ex3Infinite,-gB,3,TIMEOUT,,32.53,1.2,112,30.05,297624,,
+GpdrExamples_Ex3Infinite,-gB,4,TIMEOUT,,32.8,1.18,113,30.03,296432,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi,0,TIMEOUT,,32.74,0.26,109,30.05,278704,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi,1,TIMEOUT,,32.64,0.24,109,30.03,279432,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi,2,TIMEOUT,,32.69,0.26,109,30.04,282864,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi,3,TIMEOUT,,32.65,0.27,109,30.03,282932,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi,4,TIMEOUT,,32.74,0.29,109,30.05,278384,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi,0,TIMEOUT,,30.58,1.62,107,30.05,278468,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi,1,TIMEOUT,,32.27,0.28,108,30.04,283348,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi,2,TIMEOUT,,32.18,0.3,108,30.02,283544,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi,3,TIMEOUT,,32.15,0.25,107,30.03,282640,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi,4,TIMEOUT,,32.52,0.32,109,30.03,299188,,
+GpdrExamples_Ex3Infinite,-g --gpdr-ats,0,TIMEOUT,,33.96,1.19,116,30.06,305156,,
+GpdrExamples_Ex3Infinite,-g --gpdr-ats,1,TIMEOUT,,33.68,1.19,116,30.04,306660,,
+GpdrExamples_Ex3Infinite,-g --gpdr-ats,2,TIMEOUT,,33.47,1.23,115,30.06,302796,,
+GpdrExamples_Ex3Infinite,-g --gpdr-ats,3,TIMEOUT,,33.47,1.23,115,30.04,300200,,
+GpdrExamples_Ex3Infinite,-g --gpdr-ats,4,TIMEOUT,,33.78,1.26,116,30.04,305196,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-ats,0,TIMEOUT,,33.88,1.34,117,30.06,309100,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-ats,1,TIMEOUT,,34.2,1.37,118,30.06,305604,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-ats,2,TIMEOUT,,33.99,1.35,117,30.05,307500,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-ats,3,TIMEOUT,,33.97,1.33,117,30.04,305156,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-ats,4,TIMEOUT,,34.1,1.34,117,30.05,309488,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.51,0.26,112,30.06,293260,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.4,0.25,112,30.04,294776,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.13,0.26,111,30.05,287716,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.53,0.28,112,30.05,284320,,
+GpdrExamples_Ex3Infinite,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.67,0.63,110,30.05,292744,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.86,0.26,110,30.05,279708,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.47,0.26,109,30.03,284272,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.76,0.26,109,30.04,279128,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.42,0.3,108,30.05,273660,,
+GpdrExamples_Ex3Infinite,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.56,0.3,109,30.05,281772,,
+GpdrExamples_Ex3,--warmup,0,,,0.48,0.06,184,00.29,73972,,
+GpdrExamples_Ex3,--warmup,1,,,0.5,0.05,180,00.30,74868,,
+GpdrExamples_Ex3,--warmup,2,,,0.49,0.05,181,00.30,74724,,
+GpdrExamples_Ex3,--warmup,3,,,0.49,0.05,177,00.31,74700,,
+GpdrExamples_Ex3,--warmup,4,,,0.51,0.05,188,00.30,73808,,
+GpdrExamples_Ex3,-b,0,NoResult,101,6.02,0.21,173,03.58,299876,,
+GpdrExamples_Ex3,-b,1,NoResult,101,5.9,0.22,169,03.61,297176,,
+GpdrExamples_Ex3,-b,2,NoResult,101,5.98,0.22,170,03.64,334568,,
+GpdrExamples_Ex3,-b,3,NoResult,101,6.01,0.26,170,03.68,338188,,
+GpdrExamples_Ex3,-b,4,NoResult,101,5.96,0.23,171,03.62,312276,,
+GpdrExamples_Ex3,-k,0,Proof,11,1.25,0.12,170,00.80,129324,True Positive,
+GpdrExamples_Ex3,-k,1,Proof,11,1.27,0.12,168,00.83,128808,True Positive,
+GpdrExamples_Ex3,-k,2,Proof,11,1.23,0.1,172,00.77,128372,True Positive,
+GpdrExamples_Ex3,-k,3,Proof,11,1.24,0.12,165,00.82,129492,True Positive,
+GpdrExamples_Ex3,-k,4,Proof,11,1.22,0.12,169,00.79,129892,True Positive,
+GpdrExamples_Ex3,-bk,0,Proof,30,1.96,0.13,178,01.17,132940,True Positive,
+GpdrExamples_Ex3,-bk,1,Proof,30,1.94,0.13,178,01.16,136160,True Positive,
+GpdrExamples_Ex3,-bk,2,Proof,30,1.92,0.12,174,01.17,136556,True Positive,
+GpdrExamples_Ex3,-bk,3,Proof,30,1.92,0.11,178,01.13,132480,True Positive,
+GpdrExamples_Ex3,-bk,4,Proof,30,1.96,0.13,174,01.20,131848,True Positive,
+GpdrExamples_Ex3,-p,0,Proof,3,0.97,0.12,168,00.65,120652,True Positive,
+GpdrExamples_Ex3,-p,1,Proof,3,0.98,0.13,160,00.69,121292,True Positive,
+GpdrExamples_Ex3,-p,2,Proof,3,0.98,0.12,168,00.65,121292,True Positive,
+GpdrExamples_Ex3,-p,3,Proof,3,1.03,0.12,175,00.65,121780,True Positive,
+GpdrExamples_Ex3,-p,4,Proof,3,1.0,0.1,172,00.64,120996,True Positive,
+GpdrExamples_Ex3,-g,0,TIMEOUT,,32.72,1.18,112,30.04,294292,,
+GpdrExamples_Ex3,-g,1,TIMEOUT,,32.7,1.14,112,30.04,293968,,
+GpdrExamples_Ex3,-g,2,TIMEOUT,,32.36,1.39,112,30.05,295380,,
+GpdrExamples_Ex3,-g,3,TIMEOUT,,33.18,1.32,114,30.05,296804,,
+GpdrExamples_Ex3,-g,4,TIMEOUT,,33.01,1.31,114,30.04,299948,,
+GpdrExamples_Ex3,-gB,0,TIMEOUT,,32.83,1.38,113,30.05,299656,,
+GpdrExamples_Ex3,-gB,1,TIMEOUT,,32.9,1.35,114,30.05,298476,,
+GpdrExamples_Ex3,-gB,2,TIMEOUT,,33.08,1.31,114,30.04,301356,,
+GpdrExamples_Ex3,-gB,3,TIMEOUT,,32.92,1.22,113,30.04,300932,,
+GpdrExamples_Ex3,-gB,4,TIMEOUT,,32.65,1.08,112,30.04,299336,,
+GpdrExamples_Ex3,-g --gpdr-smi,0,TIMEOUT,,32.24,0.48,108,30.04,280808,,
+GpdrExamples_Ex3,-g --gpdr-smi,1,TIMEOUT,,30.91,1.64,108,30.03,280828,,
+GpdrExamples_Ex3,-g --gpdr-smi,2,TIMEOUT,,32.24,0.28,108,30.04,274668,,
+GpdrExamples_Ex3,-g --gpdr-smi,3,TIMEOUT,,32.51,0.29,109,30.04,278276,,
+GpdrExamples_Ex3,-g --gpdr-smi,4,TIMEOUT,,32.33,0.25,108,30.03,278620,,
+GpdrExamples_Ex3,-gB --gpdr-smi,0,Proof,29,1.56,0.11,152,01.10,137468,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi,1,Proof,29,1.59,0.13,154,01.11,138648,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi,2,Proof,29,1.6,0.13,152,01.14,137732,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi,3,Proof,29,1.55,0.12,153,01.10,138384,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi,4,Proof,29,1.58,0.12,150,01.13,137612,True Positive,
+GpdrExamples_Ex3,-g --gpdr-ats,0,TIMEOUT,,33.31,1.11,114,30.04,295768,,
+GpdrExamples_Ex3,-g --gpdr-ats,1,TIMEOUT,,33.76,1.19,116,30.04,307620,,
+GpdrExamples_Ex3,-g --gpdr-ats,2,TIMEOUT,,33.45,1.1,114,30.06,296460,,
+GpdrExamples_Ex3,-g --gpdr-ats,3,TIMEOUT,,33.24,1.11,114,30.05,295268,,
+GpdrExamples_Ex3,-g --gpdr-ats,4,TIMEOUT,,33.58,1.1,115,30.04,298116,,
+GpdrExamples_Ex3,-gB --gpdr-ats,0,TIMEOUT,,33.75,1.14,116,30.04,301804,,
+GpdrExamples_Ex3,-gB --gpdr-ats,1,TIMEOUT,,33.94,1.34,117,30.06,305904,,
+GpdrExamples_Ex3,-gB --gpdr-ats,2,TIMEOUT,,33.85,1.35,117,30.05,302224,,
+GpdrExamples_Ex3,-gB --gpdr-ats,3,TIMEOUT,,33.9,1.31,117,30.05,307216,,
+GpdrExamples_Ex3,-gB --gpdr-ats,4,TIMEOUT,,34.09,1.35,118,30.04,305124,,
+GpdrExamples_Ex3,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.72,0.3,113,30.02,285980,,
+GpdrExamples_Ex3,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.2,0.29,111,30.04,286192,,
+GpdrExamples_Ex3,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.31,0.3,111,30.04,284160,,
+GpdrExamples_Ex3,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.37,0.26,111,30.05,283204,,
+GpdrExamples_Ex3,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.36,0.31,112,30.04,284036,,
+GpdrExamples_Ex3,-gB --gpdr-smi --gpdr-ats,0,Proof,1060,20.17,0.24,117,17.45,289436,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi --gpdr-ats,1,Proof,1060,19.96,0.25,115,17.43,271252,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi --gpdr-ats,2,Proof,1060,20.16,0.43,116,17.64,292480,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi --gpdr-ats,3,Proof,1060,20.1,0.24,116,17.41,293564,True Positive,
+GpdrExamples_Ex3,-gB --gpdr-smi --gpdr-ats,4,Proof,1060,19.92,0.25,116,17.36,279188,True Positive,
+Havoc_Ex1,--warmup,0,,,0.49,0.05,171,00.31,75124,,havoc
+Havoc_Ex1,--warmup,1,,,0.5,0.05,174,00.32,74852,,havoc
+Havoc_Ex1,--warmup,2,,,0.48,0.06,177,00.30,73900,,havoc
+Havoc_Ex1,--warmup,3,,,0.5,0.05,178,00.31,74844,,havoc
+Havoc_Ex1,--warmup,4,,,0.51,0.06,168,00.33,74852,,havoc
+Havoc_Ex1,-b,0,NoResult,101,4.8,0.21,179,02.79,279224,,havoc
+Havoc_Ex1,-b,1,NoResult,101,4.92,0.2,179,02.86,286488,,havoc
+Havoc_Ex1,-b,2,NoResult,101,5.15,0.22,176,03.05,285008,,havoc
+Havoc_Ex1,-b,3,NoResult,101,4.96,0.2,185,02.78,291064,,havoc
+Havoc_Ex1,-b,4,NoResult,101,5.33,0.26,186,02.99,285264,,havoc
+Havoc_Ex1,-k,0,Proof,1,0.94,0.1,154,00.68,119888,True Positive,havoc
+Havoc_Ex1,-k,1,Proof,1,0.96,0.11,165,00.64,119904,True Positive,havoc
+Havoc_Ex1,-k,2,Proof,1,1.03,0.12,151,00.75,119060,True Positive,havoc
+Havoc_Ex1,-k,3,Proof,1,0.94,0.11,164,00.64,120184,True Positive,havoc
+Havoc_Ex1,-k,4,Proof,1,0.91,0.1,177,00.57,120672,True Positive,havoc
+Havoc_Ex1,-bk,0,Proof,5,1.05,0.11,173,00.67,123256,True Positive,havoc
+Havoc_Ex1,-bk,1,Proof,5,1.04,0.11,176,00.65,124136,True Positive,havoc
+Havoc_Ex1,-bk,2,Proof,5,1.08,0.11,183,00.65,125472,True Positive,havoc
+Havoc_Ex1,-bk,3,Proof,5,1.02,0.13,179,00.64,123772,True Positive,havoc
+Havoc_Ex1,-bk,4,Proof,5,1.06,0.1,182,00.64,124788,True Positive,havoc
+Havoc_Ex1,-p,0,Proof,1,0.91,0.12,168,00.61,120360,True Positive,havoc
+Havoc_Ex1,-p,1,Proof,1,0.96,0.11,183,00.58,120092,True Positive,havoc
+Havoc_Ex1,-p,2,Proof,1,0.91,0.1,174,00.58,119476,True Positive,havoc
+Havoc_Ex1,-p,3,Proof,1,0.97,0.09,188,00.56,121608,True Positive,havoc
+Havoc_Ex1,-p,4,Proof,1,0.94,0.1,183,00.57,119976,True Positive,havoc
+Havoc_Ex1,-g,0,Proof,6,1.09,0.12,186,00.65,123484,True Positive,havoc
+Havoc_Ex1,-g,1,Proof,6,1.09,0.12,181,00.67,123368,True Positive,havoc
+Havoc_Ex1,-g,2,Proof,6,1.06,0.12,183,00.65,124252,True Positive,havoc
+Havoc_Ex1,-g,3,Proof,6,1.12,0.12,168,00.73,124080,True Positive,havoc
+Havoc_Ex1,-g,4,Proof,6,1.03,0.12,170,00.68,123108,True Positive,havoc
+Havoc_Ex1,-gB,0,Proof,6,1.09,0.13,177,00.69,131560,True Positive,havoc
+Havoc_Ex1,-gB,1,Proof,6,1.03,0.12,166,00.70,131376,True Positive,havoc
+Havoc_Ex1,-gB,2,Proof,6,1.05,0.14,165,00.72,130956,True Positive,havoc
+Havoc_Ex1,-gB,3,Proof,6,1.04,0.12,157,00.74,130224,True Positive,havoc
+Havoc_Ex1,-gB,4,Proof,6,1.13,0.16,135,00.95,129952,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi,0,Proof,6,1.16,0.12,143,00.89,123332,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi,1,Proof,6,1.14,0.1,147,00.85,124120,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi,2,Proof,6,1.14,0.14,137,00.93,123768,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi,3,Proof,6,1.08,0.13,160,00.76,122708,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi,4,Proof,6,1.13,0.12,150,00.83,124284,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi,0,Proof,6,1.1,0.13,149,00.82,130820,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi,1,Proof,6,1.09,0.13,153,00.80,130676,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi,2,Proof,6,1.12,0.13,150,00.84,131316,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi,3,Proof,6,1.11,0.14,156,00.80,130132,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi,4,Proof,6,1.18,0.15,141,00.95,129752,True Positive,havoc
+Havoc_Ex1,-g --gpdr-ats,0,Proof,6,1.07,0.12,159,00.74,123836,True Positive,havoc
+Havoc_Ex1,-g --gpdr-ats,1,Proof,6,1.11,0.12,158,00.78,123824,True Positive,havoc
+Havoc_Ex1,-g --gpdr-ats,2,Proof,6,1.13,0.12,153,00.82,123320,True Positive,havoc
+Havoc_Ex1,-g --gpdr-ats,3,Proof,6,1.08,0.1,162,00.73,124972,True Positive,havoc
+Havoc_Ex1,-g --gpdr-ats,4,Proof,6,1.09,0.11,154,00.78,123632,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-ats,0,Proof,6,1.11,0.1,162,00.74,124564,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-ats,1,Proof,6,1.07,0.13,163,00.74,125652,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-ats,2,Proof,6,1.11,0.12,158,00.78,126112,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-ats,3,Proof,6,1.15,0.13,151,00.85,124848,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-ats,4,Proof,6,1.13,0.1,152,00.81,126544,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi --gpdr-ats,0,Proof,6,1.1,0.12,158,00.77,123780,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi --gpdr-ats,1,Proof,6,1.07,0.11,162,00.73,123544,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi --gpdr-ats,2,Proof,6,1.06,0.13,160,00.74,123312,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi --gpdr-ats,3,Proof,6,1.07,0.12,158,00.75,123840,True Positive,havoc
+Havoc_Ex1,-g --gpdr-smi --gpdr-ats,4,Proof,6,1.08,0.11,155,00.77,124296,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,6,1.11,0.13,158,00.78,124464,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,6,1.1,0.1,162,00.74,126844,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,6,1.13,0.11,161,00.77,124936,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,6,1.08,0.12,156,00.76,124580,True Positive,havoc
+Havoc_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,6,1.1,0.13,161,00.77,125056,True Positive,havoc
+Havoc_Ex2,--warmup,0,,,0.48,0.05,171,00.31,73752,,havoc
+Havoc_Ex2,--warmup,1,,,0.5,0.05,172,00.32,74804,,havoc
+Havoc_Ex2,--warmup,2,,,0.5,0.05,177,00.31,74956,,havoc
+Havoc_Ex2,--warmup,3,,,0.49,0.05,179,00.30,74072,,havoc
+Havoc_Ex2,--warmup,4,,,0.5,0.04,176,00.31,74404,,havoc
+Havoc_Ex2,-b,0,NoResult,101,5.2,0.18,186,02.89,286940,,havoc
+Havoc_Ex2,-b,1,NoResult,101,5.04,0.19,185,02.83,283808,,havoc
+Havoc_Ex2,-b,2,NoResult,101,5.02,0.21,185,02.81,285416,,havoc
+Havoc_Ex2,-b,3,NoResult,101,4.98,0.19,186,02.77,287180,,havoc
+Havoc_Ex2,-b,4,NoResult,101,5.06,0.23,185,02.85,283724,,havoc
+Havoc_Ex2,-k,0,Proof,1,0.97,0.1,168,00.63,120616,True Positive,havoc
+Havoc_Ex2,-k,1,Proof,1,0.94,0.09,166,00.62,119456,True Positive,havoc
+Havoc_Ex2,-k,2,Proof,1,0.94,0.11,170,00.62,119940,True Positive,havoc
+Havoc_Ex2,-k,3,Proof,1,0.96,0.1,163,00.65,120436,True Positive,havoc
+Havoc_Ex2,-k,4,Proof,1,0.92,0.12,162,00.64,119848,True Positive,havoc
+Havoc_Ex2,-bk,0,Proof,8,1.12,0.11,163,00.75,128204,True Positive,havoc
+Havoc_Ex2,-bk,1,Proof,8,1.12,0.12,161,00.76,123560,True Positive,havoc
+Havoc_Ex2,-bk,2,Proof,8,1.15,0.1,167,00.75,125296,True Positive,havoc
+Havoc_Ex2,-bk,3,Proof,8,1.11,0.11,159,00.77,125448,True Positive,havoc
+Havoc_Ex2,-bk,4,Proof,8,1.14,0.11,161,00.78,125192,True Positive,havoc
+Havoc_Ex2,-p,0,Proof,1,0.97,0.09,170,00.62,120780,True Positive,havoc
+Havoc_Ex2,-p,1,Proof,1,0.91,0.11,160,00.64,121372,True Positive,havoc
+Havoc_Ex2,-p,2,Proof,1,0.95,0.09,164,00.63,119984,True Positive,havoc
+Havoc_Ex2,-p,3,Proof,1,0.93,0.12,166,00.63,121296,True Positive,havoc
+Havoc_Ex2,-p,4,Proof,1,0.95,0.08,159,00.65,121816,True Positive,havoc
+Havoc_Ex2,-g,0,Proof,6,1.06,0.11,162,00.72,124072,True Positive,havoc
+Havoc_Ex2,-g,1,Proof,6,1.06,0.11,162,00.72,124276,True Positive,havoc
+Havoc_Ex2,-g,2,Proof,6,1.06,0.1,163,00.71,123620,True Positive,havoc
+Havoc_Ex2,-g,3,Proof,6,1.09,0.12,163,00.74,124344,True Positive,havoc
+Havoc_Ex2,-g,4,Proof,6,1.02,0.11,159,00.71,122632,True Positive,havoc
+Havoc_Ex2,-gB,0,Proof,6,1.06,0.13,159,00.75,130396,True Positive,havoc
+Havoc_Ex2,-gB,1,Proof,6,1.08,0.11,163,00.73,129424,True Positive,havoc
+Havoc_Ex2,-gB,2,Proof,6,1.06,0.13,158,00.75,129848,True Positive,havoc
+Havoc_Ex2,-gB,3,Proof,6,1.09,0.12,167,00.72,129624,True Positive,havoc
+Havoc_Ex2,-gB,4,Proof,6,1.06,0.11,165,00.71,130824,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi,0,Proof,6,1.03,0.12,160,00.72,123440,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi,1,Proof,6,1.06,0.11,165,00.71,122324,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi,2,Proof,6,1.0,0.13,160,00.70,122548,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi,3,Proof,6,1.05,0.11,163,00.71,123344,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi,4,Proof,6,1.06,0.1,167,00.69,123400,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi,0,Proof,6,1.08,0.1,165,00.71,130568,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi,1,Proof,6,1.09,0.1,164,00.73,129640,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi,2,Proof,6,1.09,0.13,166,00.73,131656,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi,3,Proof,6,1.06,0.13,162,00.73,131348,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi,4,Proof,6,1.07,0.12,164,00.73,131184,True Positive,havoc
+Havoc_Ex2,-g --gpdr-ats,0,Proof,6,1.09,0.1,162,00.74,125448,True Positive,havoc
+Havoc_Ex2,-g --gpdr-ats,1,Proof,6,1.12,0.12,158,00.79,125248,True Positive,havoc
+Havoc_Ex2,-g --gpdr-ats,2,Proof,6,1.09,0.12,162,00.75,123968,True Positive,havoc
+Havoc_Ex2,-g --gpdr-ats,3,Proof,6,1.12,0.11,167,00.74,122420,True Positive,havoc
+Havoc_Ex2,-g --gpdr-ats,4,Proof,6,1.08,0.13,166,00.73,124696,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-ats,0,Proof,6,1.09,0.13,166,00.73,125848,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-ats,1,Proof,6,1.07,0.12,165,00.72,125928,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-ats,2,Proof,6,1.11,0.1,166,00.73,125572,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-ats,3,Proof,6,1.06,0.13,163,00.73,125380,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-ats,4,Proof,6,1.09,0.11,165,00.72,125600,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi --gpdr-ats,0,Proof,6,1.04,0.11,159,00.72,123288,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi --gpdr-ats,1,Proof,6,1.08,0.1,165,00.71,124464,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi --gpdr-ats,2,Proof,6,1.06,0.1,154,00.75,124696,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi --gpdr-ats,3,Proof,6,1.06,0.12,162,00.72,122728,True Positive,havoc
+Havoc_Ex2,-g --gpdr-smi --gpdr-ats,4,Proof,6,1.05,0.12,161,00.73,124660,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi --gpdr-ats,0,Proof,6,1.1,0.14,164,00.75,125380,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi --gpdr-ats,1,Proof,6,1.08,0.1,161,00.74,126124,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi --gpdr-ats,2,Proof,6,1.1,0.11,156,00.77,126196,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi --gpdr-ats,3,Proof,6,1.08,0.11,163,00.73,124384,True Positive,havoc
+Havoc_Ex2,-gB --gpdr-smi --gpdr-ats,4,Proof,6,1.06,0.1,164,00.70,125972,True Positive,havoc
+Hoare_Ex1,--warmup,0,,,0.53,0.05,177,00.33,80556,,
+Hoare_Ex1,--warmup,1,,,0.54,0.06,176,00.34,80772,,
+Hoare_Ex1,--warmup,2,,,0.53,0.06,178,00.33,80260,,
+Hoare_Ex1,--warmup,3,,,0.53,0.05,180,00.33,79532,,
+Hoare_Ex1,--warmup,4,,,0.57,0.04,186,00.33,80764,,
+Hoare_Ex1,-b,0,TIMEOUT,,33.17,0.26,110,30.34,343752,,
+Hoare_Ex1,-b,1,TIMEOUT,,33.38,0.27,110,30.37,344036,,
+Hoare_Ex1,-b,2,TIMEOUT,,33.42,0.33,111,30.34,357252,,
+Hoare_Ex1,-b,3,TIMEOUT,,33.03,0.33,110,30.31,353584,,
+Hoare_Ex1,-b,4,TIMEOUT,,33.36,0.27,111,30.28,356816,,
+Hoare_Ex1,-k,0,Proof,4,1.21,0.12,163,00.81,127304,True Positive,
+Hoare_Ex1,-k,1,Proof,4,1.19,0.11,167,00.78,125988,True Positive,
+Hoare_Ex1,-k,2,Proof,4,1.16,0.11,171,00.74,126792,True Positive,
+Hoare_Ex1,-k,3,Proof,4,1.14,0.14,166,00.77,126028,True Positive,
+Hoare_Ex1,-k,4,Proof,4,1.18,0.11,173,00.74,125556,True Positive,
+Hoare_Ex1,-bk,0,Proof,5,1.29,0.12,168,00.84,131024,True Positive,
+Hoare_Ex1,-bk,1,Proof,5,1.27,0.11,182,00.76,130276,True Positive,
+Hoare_Ex1,-bk,2,Proof,5,1.24,0.12,179,00.76,130176,True Positive,
+Hoare_Ex1,-bk,3,Proof,5,1.24,0.12,178,00.76,130964,True Positive,
+Hoare_Ex1,-bk,4,Proof,5,1.24,0.14,177,00.78,130284,True Positive,
+Hoare_Ex1,-p,0,Proof,5,1.11,0.1,169,00.71,122244,True Positive,
+Hoare_Ex1,-p,1,Proof,5,1.11,0.14,166,00.76,122396,True Positive,
+Hoare_Ex1,-p,2,Proof,5,1.09,0.14,169,00.73,123792,True Positive,
+Hoare_Ex1,-p,3,Proof,5,1.11,0.15,172,00.73,123520,True Positive,
+Hoare_Ex1,-p,4,Proof,5,1.14,0.12,174,00.73,122292,True Positive,
+Hoare_Ex1,-g,0,Crash,0,0.7,0.1,188,00.43,83552,,
+Hoare_Ex1,-g,1,Crash,0,0.68,0.1,186,00.42,84036,,
+Hoare_Ex1,-g,2,Crash,0,0.73,0.09,176,00.46,83020,,
+Hoare_Ex1,-g,3,Crash,0,0.73,0.09,190,00.43,83896,,
+Hoare_Ex1,-g,4,Crash,0,0.72,0.08,191,00.42,83248,,
+Hoare_Ex1,-gB,0,Crash,0,0.71,0.1,192,00.42,84148,,
+Hoare_Ex1,-gB,1,Crash,0,0.71,0.08,194,00.41,84304,,
+Hoare_Ex1,-gB,2,Crash,0,0.69,0.1,179,00.44,84472,,
+Hoare_Ex1,-gB,3,Crash,0,0.71,0.08,186,00.42,84264,,
+Hoare_Ex1,-gB,4,Crash,0,0.71,0.09,191,00.42,83456,,
+Hoare_Ex1,-g --gpdr-smi,0,Crash,0,0.72,0.09,187,00.43,84152,,
+Hoare_Ex1,-g --gpdr-smi,1,Crash,0,0.69,0.1,186,00.42,84568,,
+Hoare_Ex1,-g --gpdr-smi,2,Crash,0,0.72,0.09,187,00.43,83412,,
+Hoare_Ex1,-g --gpdr-smi,3,Crash,0,0.71,0.08,189,00.42,84280,,
+Hoare_Ex1,-g --gpdr-smi,4,Crash,0,0.73,0.09,197,00.42,83520,,
+Hoare_Ex1,-gB --gpdr-smi,0,Crash,0,0.72,0.07,193,00.41,84300,,
+Hoare_Ex1,-gB --gpdr-smi,1,Crash,0,0.69,0.09,179,00.44,84508,,
+Hoare_Ex1,-gB --gpdr-smi,2,Crash,0,0.75,0.06,192,00.42,83732,,
+Hoare_Ex1,-gB --gpdr-smi,3,Crash,0,0.72,0.08,194,00.41,84704,,
+Hoare_Ex1,-gB --gpdr-smi,4,Crash,0,0.71,0.09,195,00.41,83644,,
+Hoare_Ex1,-g --gpdr-ats,0,TIMEOUT,,33.64,1.07,115,30.04,358592,,
+Hoare_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.88,1.03,116,30.04,311040,,
+Hoare_Ex1,-g --gpdr-ats,2,TIMEOUT,,33.92,1.06,116,30.04,311072,,
+Hoare_Ex1,-g --gpdr-ats,3,TIMEOUT,,33.9,1.05,116,30.06,308248,,
+Hoare_Ex1,-g --gpdr-ats,4,TIMEOUT,,34.44,1.07,118,30.07,364864,,
+Hoare_Ex1,-gB --gpdr-ats,0,,,3.79,0.19,241,01.64,207200,,
+Hoare_Ex1,-gB --gpdr-ats,1,,,3.77,0.22,244,01.64,218544,,
+Hoare_Ex1,-gB --gpdr-ats,2,,,3.78,0.22,248,01.61,211840,,
+Hoare_Ex1,-gB --gpdr-ats,3,,,3.92,0.19,250,01.64,210728,,
+Hoare_Ex1,-gB --gpdr-ats,4,,,3.73,0.18,238,01.64,206980,,
+Hoare_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,34.15,0.3,114,30.05,304872,,
+Hoare_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,34.08,0.33,114,30.06,309820,,
+Hoare_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,34.32,0.26,115,30.04,307236,,
+Hoare_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,34.45,0.27,115,30.06,308336,,
+Hoare_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,34.43,0.24,115,30.03,313976,,
+Hoare_Ex1,-gB --gpdr-smi --gpdr-ats,0,,,2.07,0.13,201,01.09,136040,,
+Hoare_Ex1,-gB --gpdr-smi --gpdr-ats,1,,,2.02,0.13,200,01.08,136168,,
+Hoare_Ex1,-gB --gpdr-smi --gpdr-ats,2,,,2.09,0.12,203,01.08,137488,,
+Hoare_Ex1,-gB --gpdr-smi --gpdr-ats,3,,,2.07,0.12,206,01.06,137428,,
+Hoare_Ex1,-gB --gpdr-smi --gpdr-ats,4,,,2.02,0.12,197,01.08,139664,,
+Hoare_Ex2,--warmup,0,,,0.56,0.06,202,00.31,80884,,
+Hoare_Ex2,--warmup,1,,,0.58,0.05,211,00.30,80340,,
+Hoare_Ex2,--warmup,2,,,0.58,0.05,215,00.29,79712,,
+Hoare_Ex2,--warmup,3,,,0.57,0.05,222,00.28,80264,,
+Hoare_Ex2,--warmup,4,,,0.57,0.05,202,00.30,81032,,
+Hoare_Ex2,-b,0,TIMEOUT,,34.32,0.33,115,30.03,479956,,
+Hoare_Ex2,-b,1,TIMEOUT,,34.02,0.34,114,30.11,471120,,
+Hoare_Ex2,-b,2,TIMEOUT,,34.26,0.3,114,30.27,477016,,
+Hoare_Ex2,-b,3,TIMEOUT,,34.18,0.34,114,30.06,480124,,
+Hoare_Ex2,-b,4,TIMEOUT,,33.92,0.3,113,30.05,470668,,
+Hoare_Ex2,-k,0,Crash,24,3.8,0.17,231,01.71,215184,,
+Hoare_Ex2,-k,1,Crash,24,3.82,0.19,218,01.83,215556,,
+Hoare_Ex2,-k,2,Crash,24,3.85,0.15,226,01.77,216708,,
+Hoare_Ex2,-k,3,Crash,24,3.54,0.17,211,01.75,214648,,
+Hoare_Ex2,-k,4,Crash,24,3.71,0.15,225,01.72,216576,,
+Hoare_Ex2,-bk,0,Crash,28,4.13,0.16,197,02.18,210928,,
+Hoare_Ex2,-bk,1,Crash,28,4.06,0.17,195,02.17,202884,,
+Hoare_Ex2,-bk,2,Crash,28,4.04,0.16,194,02.16,203220,,
+Hoare_Ex2,-bk,3,Crash,28,4.11,0.17,197,02.16,214432,,
+Hoare_Ex2,-bk,4,Crash,28,3.96,0.17,191,02.16,204652,,
+Hoare_Ex2,-p,0,Proof,13,1.35,0.14,182,00.82,127456,True Positive,
+Hoare_Ex2,-p,1,Proof,13,1.39,0.1,197,00.75,127628,True Positive,
+Hoare_Ex2,-p,2,Proof,13,1.37,0.11,195,00.76,127268,True Positive,
+Hoare_Ex2,-p,3,Proof,13,1.38,0.1,197,00.75,126124,True Positive,
+Hoare_Ex2,-p,4,Proof,13,1.38,0.1,196,00.75,127000,True Positive,
+Hoare_Ex2,-g,0,Crash,3,1.08,0.1,183,00.64,122492,,
+Hoare_Ex2,-g,1,Crash,3,1.08,0.1,193,00.61,122952,,
+Hoare_Ex2,-g,2,Crash,3,1.08,0.14,190,00.64,121868,,
+Hoare_Ex2,-g,3,Crash,3,1.03,0.12,179,00.64,122784,,
+Hoare_Ex2,-g,4,Crash,3,1.03,0.12,179,00.64,122100,,
+Hoare_Ex2,-gB,0,Crash,3,1.07,0.11,191,00.62,122800,,
+Hoare_Ex2,-gB,1,Crash,3,1.07,0.11,187,00.63,122628,,
+Hoare_Ex2,-gB,2,Crash,3,1.11,0.09,193,00.62,123332,,
+Hoare_Ex2,-gB,3,Crash,3,1.07,0.09,185,00.63,123712,,
+Hoare_Ex2,-gB,4,Crash,3,1.08,0.11,188,00.63,123368,,
+Hoare_Ex2,-g --gpdr-smi,0,Crash,3,1.07,0.11,192,00.61,122604,,
+Hoare_Ex2,-g --gpdr-smi,1,Crash,3,1.06,0.11,185,00.63,122840,,
+Hoare_Ex2,-g --gpdr-smi,2,Crash,3,1.07,0.11,187,00.63,122888,,
+Hoare_Ex2,-g --gpdr-smi,3,Crash,3,1.03,0.1,180,00.63,122296,,
+Hoare_Ex2,-g --gpdr-smi,4,Crash,3,1.08,0.1,188,00.63,122972,,
+Hoare_Ex2,-gB --gpdr-smi,0,Crash,3,1.12,0.12,192,00.64,122704,,
+Hoare_Ex2,-gB --gpdr-smi,1,Crash,3,1.1,0.11,190,00.64,123328,,
+Hoare_Ex2,-gB --gpdr-smi,2,Crash,3,1.14,0.11,194,00.64,122864,,
+Hoare_Ex2,-gB --gpdr-smi,3,Crash,3,1.12,0.1,191,00.64,121596,,
+Hoare_Ex2,-gB --gpdr-smi,4,Crash,3,1.04,0.1,176,00.65,121800,,
+Hoare_Ex2,-g --gpdr-ats,0,TIMEOUT,,34.44,1.13,118,30.05,309860,,
+Hoare_Ex2,-g --gpdr-ats,1,TIMEOUT,,34.29,1.1,117,30.04,353612,,
+Hoare_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.62,0.94,115,30.03,319536,,
+Hoare_Ex2,-g --gpdr-ats,3,TIMEOUT,,34.08,0.97,116,30.05,312200,,
+Hoare_Ex2,-g --gpdr-ats,4,TIMEOUT,,34.32,1.02,117,30.04,310016,,
+Hoare_Ex2,-gB --gpdr-ats,0,TIMEOUT,,34.69,0.95,118,30.04,363040,,
+Hoare_Ex2,-gB --gpdr-ats,1,TIMEOUT,,34.15,1.29,117,30.05,375684,,
+Hoare_Ex2,-gB --gpdr-ats,2,TIMEOUT,,34.34,1.18,118,30.06,369028,,
+Hoare_Ex2,-gB --gpdr-ats,3,TIMEOUT,,35.02,0.99,119,30.06,371300,,
+Hoare_Ex2,-gB --gpdr-ats,4,TIMEOUT,,35.03,0.94,119,30.04,363168,,
+Hoare_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.46,0.27,112,30.03,295552,,
+Hoare_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.71,0.26,113,30.05,302848,,
+Hoare_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.54,0.27,112,30.03,304144,,
+Hoare_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.84,0.27,113,30.05,304292,,
+Hoare_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.42,0.27,112,30.04,295692,,
+Hoare_Ex2,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,48.01,2.21,167,30.05,1966444,,
+Hoare_Ex2,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,47.39,2.39,165,30.06,2052296,,
+Hoare_Ex2,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,47.86,2.51,167,30.06,2103224,,
+Hoare_Ex2,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,47.46,2.11,164,30.06,2423140,,
+Hoare_Ex2,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,46.66,1.96,161,30.05,2142620,,
+If_Ex1,--warmup,0,,,0.5,0.04,190,00.28,75188,,
+If_Ex1,--warmup,1,,,0.52,0.06,173,00.33,74580,,
+If_Ex1,--warmup,2,,,0.51,0.06,177,00.32,75328,,
+If_Ex1,--warmup,3,,,0.51,0.06,198,00.28,74964,,
+If_Ex1,--warmup,4,,,0.56,0.05,214,00.28,75504,,
+If_Ex1,-b,0,NoResult,101,5.4,0.2,172,03.24,282080,,
+If_Ex1,-b,1,NoResult,101,5.75,0.25,173,03.46,280772,,
+If_Ex1,-b,2,NoResult,101,5.64,0.22,168,03.49,280600,,
+If_Ex1,-b,3,NoResult,101,5.63,0.2,182,03.20,292544,,
+If_Ex1,-b,4,NoResult,101,5.49,0.21,175,03.26,283364,,
+If_Ex1,-k,0,Proof,9,1.14,0.1,167,00.74,125440,True Positive,
+If_Ex1,-k,1,Proof,9,1.18,0.12,154,00.84,129172,True Positive,
+If_Ex1,-k,2,Proof,9,1.24,0.11,148,00.91,124896,True Positive,
+If_Ex1,-k,3,Proof,9,1.24,0.11,146,00.92,129220,True Positive,
+If_Ex1,-k,4,Proof,9,1.22,0.11,152,00.87,128236,True Positive,
+If_Ex1,-bk,0,Proof,10,1.26,0.11,164,00.83,128476,True Positive,
+If_Ex1,-bk,1,Proof,10,1.26,0.11,168,00.82,128404,True Positive,
+If_Ex1,-bk,2,Proof,10,1.26,0.13,164,00.85,128744,True Positive,
+If_Ex1,-bk,3,Proof,10,1.21,0.12,164,00.81,129016,True Positive,
+If_Ex1,-bk,4,Proof,10,1.24,0.11,153,00.88,128244,True Positive,
+If_Ex1,-p,0,Proof,1,0.98,0.08,169,00.62,118816,True Positive,
+If_Ex1,-p,1,Proof,1,0.96,0.09,172,00.61,120068,True Positive,
+If_Ex1,-p,2,Proof,1,0.98,0.11,159,00.68,119804,True Positive,
+If_Ex1,-p,3,Proof,1,0.96,0.1,166,00.64,118656,True Positive,
+If_Ex1,-p,4,Proof,1,0.95,0.1,159,00.66,118172,True Positive,
+If_Ex1,-g,0,TIMEOUT,,32.11,1.17,110,30.06,282480,,
+If_Ex1,-g,1,TIMEOUT,,32.72,1.27,113,30.04,297456,,
+If_Ex1,-g,2,TIMEOUT,,32.41,1.2,111,30.05,294168,,
+If_Ex1,-g,3,TIMEOUT,,32.39,1.22,111,30.05,291644,,
+If_Ex1,-g,4,TIMEOUT,,32.12,1.23,111,30.04,289880,,
+If_Ex1,-gB,0,Proof,6,1.09,0.11,166,00.72,123068,True Positive,
+If_Ex1,-gB,1,Proof,6,1.11,0.12,168,00.73,121860,True Positive,
+If_Ex1,-gB,2,Proof,6,1.11,0.1,171,00.71,122856,True Positive,
+If_Ex1,-gB,3,Proof,6,1.15,0.11,177,00.71,122372,True Positive,
+If_Ex1,-gB,4,Proof,6,1.1,0.11,170,00.71,121876,True Positive,
+If_Ex1,-g --gpdr-smi,0,TIMEOUT,,32.14,0.31,108,30.04,273432,,
+If_Ex1,-g --gpdr-smi,1,TIMEOUT,,31.88,0.32,107,30.05,271692,,
+If_Ex1,-g --gpdr-smi,2,TIMEOUT,,32.23,0.26,108,30.04,278100,,
+If_Ex1,-g --gpdr-smi,3,TIMEOUT,,31.86,0.26,106,30.04,271572,,
+If_Ex1,-g --gpdr-smi,4,TIMEOUT,,32.1,0.27,107,30.04,273900,,
+If_Ex1,-gB --gpdr-smi,0,Proof,6,1.06,0.12,158,00.74,120892,True Positive,
+If_Ex1,-gB --gpdr-smi,1,Proof,6,1.09,0.1,164,00.72,123200,True Positive,
+If_Ex1,-gB --gpdr-smi,2,Proof,6,1.03,0.13,159,00.73,121484,True Positive,
+If_Ex1,-gB --gpdr-smi,3,Proof,6,1.06,0.11,166,00.71,121324,True Positive,
+If_Ex1,-gB --gpdr-smi,4,Proof,6,1.06,0.11,161,00.73,122356,True Positive,
+If_Ex1,-g --gpdr-ats,0,TIMEOUT,,33.39,1.2,115,30.03,295868,,
+If_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.32,1.25,115,30.03,303464,,
+If_Ex1,-g --gpdr-ats,2,TIMEOUT,,33.44,1.25,115,30.04,298236,,
+If_Ex1,-g --gpdr-ats,3,TIMEOUT,,33.25,1.23,114,30.05,292944,,
+If_Ex1,-g --gpdr-ats,4,TIMEOUT,,33.22,1.17,114,30.04,297028,,
+If_Ex1,-gB --gpdr-ats,0,Proof,18,1.46,0.14,164,00.97,131132,True Positive,
+If_Ex1,-gB --gpdr-ats,1,Proof,18,1.47,0.13,168,00.95,130088,True Positive,
+If_Ex1,-gB --gpdr-ats,2,Proof,18,1.44,0.14,157,01.00,130272,True Positive,
+If_Ex1,-gB --gpdr-ats,3,Proof,18,1.48,0.15,171,00.95,131448,True Positive,
+If_Ex1,-gB --gpdr-ats,4,Proof,18,1.46,0.14,172,00.93,130600,True Positive,
+If_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.57,0.33,109,30.04,279464,,
+If_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.67,0.29,109,30.03,279476,,
+If_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.73,0.28,109,30.02,279996,,
+If_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.72,0.25,109,30.04,279436,,
+If_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.85,0.24,110,30.03,281048,,
+If_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,21,1.49,0.13,163,00.99,130380,True Positive,
+If_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,21,1.55,0.11,164,01.01,128504,True Positive,
+If_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,21,1.46,0.15,158,01.02,130248,True Positive,
+If_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,21,1.54,0.13,162,01.03,130360,True Positive,
+If_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,21,1.45,0.14,162,00.98,130076,True Positive,
+If_Ex2,--warmup,0,,,0.51,0.05,181,00.31,75728,,
+If_Ex2,--warmup,1,,,0.53,0.06,184,00.32,74676,,
+If_Ex2,--warmup,2,,,0.52,0.05,173,00.33,75896,,
+If_Ex2,--warmup,3,,,0.51,0.05,182,00.31,74552,,
+If_Ex2,--warmup,4,,,0.48,0.05,180,00.29,74892,,
+If_Ex2,-b,0,NoResult,101,9.15,0.22,143,06.55,346816,,
+If_Ex2,-b,1,NoResult,101,9.52,0.26,148,06.59,352072,,
+If_Ex2,-b,2,NoResult,101,9.46,0.22,146,06.60,343452,,
+If_Ex2,-b,3,NoResult,101,9.73,0.23,151,06.56,351536,,
+If_Ex2,-b,4,NoResult,101,9.68,0.27,150,06.64,353196,,
+If_Ex2,-k,0,Proof,9,1.2,0.12,169,00.78,130412,True Positive,
+If_Ex2,-k,1,Proof,9,1.25,0.13,158,00.87,130816,True Positive,
+If_Ex2,-k,2,Proof,9,1.28,0.13,155,00.91,129676,True Positive,
+If_Ex2,-k,3,Proof,9,1.33,0.13,146,01.00,129932,True Positive,
+If_Ex2,-k,4,Proof,9,1.33,0.14,134,01.09,130568,True Positive,
+If_Ex2,-bk,0,Proof,10,1.26,0.12,169,00.81,130704,True Positive,
+If_Ex2,-bk,1,Proof,10,1.27,0.12,175,00.79,130328,True Positive,
+If_Ex2,-bk,2,Proof,10,1.28,0.11,169,00.82,132128,True Positive,
+If_Ex2,-bk,3,Proof,10,1.3,0.11,174,00.80,132416,True Positive,
+If_Ex2,-bk,4,Proof,10,1.26,0.12,168,00.82,131140,True Positive,
+If_Ex2,-p,0,Proof,4,0.99,0.11,169,00.65,123952,True Positive,
+If_Ex2,-p,1,Proof,4,1.01,0.11,178,00.63,123952,True Positive,
+If_Ex2,-p,2,Proof,4,1.01,0.1,164,00.67,125072,True Positive,
+If_Ex2,-p,3,Proof,4,1.02,0.1,164,00.68,122680,True Positive,
+If_Ex2,-p,4,Proof,4,1.01,0.09,175,00.63,124504,True Positive,
+If_Ex2,-g,0,TIMEOUT,,33.2,1.25,114,30.06,319280,,
+If_Ex2,-g,1,TIMEOUT,,32.91,1.25,113,30.05,306500,,
+If_Ex2,-g,2,TIMEOUT,,32.74,1.26,113,30.05,301740,,
+If_Ex2,-g,3,TIMEOUT,,32.78,1.24,113,30.06,310620,,
+If_Ex2,-g,4,TIMEOUT,,32.69,1.21,112,30.06,305192,,
+If_Ex2,-gB,0,Proof,68,2.56,0.3,156,01.83,155720,True Positive,
+If_Ex2,-gB,1,Proof,68,2.64,0.27,157,01.85,154176,True Positive,
+If_Ex2,-gB,2,Proof,68,2.73,0.29,171,01.77,159124,True Positive,
+If_Ex2,-gB,3,Proof,68,2.68,0.24,167,01.74,155968,True Positive,
+If_Ex2,-gB,4,Proof,68,2.63,0.23,169,01.68,157104,True Positive,
+If_Ex2,-g --gpdr-smi,0,TIMEOUT,,31.94,0.68,108,30.03,282732,,
+If_Ex2,-g --gpdr-smi,1,TIMEOUT,,32.12,0.29,107,30.03,286300,,
+If_Ex2,-g --gpdr-smi,2,TIMEOUT,,32.4,0.26,108,30.03,289680,,
+If_Ex2,-g --gpdr-smi,3,TIMEOUT,,32.54,0.23,109,30.03,291580,,
+If_Ex2,-g --gpdr-smi,4,TIMEOUT,,32.85,0.23,110,30.03,291984,,
+If_Ex2,-gB --gpdr-smi,0,Proof,39,1.79,0.12,164,01.17,137572,True Positive,
+If_Ex2,-gB --gpdr-smi,1,Proof,39,1.76,0.12,162,01.16,139444,True Positive,
+If_Ex2,-gB --gpdr-smi,2,Proof,39,1.78,0.12,164,01.16,138780,True Positive,
+If_Ex2,-gB --gpdr-smi,3,Proof,39,1.77,0.11,160,01.17,138048,True Positive,
+If_Ex2,-gB --gpdr-smi,4,Proof,39,1.78,0.12,162,01.17,138372,True Positive,
+If_Ex2,-g --gpdr-ats,0,TIMEOUT,,33.48,1.27,115,30.04,300212,,
+If_Ex2,-g --gpdr-ats,1,TIMEOUT,,33.78,1.26,116,30.04,312888,,
+If_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.36,1.29,115,30.04,300196,,
+If_Ex2,-g --gpdr-ats,3,TIMEOUT,,33.34,1.26,115,30.06,298836,,
+If_Ex2,-g --gpdr-ats,4,TIMEOUT,,33.52,1.24,115,30.05,305520,,
+If_Ex2,-gB --gpdr-ats,0,Proof,36,2.06,0.12,183,01.19,135252,True Positive,
+If_Ex2,-gB --gpdr-ats,1,Proof,36,2.28,0.13,193,01.24,147964,True Positive,
+If_Ex2,-gB --gpdr-ats,2,Proof,36,2.21,0.15,190,01.24,149516,True Positive,
+If_Ex2,-gB --gpdr-ats,3,Proof,36,2.12,0.14,188,01.20,134732,True Positive,
+If_Ex2,-gB --gpdr-ats,4,Proof,36,2.21,0.14,194,01.21,147452,True Positive,
+If_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.17,0.41,111,30.04,281904,,
+If_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.32,0.29,111,30.03,285044,,
+If_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.96,0.26,110,30.05,284772,,
+If_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.78,0.24,109,30.03,280460,,
+If_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.94,0.23,110,30.02,282496,,
+If_Ex2,-gB --gpdr-smi --gpdr-ats,0,Proof,48,2.11,0.11,163,01.36,131556,True Positive,
+If_Ex2,-gB --gpdr-smi --gpdr-ats,1,Proof,48,2.09,0.13,165,01.33,131656,True Positive,
+If_Ex2,-gB --gpdr-smi --gpdr-ats,2,Proof,48,2.13,0.11,169,01.33,132380,True Positive,
+If_Ex2,-gB --gpdr-smi --gpdr-ats,3,Proof,48,2.08,0.11,167,01.31,132092,True Positive,
+If_Ex2,-gB --gpdr-smi --gpdr-ats,4,Proof,48,2.07,0.13,163,01.35,132620,True Positive,
+Pointer_Ex1,--warmup,0,,,0.48,0.06,180,00.30,75036,,pointer
+Pointer_Ex1,--warmup,1,,,0.5,0.05,171,00.32,75024,,pointer
+Pointer_Ex1,--warmup,2,,,0.5,0.04,192,00.28,75096,,pointer
+Pointer_Ex1,--warmup,3,,,0.49,0.05,178,00.30,75636,,pointer
+Pointer_Ex1,--warmup,4,,,0.52,0.05,186,00.30,76148,,pointer
+Pointer_Ex1,-b,0,NoResult,101,5.82,0.21,177,03.40,285208,,pointer
+Pointer_Ex1,-b,1,NoResult,101,5.74,0.19,175,03.38,290408,,pointer
+Pointer_Ex1,-b,2,NoResult,101,5.88,0.21,179,03.39,289456,,pointer
+Pointer_Ex1,-b,3,NoResult,101,5.6,0.2,169,03.43,277708,,pointer
+Pointer_Ex1,-b,4,NoResult,101,5.81,0.2,177,03.39,284376,,pointer
+Pointer_Ex1,-k,0,Proof,9,1.18,0.11,176,00.74,128448,True Positive,pointer
+Pointer_Ex1,-k,1,Proof,9,1.22,0.11,180,00.74,128316,True Positive,pointer
+Pointer_Ex1,-k,2,Proof,9,1.18,0.11,168,00.77,128444,True Positive,pointer
+Pointer_Ex1,-k,3,Proof,9,1.19,0.1,177,00.73,126520,True Positive,pointer
+Pointer_Ex1,-k,4,Proof,9,1.19,0.11,178,00.73,125696,True Positive,pointer
+Pointer_Ex1,-bk,0,Proof,10,1.22,0.13,170,00.79,129620,True Positive,pointer
+Pointer_Ex1,-bk,1,Proof,10,1.27,0.1,179,00.76,128996,True Positive,pointer
+Pointer_Ex1,-bk,2,Proof,10,1.25,0.1,178,00.76,129556,True Positive,pointer
+Pointer_Ex1,-bk,3,Proof,10,1.22,0.09,180,00.73,129160,True Positive,pointer
+Pointer_Ex1,-bk,4,Proof,10,1.27,0.13,181,00.77,128132,True Positive,pointer
+Pointer_Ex1,-p,0,,,0.49,0.06,174,00.32,76104,,pointer
+Pointer_Ex1,-p,1,,,0.5,0.05,186,00.29,75836,,pointer
+Pointer_Ex1,-p,2,,,0.51,0.04,186,00.29,76060,,pointer
+Pointer_Ex1,-p,3,,,0.52,0.05,189,00.30,76220,,pointer
+Pointer_Ex1,-p,4,,,0.51,0.04,189,00.29,76052,,pointer
+Pointer_Ex1,-g,0,,,0.99,0.1,178,00.61,123204,,pointer
+Pointer_Ex1,-g,1,,,0.99,0.12,171,00.65,122660,,pointer
+Pointer_Ex1,-g,2,,,0.96,0.12,166,00.65,123616,,pointer
+Pointer_Ex1,-g,3,,,0.97,0.11,171,00.63,124032,,pointer
+Pointer_Ex1,-g,4,,,0.94,0.13,166,00.64,121716,,pointer
+Pointer_Ex1,-gB,0,,,0.98,0.1,170,00.63,129260,,pointer
+Pointer_Ex1,-gB,1,,,0.95,0.12,167,00.64,131096,,pointer
+Pointer_Ex1,-gB,2,,,0.95,0.13,162,00.67,130004,,pointer
+Pointer_Ex1,-gB,3,,,0.96,0.13,170,00.64,131188,,pointer
+Pointer_Ex1,-gB,4,,,0.98,0.12,172,00.64,131084,,pointer
+Pointer_Ex1,-g --gpdr-smi,0,,,0.95,0.1,169,00.62,124148,,pointer
+Pointer_Ex1,-g --gpdr-smi,1,,,0.96,0.11,170,00.63,123068,,pointer
+Pointer_Ex1,-g --gpdr-smi,2,,,1.0,0.1,179,00.62,123912,,pointer
+Pointer_Ex1,-g --gpdr-smi,3,,,0.95,0.1,161,00.65,122072,,pointer
+Pointer_Ex1,-g --gpdr-smi,4,,,0.95,0.1,165,00.63,122500,,pointer
+Pointer_Ex1,-gB --gpdr-smi,0,,,1.04,0.11,180,00.64,130464,,pointer
+Pointer_Ex1,-gB --gpdr-smi,1,,,0.97,0.11,169,00.64,130268,,pointer
+Pointer_Ex1,-gB --gpdr-smi,2,,,1.0,0.13,174,00.65,129424,,pointer
+Pointer_Ex1,-gB --gpdr-smi,3,,,0.96,0.1,169,00.63,130620,,pointer
+Pointer_Ex1,-gB --gpdr-smi,4,,,1.03,0.11,170,00.66,131332,,pointer
+Pointer_Ex1,-g --gpdr-ats,0,TIMEOUT,,33.64,1.18,115,30.05,306544,,pointer
+Pointer_Ex1,-g --gpdr-ats,1,TIMEOUT,,33.67,1.26,116,30.04,307392,,pointer
+Pointer_Ex1,-g --gpdr-ats,2,TIMEOUT,,33.83,1.19,116,30.03,305044,,pointer
+Pointer_Ex1,-g --gpdr-ats,3,TIMEOUT,,33.61,1.21,115,30.05,302032,,pointer
+Pointer_Ex1,-g --gpdr-ats,4,TIMEOUT,,33.61,1.22,115,30.05,304948,,pointer
+Pointer_Ex1,-gB --gpdr-ats,0,,,3.26,0.18,204,01.69,168512,,pointer
+Pointer_Ex1,-gB --gpdr-ats,1,,,2.85,0.3,187,01.68,164296,,pointer
+Pointer_Ex1,-gB --gpdr-ats,2,,,3.13,0.27,200,01.70,170292,,pointer
+Pointer_Ex1,-gB --gpdr-ats,3,,,3.01,0.24,194,01.68,160412,,pointer
+Pointer_Ex1,-gB --gpdr-ats,4,,,3.03,0.25,195,01.68,161792,,pointer
+Pointer_Ex1,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.19,0.37,111,30.04,290456,,pointer
+Pointer_Ex1,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.47,0.25,112,30.03,295240,,pointer
+Pointer_Ex1,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.41,0.26,112,30.05,287920,,pointer
+Pointer_Ex1,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.26,0.27,111,30.05,288572,,pointer
+Pointer_Ex1,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.39,0.26,112,30.04,286972,,pointer
+Pointer_Ex1,-gB --gpdr-smi --gpdr-ats,0,Proof,107,3.76,0.14,169,02.30,161676,True Positive,pointer
+Pointer_Ex1,-gB --gpdr-smi --gpdr-ats,1,Proof,107,3.92,0.14,162,02.51,163588,True Positive,pointer
+Pointer_Ex1,-gB --gpdr-smi --gpdr-ats,2,Proof,107,3.72,0.14,167,02.31,163388,True Positive,pointer
+Pointer_Ex1,-gB --gpdr-smi --gpdr-ats,3,Proof,107,3.8,0.15,174,02.26,162568,True Positive,pointer
+Pointer_Ex1,-gB --gpdr-smi --gpdr-ats,4,Proof,107,3.69,0.15,167,02.29,147512,True Positive,pointer
+Pointer_Ex2,--warmup,0,,,0.52,0.05,183,00.31,76752,,pointer
+Pointer_Ex2,--warmup,1,,,0.54,0.05,196,00.30,75828,,pointer
+Pointer_Ex2,--warmup,2,,,0.51,0.04,185,00.30,75600,,pointer
+Pointer_Ex2,--warmup,3,,,0.5,0.05,185,00.30,76060,,pointer
+Pointer_Ex2,--warmup,4,,,0.51,0.06,186,00.30,76812,,pointer
+Pointer_Ex2,-b,0,Counterexample,9,1.59,0.11,207,00.82,140752,False Negative,pointer
+Pointer_Ex2,-b,1,Counterexample,9,1.5,0.13,198,00.82,134708,False Negative,pointer
+Pointer_Ex2,-b,2,Counterexample,9,1.51,0.12,197,00.83,135528,False Negative,pointer
+Pointer_Ex2,-b,3,Counterexample,9,1.57,0.11,205,00.82,132304,False Negative,pointer
+Pointer_Ex2,-b,4,Counterexample,9,1.56,0.11,204,00.82,136952,False Negative,pointer
+Pointer_Ex2,-k,0,Counterexample,39,2.92,0.14,217,01.41,181104,False Negative,pointer
+Pointer_Ex2,-k,1,Counterexample,39,2.95,0.13,222,01.39,182636,False Negative,pointer
+Pointer_Ex2,-k,2,Counterexample,39,3.13,0.14,232,01.41,183436,False Negative,pointer
+Pointer_Ex2,-k,3,Counterexample,39,2.95,0.14,218,01.41,181012,False Negative,pointer
+Pointer_Ex2,-k,4,Counterexample,39,3.02,0.14,222,01.42,182900,False Negative,pointer
+Pointer_Ex2,-bk,0,Counterexample,33,2.82,0.11,226,01.30,170252,False Negative,pointer
+Pointer_Ex2,-bk,1,Counterexample,33,2.85,0.12,224,01.32,177164,False Negative,pointer
+Pointer_Ex2,-bk,2,Counterexample,33,2.85,0.15,230,01.30,176076,False Negative,pointer
+Pointer_Ex2,-bk,3,Counterexample,33,2.86,0.12,224,01.32,175940,False Negative,pointer
+Pointer_Ex2,-bk,4,Counterexample,33,2.81,0.15,225,01.31,175912,False Negative,pointer
+Pointer_Ex2,-p,0,,,0.53,0.04,188,00.31,75860,,pointer
+Pointer_Ex2,-p,1,,,0.52,0.05,194,00.30,75948,,pointer
+Pointer_Ex2,-p,2,,,0.55,0.06,189,00.32,75604,,pointer
+Pointer_Ex2,-p,3,,,0.53,0.06,198,00.30,76412,,pointer
+Pointer_Ex2,-p,4,,,0.54,0.04,186,00.31,76072,,pointer
+Pointer_Ex2,-g,0,,,0.99,0.09,175,00.61,121968,,pointer
+Pointer_Ex2,-g,1,,,1.03,0.1,180,00.62,120372,,pointer
+Pointer_Ex2,-g,2,,,0.95,0.12,169,00.63,122724,,pointer
+Pointer_Ex2,-g,3,,,0.99,0.09,173,00.62,120872,,pointer
+Pointer_Ex2,-g,4,,,0.98,0.1,175,00.61,122116,,pointer
+Pointer_Ex2,-gB,0,,,1.02,0.1,177,00.63,122572,,pointer
+Pointer_Ex2,-gB,1,,,1.03,0.08,180,00.62,120884,,pointer
+Pointer_Ex2,-gB,2,,,1.02,0.1,178,00.63,122160,,pointer
+Pointer_Ex2,-gB,3,,,1.05,0.1,180,00.64,122936,,pointer
+Pointer_Ex2,-gB,4,,,1.04,0.1,173,00.66,121792,,pointer
+Pointer_Ex2,-g --gpdr-smi,0,,,1.02,0.1,177,00.63,120540,,pointer
+Pointer_Ex2,-g --gpdr-smi,1,,,1.0,0.1,177,00.62,121696,,pointer
+Pointer_Ex2,-g --gpdr-smi,2,,,0.99,0.1,175,00.62,120544,,pointer
+Pointer_Ex2,-g --gpdr-smi,3,,,1.0,0.11,175,00.63,120864,,pointer
+Pointer_Ex2,-g --gpdr-smi,4,,,1.02,0.1,177,00.63,121824,,pointer
+Pointer_Ex2,-gB --gpdr-smi,0,,,1.03,0.1,173,00.65,122096,,pointer
+Pointer_Ex2,-gB --gpdr-smi,1,,,1.0,0.1,177,00.62,122200,,pointer
+Pointer_Ex2,-gB --gpdr-smi,2,,,1.02,0.09,179,00.62,121480,,pointer
+Pointer_Ex2,-gB --gpdr-smi,3,,,1.03,0.1,171,00.66,121264,,pointer
+Pointer_Ex2,-gB --gpdr-smi,4,,,1.03,0.1,179,00.62,121760,,pointer
+Pointer_Ex2,-g --gpdr-ats,0,TIMEOUT,,33.69,1.05,115,30.04,299836,,pointer
+Pointer_Ex2,-g --gpdr-ats,1,TIMEOUT,,33.71,1.11,115,30.03,307836,,pointer
+Pointer_Ex2,-g --gpdr-ats,2,TIMEOUT,,33.16,1.14,114,30.05,298368,,pointer
+Pointer_Ex2,-g --gpdr-ats,3,TIMEOUT,,33.87,1.08,116,30.04,304480,,pointer
+Pointer_Ex2,-g --gpdr-ats,4,TIMEOUT,,33.91,1.65,118,30.04,313688,,pointer
+Pointer_Ex2,-gB --gpdr-ats,0,TIMEOUT,,33.83,1.09,116,30.03,311536,,pointer
+Pointer_Ex2,-gB --gpdr-ats,1,TIMEOUT,,33.93,1.11,116,30.06,314048,,pointer
+Pointer_Ex2,-gB --gpdr-ats,2,TIMEOUT,,33.79,1.13,116,30.03,307632,,pointer
+Pointer_Ex2,-gB --gpdr-ats,3,TIMEOUT,,34.14,1.12,117,30.03,304660,,pointer
+Pointer_Ex2,-gB --gpdr-ats,4,TIMEOUT,,34.04,1.13,117,30.04,306284,,pointer
+Pointer_Ex2,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.69,0.29,113,30.06,302732,,pointer
+Pointer_Ex2,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.44,0.24,112,30.05,295936,,pointer
+Pointer_Ex2,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.89,0.28,113,30.04,291860,,pointer
+Pointer_Ex2,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.42,0.31,112,30.04,297996,,pointer
+Pointer_Ex2,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.66,0.32,113,30.04,294120,,pointer
+Pointer_Ex2,-gB --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.34,0.33,112,30.06,295384,,pointer
+Pointer_Ex2,-gB --gpdr-smi --gpdr-ats,1,TIMEOUT,,33.37,0.31,112,30.06,290728,,pointer
+Pointer_Ex2,-gB --gpdr-smi --gpdr-ats,2,TIMEOUT,,33.39,0.25,111,30.05,296792,,pointer
+Pointer_Ex2,-gB --gpdr-smi --gpdr-ats,3,TIMEOUT,,33.07,0.25,110,30.04,287004,,pointer
+Pointer_Ex2,-gB --gpdr-smi --gpdr-ats,4,TIMEOUT,,33.39,0.31,112,30.05,291672,,pointer
+Pointer_Ex3,--warmup,0,,,0.55,0.07,172,00.36,75200,,pointer
+Pointer_Ex3,--warmup,1,,,0.55,0.06,182,00.34,75504,,pointer
+Pointer_Ex3,--warmup,2,,,0.53,0.06,177,00.33,74952,,pointer
+Pointer_Ex3,--warmup,3,,,0.53,0.05,184,00.32,74844,,pointer
+Pointer_Ex3,--warmup,4,,,0.54,0.06,178,00.34,75204,,pointer
+Pointer_Ex3,-b,0,Counterexample,4,1.17,0.1,160,00.79,125680,False Negative,pointer
+Pointer_Ex3,-b,1,Counterexample,4,1.14,0.11,165,00.75,124984,False Negative,pointer
+Pointer_Ex3,-b,2,Counterexample,4,1.1,0.13,162,00.76,124316,False Negative,pointer
+Pointer_Ex3,-b,3,Counterexample,4,1.11,0.11,169,00.72,127244,False Negative,pointer
+Pointer_Ex3,-b,4,Counterexample,4,1.14,0.1,169,00.73,127280,False Negative,pointer
+Pointer_Ex3,-k,0,Counterexample,14,1.33,0.12,153,00.95,128972,False Negative,pointer
+Pointer_Ex3,-k,1,Counterexample,14,1.37,0.1,161,00.91,129444,False Negative,pointer
+Pointer_Ex3,-k,2,Counterexample,14,1.38,0.12,167,00.89,128712,False Negative,pointer
+Pointer_Ex3,-k,3,Counterexample,14,1.33,0.14,161,00.91,129968,False Negative,pointer
+Pointer_Ex3,-k,4,Counterexample,14,1.34,0.13,156,00.94,128520,False Negative,pointer
+Pointer_Ex3,-bk,0,Counterexample,8,1.27,0.11,168,00.82,128892,False Negative,pointer
+Pointer_Ex3,-bk,1,Counterexample,8,1.26,0.12,170,00.81,128524,False Negative,pointer
+Pointer_Ex3,-bk,2,Counterexample,8,1.23,0.13,163,00.83,128408,False Negative,pointer
+Pointer_Ex3,-bk,3,Counterexample,8,1.22,0.13,166,00.81,128572,False Negative,pointer
+Pointer_Ex3,-bk,4,Counterexample,8,1.22,0.12,166,00.80,129884,False Negative,pointer
+Pointer_Ex3,-p,0,Proof,2,1.0,0.1,170,00.65,121316,True Positive,pointer
+Pointer_Ex3,-p,1,Proof,2,0.98,0.11,166,00.65,120688,True Positive,pointer
+Pointer_Ex3,-p,2,Proof,2,1.01,0.13,159,00.72,120212,True Positive,pointer
+Pointer_Ex3,-p,3,Proof,2,1.01,0.12,170,00.67,121948,True Positive,pointer
+Pointer_Ex3,-p,4,Proof,2,0.99,0.13,163,00.69,121112,True Positive,pointer
+Pointer_Ex3,-g,0,TIMEOUT,,32.72,1.19,112,30.06,290340,,pointer
+Pointer_Ex3,-g,1,TIMEOUT,,32.45,1.13,111,30.03,291172,,pointer
+Pointer_Ex3,-g,2,TIMEOUT,,32.11,1.12,110,30.04,291316,,pointer
+Pointer_Ex3,-g,3,TIMEOUT,,32.02,1.13,110,30.04,290680,,pointer
+Pointer_Ex3,-g,4,TIMEOUT,,32.27,1.19,111,30.04,293020,,pointer
+Pointer_Ex3,-gB,0,Counterexample,52,2.28,0.16,159,01.54,142772,False Negative,pointer
+Pointer_Ex3,-gB,1,Counterexample,52,2.32,0.16,163,01.51,142884,False Negative,pointer
+Pointer_Ex3,-gB,2,Counterexample,52,2.4,0.17,172,01.49,142904,False Negative,pointer
+Pointer_Ex3,-gB,3,Counterexample,52,2.38,0.19,170,01.51,143040,False Negative,pointer
+Pointer_Ex3,-gB,4,Counterexample,52,2.3,0.17,171,01.45,142896,False Negative,pointer
+Pointer_Ex3,-g --gpdr-smi,0,TIMEOUT,,32.08,0.66,108,30.05,280680,,pointer
+Pointer_Ex3,-g --gpdr-smi,1,TIMEOUT,,32.16,0.28,107,30.05,271812,,pointer
+Pointer_Ex3,-g --gpdr-smi,2,TIMEOUT,,32.12,0.26,107,30.04,277568,,pointer
+Pointer_Ex3,-g --gpdr-smi,3,TIMEOUT,,32.06,0.28,107,30.04,272208,,pointer
+Pointer_Ex3,-g --gpdr-smi,4,TIMEOUT,,31.73,0.33,106,30.04,276400,,pointer
+Pointer_Ex3,-gB --gpdr-smi,0,Counterexample,44,2.06,0.14,134,01.63,138780,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi,1,Counterexample,44,2.06,0.14,139,01.57,137216,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi,2,Counterexample,44,2.16,0.17,134,01.73,138696,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi,3,Counterexample,44,2.11,0.14,131,01.71,137688,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi,4,Counterexample,44,2.06,0.14,135,01.62,137724,False Negative,pointer
+Pointer_Ex3,-g --gpdr-ats,0,TIMEOUT,,33.0,1.03,113,30.04,305196,,pointer
+Pointer_Ex3,-g --gpdr-ats,1,TIMEOUT,,32.27,0.99,110,30.04,295476,,pointer
+Pointer_Ex3,-g --gpdr-ats,2,TIMEOUT,,32.54,0.99,111,30.04,293804,,pointer
+Pointer_Ex3,-g --gpdr-ats,3,TIMEOUT,,31.99,1.1,110,30.04,292876,,pointer
+Pointer_Ex3,-g --gpdr-ats,4,TIMEOUT,,32.08,1.37,111,30.04,306780,,pointer
+Pointer_Ex3,-gB --gpdr-ats,0,Counterexample,177,6.79,0.32,159,04.46,210872,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-ats,1,Counterexample,177,8.07,0.33,158,05.31,201264,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-ats,2,Counterexample,177,7.92,0.33,164,05.00,204524,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-ats,3,Counterexample,177,7.6,0.33,152,05.20,198744,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-ats,4,Counterexample,177,7.56,0.3,160,04.91,201428,False Negative,pointer
+Pointer_Ex3,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,32.72,0.32,110,30.03,279180,,pointer
+Pointer_Ex3,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.59,0.31,109,30.05,279804,,pointer
+Pointer_Ex3,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,32.51,0.36,109,30.03,279584,,pointer
+Pointer_Ex3,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.73,0.3,109,30.03,281628,,pointer
+Pointer_Ex3,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.74,0.29,110,30.03,281648,,pointer
+Pointer_Ex3,-gB --gpdr-smi --gpdr-ats,0,Counterexample,310,9.37,0.26,128,07.49,200180,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi --gpdr-ats,1,Counterexample,310,9.21,0.21,127,07.40,183620,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi --gpdr-ats,2,Counterexample,310,8.94,0.2,132,06.91,190200,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi --gpdr-ats,3,Counterexample,310,8.9,0.22,127,07.14,185540,False Negative,pointer
+Pointer_Ex3,-gB --gpdr-smi --gpdr-ats,4,Counterexample,310,9.04,0.24,131,07.08,191260,False Negative,pointer
+Pointer_Ex4,--warmup,0,,,0.61,0.07,150,00.45,74904,,pointer
+Pointer_Ex4,--warmup,1,,,0.57,0.07,165,00.39,74736,,pointer
+Pointer_Ex4,--warmup,2,,,0.58,0.06,163,00.40,74764,,pointer
+Pointer_Ex4,--warmup,3,,,0.59,0.07,156,00.42,74996,,pointer
+Pointer_Ex4,--warmup,4,,,0.55,0.06,164,00.37,74400,,pointer
+Pointer_Ex4,-b,0,NoResult,101,6.28,0.25,188,03.47,288480,,pointer
+Pointer_Ex4,-b,1,NoResult,101,6.63,0.29,180,03.84,287444,,pointer
+Pointer_Ex4,-b,2,NoResult,101,6.38,0.27,171,03.87,287312,,pointer
+Pointer_Ex4,-b,3,NoResult,101,6.24,0.26,178,03.64,287080,,pointer
+Pointer_Ex4,-b,4,NoResult,101,6.45,0.27,175,03.82,288784,,pointer
+Pointer_Ex4,-k,0,Proof,4,1.0,0.11,166,00.67,123560,True Positive,pointer
+Pointer_Ex4,-k,1,Proof,4,1.04,0.12,148,00.78,123316,True Positive,pointer
+Pointer_Ex4,-k,2,Proof,4,1.16,0.12,143,00.90,122328,True Positive,pointer
+Pointer_Ex4,-k,3,Proof,4,1.14,0.12,145,00.87,123384,True Positive,pointer
+Pointer_Ex4,-k,4,Proof,4,1.12,0.12,146,00.85,123492,True Positive,pointer
+Pointer_Ex4,-bk,0,Proof,5,1.1,0.13,151,00.82,122260,True Positive,pointer
+Pointer_Ex4,-bk,1,Proof,5,1.17,0.14,137,00.96,121188,True Positive,pointer
+Pointer_Ex4,-bk,2,Proof,5,1.22,0.12,141,00.95,123276,True Positive,pointer
+Pointer_Ex4,-bk,3,Proof,5,1.19,0.13,139,00.95,121800,True Positive,pointer
+Pointer_Ex4,-bk,4,Proof,5,1.16,0.12,148,00.86,123796,True Positive,pointer
+Pointer_Ex4,-p,0,Proof,1,1.02,0.1,148,00.76,118688,True Positive,pointer
+Pointer_Ex4,-p,1,Proof,1,1.02,0.12,153,00.74,119128,True Positive,pointer
+Pointer_Ex4,-p,2,Proof,1,1.04,0.13,149,00.78,119420,True Positive,pointer
+Pointer_Ex4,-p,3,Proof,1,1.09,0.11,136,00.88,120116,True Positive,pointer
+Pointer_Ex4,-p,4,Proof,1,1.01,0.11,158,00.71,118044,True Positive,pointer
+Pointer_Ex4,-g,0,Proof,25,1.52,0.14,136,01.21,127988,True Positive,pointer
+Pointer_Ex4,-g,1,Proof,25,1.55,0.13,140,01.20,127264,True Positive,pointer
+Pointer_Ex4,-g,2,Proof,25,1.66,0.13,133,01.34,127412,True Positive,pointer
+Pointer_Ex4,-g,3,Proof,25,1.59,0.14,140,01.23,127504,True Positive,pointer
+Pointer_Ex4,-g,4,Proof,25,1.56,0.13,140,01.20,128300,True Positive,pointer
+Pointer_Ex4,-gB,0,Proof,6,1.15,0.12,144,00.88,121724,True Positive,pointer
+Pointer_Ex4,-gB,1,Proof,6,1.17,0.13,146,00.89,122472,True Positive,pointer
+Pointer_Ex4,-gB,2,Proof,6,1.24,0.16,132,01.06,121924,True Positive,pointer
+Pointer_Ex4,-gB,3,Proof,6,1.17,0.1,145,00.87,122412,True Positive,pointer
+Pointer_Ex4,-gB,4,Proof,6,1.14,0.11,150,00.84,121556,True Positive,pointer
+Pointer_Ex4,-g --gpdr-smi,0,TIMEOUT,,32.02,0.26,107,30.06,278140,,pointer
+Pointer_Ex4,-g --gpdr-smi,1,TIMEOUT,,31.48,0.37,106,30.04,276396,,pointer
+Pointer_Ex4,-g --gpdr-smi,2,TIMEOUT,,31.72,0.37,106,30.04,278392,,pointer
+Pointer_Ex4,-g --gpdr-smi,3,TIMEOUT,,31.8,0.38,107,30.04,284212,,pointer
+Pointer_Ex4,-g --gpdr-smi,4,TIMEOUT,,31.4,0.41,105,30.04,277556,,pointer
+Pointer_Ex4,-gB --gpdr-smi,0,Proof,6,1.25,0.14,141,00.99,121940,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi,1,Proof,6,1.3,0.16,131,01.11,121448,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi,2,Proof,6,1.33,0.15,136,01.08,122696,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi,3,Proof,6,1.3,0.14,141,01.02,121008,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi,4,Proof,6,1.35,0.13,136,01.08,122264,True Positive,pointer
+Pointer_Ex4,-g --gpdr-ats,0,TIMEOUT,,31.19,1.81,109,30.04,288824,,pointer
+Pointer_Ex4,-g --gpdr-ats,1,TIMEOUT,,32.0,1.14,110,30.04,287072,,pointer
+Pointer_Ex4,-g --gpdr-ats,2,TIMEOUT,,31.51,1.19,108,30.03,289100,,pointer
+Pointer_Ex4,-g --gpdr-ats,3,TIMEOUT,,31.27,1.08,107,30.04,281008,,pointer
+Pointer_Ex4,-g --gpdr-ats,4,TIMEOUT,,31.77,1.1,109,30.04,289640,,pointer
+Pointer_Ex4,-gB --gpdr-ats,0,Proof,18,1.56,0.14,147,01.16,130832,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-ats,1,Proof,18,1.61,0.17,146,01.22,131292,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-ats,2,Proof,18,1.58,0.14,152,01.12,129772,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-ats,3,Proof,18,1.57,0.14,142,01.21,129644,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-ats,4,Proof,18,1.69,0.15,137,01.34,130948,True Positive,pointer
+Pointer_Ex4,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,31.89,0.36,107,30.06,280476,,pointer
+Pointer_Ex4,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.3,0.36,108,30.06,281872,,pointer
+Pointer_Ex4,-g --gpdr-smi --gpdr-ats,2,TIMEOUT,,31.44,0.37,105,30.05,282612,,pointer
+Pointer_Ex4,-g --gpdr-smi --gpdr-ats,3,TIMEOUT,,32.88,0.28,110,30.03,282044,,pointer
+Pointer_Ex4,-g --gpdr-smi --gpdr-ats,4,TIMEOUT,,32.88,0.26,110,30.03,277008,,pointer
+Pointer_Ex4,-gB --gpdr-smi --gpdr-ats,0,Proof,21,1.35,0.14,160,00.94,130404,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi --gpdr-ats,1,Proof,21,1.35,0.12,156,00.93,131232,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi --gpdr-ats,2,Proof,21,1.35,0.11,161,00.91,129804,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi --gpdr-ats,3,Proof,21,1.41,0.11,164,00.93,130188,True Positive,pointer
+Pointer_Ex4,-gB --gpdr-smi --gpdr-ats,4,Proof,21,1.4,0.1,166,00.90,131304,True Positive,pointer
+Pointer_Ex5,--warmup,0,,,0.45,0.05,168,00.30,73520,,pointer
+Pointer_Ex5,--warmup,1,,,0.48,0.05,173,00.31,74364,,pointer
+Pointer_Ex5,--warmup,2,,,0.47,0.05,186,00.28,74668,,pointer
+Pointer_Ex5,--warmup,3,,,0.45,0.05,173,00.29,74084,,pointer
+Pointer_Ex5,--warmup,4,,,0.51,0.05,195,00.29,74784,,pointer
+Pointer_Ex5,-b,0,NoResult,101,5.0,0.22,182,02.85,284204,,pointer
+Pointer_Ex5,-b,1,NoResult,101,5.19,0.19,187,02.86,288540,,pointer
+Pointer_Ex5,-b,2,NoResult,101,5.2,0.17,188,02.86,287428,,pointer
+Pointer_Ex5,-b,3,NoResult,101,5.08,0.19,186,02.82,288504,,pointer
+Pointer_Ex5,-b,4,NoResult,101,5.08,0.19,184,02.86,288544,,pointer
+Pointer_Ex5,-k,0,Proof,4,1.01,0.11,169,00.66,124664,True Positive,pointer
+Pointer_Ex5,-k,1,Proof,4,0.97,0.11,165,00.65,125808,True Positive,pointer
+Pointer_Ex5,-k,2,Proof,4,0.97,0.1,167,00.63,124492,True Positive,pointer
+Pointer_Ex5,-k,3,Proof,4,1.04,0.1,178,00.64,124956,True Positive,pointer
+Pointer_Ex5,-k,4,Proof,4,1.03,0.09,173,00.64,125640,True Positive,pointer
+Pointer_Ex5,-bk,0,Proof,5,1.02,0.11,172,00.65,125324,True Positive,pointer
+Pointer_Ex5,-bk,1,Proof,5,1.03,0.1,169,00.67,126012,True Positive,pointer
+Pointer_Ex5,-bk,2,Proof,5,1.02,0.09,165,00.67,124760,True Positive,pointer
+Pointer_Ex5,-bk,3,Proof,5,1.02,0.11,168,00.67,126068,True Positive,pointer
+Pointer_Ex5,-bk,4,Proof,5,1.03,0.12,167,00.68,123884,True Positive,pointer
+Pointer_Ex5,-p,0,Proof,1,0.89,0.09,168,00.58,119884,True Positive,pointer
+Pointer_Ex5,-p,1,Proof,1,0.93,0.09,170,00.60,119324,True Positive,pointer
+Pointer_Ex5,-p,2,Proof,1,0.92,0.11,170,00.61,119716,True Positive,pointer
+Pointer_Ex5,-p,3,Proof,1,0.89,0.09,168,00.58,118324,True Positive,pointer
+Pointer_Ex5,-p,4,Proof,1,0.88,0.1,163,00.60,120052,True Positive,pointer
+Pointer_Ex5,-g,0,TIMEOUT,,32.77,1.26,113,30.04,306236,,pointer
+Pointer_Ex5,-g,1,TIMEOUT,,32.46,1.29,112,30.05,291112,,pointer
+Pointer_Ex5,-g,2,TIMEOUT,,32.82,1.28,113,30.05,293096,,pointer
+Pointer_Ex5,-g,3,TIMEOUT,,33.12,1.29,114,30.07,299536,,pointer
+Pointer_Ex5,-g,4,TIMEOUT,,33.05,1.2,114,30.04,298704,,pointer
+Pointer_Ex5,-gB,0,Proof,39,1.85,0.15,168,01.18,139996,True Positive,pointer
+Pointer_Ex5,-gB,1,Proof,39,1.85,0.14,171,01.16,139284,True Positive,pointer
+Pointer_Ex5,-gB,2,Proof,39,1.84,0.14,166,01.19,139164,True Positive,pointer
+Pointer_Ex5,-gB,3,Proof,39,1.86,0.13,166,01.20,138876,True Positive,pointer
+Pointer_Ex5,-gB,4,Proof,39,1.89,0.15,170,01.19,139756,True Positive,pointer
+Pointer_Ex5,-g --gpdr-smi,0,TIMEOUT,,33.07,0.25,110,30.05,281540,,pointer
+Pointer_Ex5,-g --gpdr-smi,1,TIMEOUT,,32.8,0.27,110,30.05,282692,,pointer
+Pointer_Ex5,-g --gpdr-smi,2,TIMEOUT,,32.7,0.27,109,30.06,283060,,pointer
+Pointer_Ex5,-g --gpdr-smi,3,TIMEOUT,,32.93,0.27,110,30.05,279752,,pointer
+Pointer_Ex5,-g --gpdr-smi,4,TIMEOUT,,32.75,0.27,109,30.05,278856,,pointer
+Pointer_Ex5,-gB --gpdr-smi,0,Proof,19,1.32,0.1,161,00.88,138508,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-smi,1,Proof,19,1.32,0.13,165,00.88,138332,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-smi,2,Proof,19,1.33,0.15,168,00.87,137484,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-smi,3,Proof,19,1.31,0.11,164,00.87,136640,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-smi,4,Proof,19,1.34,0.12,166,00.87,137912,True Positive,pointer
+Pointer_Ex5,-g --gpdr-ats,0,TIMEOUT,,32.96,1.3,113,30.06,296340,,pointer
+Pointer_Ex5,-g --gpdr-ats,1,TIMEOUT,,32.54,1.17,112,30.02,284768,,pointer
+Pointer_Ex5,-g --gpdr-ats,2,TIMEOUT,,32.61,1.24,112,30.03,299888,,pointer
+Pointer_Ex5,-g --gpdr-ats,3,TIMEOUT,,33.07,1.21,114,30.04,298796,,pointer
+Pointer_Ex5,-g --gpdr-ats,4,TIMEOUT,,32.98,1.27,113,30.06,294040,,pointer
+Pointer_Ex5,-gB --gpdr-ats,0,Proof,70,3.19,0.17,196,01.71,167732,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-ats,1,Proof,70,3.34,0.17,206,01.70,177960,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-ats,2,Proof,70,3.1,0.18,194,01.69,173616,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-ats,3,Proof,70,3.16,0.16,195,01.70,173436,True Positive,pointer
+Pointer_Ex5,-gB --gpdr-ats,4,Proof,70,3.2,0.15,198,01.69,161072,True Positive,pointer
+Pointer_Ex5,-g --gpdr-smi --gpdr-ats,0,TIMEOUT,,33.3,0.27,111,30.03,284200,,pointer
+Pointer_Ex5,-g --gpdr-smi --gpdr-ats,1,TIMEOUT,,32.84,0.3,110,30.03,281264,,pointer
