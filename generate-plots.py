@@ -1,3 +1,30 @@
+# Get relevant numbers from ground truth data
+with open("examples-list-all.txt", "r") as f:
+    lines = f.readlines()
+    total_examples = 0
+    safe_examples = 0
+    unsafe_examples = 0
+    pointer_examples = 0
+    array_examples = 0
+    array_or_pointer_examples = 0
+    for line in lines:
+        total_examples += 1
+        safe = line.strip().split(" ")[2].lower()
+        if safe == "true":
+            safe_examples += 1
+        elif safe == "false":
+            unsafe_examples += 1
+        split = line.strip().split(" ")
+        tags = split[3].split(",") if len(split) > 3 else []
+        if "array" in tags:
+            array_examples += 1
+        if "pointer" in tags:
+            pointer_examples += 1
+        if "array" in tags or "pointer" in tags:
+            array_or_pointer_examples += 1
+
+print(f"Total examples: {total_examples}, Safe: {safe_examples}, Unsafe: {unsafe_examples}, Arrays: {array_examples}, Pointers: {pointer_examples}, Arrays or Pointers: {array_or_pointer_examples}")
+
 # Read results and aggregate them
 import csv
 
@@ -31,6 +58,7 @@ with open("benchmark-results.csv", "r") as csvfile:
             or block[0]['Classification'] != block[4]['Classification']:
             print(f"Warning: Inconsistent classification for {example_name} in mode {mode}")
         classification = block[0]['Classification']
+        num_smt_calls = [int(row['NumberOfSMTCalls']) if row['NumberOfSMTCalls'].isnumeric() else 0 for row in block]
         aggregated_results[(f"{i // repititions}: {example_name}", mode)] = {
             'Safe': safe,
             'AvgUserTimeSec': sum(user_times) / repititions,
@@ -38,6 +66,7 @@ with open("benchmark-results.csv", "r") as csvfile:
             'AvgCPUPercent': sum(cpu_percents) / repititions,
             'AvgElapsedTime': sum(elapsed_times) / repititions,
             'AvgMaxMemoryKB': sum(max_memories) / repititions,
+            'AvgNumSMTCalls': sum(num_smt_calls) / repititions,
             'Classification': classification,
             'Tags': tags
         }
@@ -52,11 +81,11 @@ counts = {
     "GPDR": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR (B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR (ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (ATS + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (ATS+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR (SMI)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI + ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI + ATS + B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},       
+    "GPDR (SMI+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI+ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "GPDR (SMI+ATS+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},       
 }
 approach_mapping = {
     "-b": "BMC",
@@ -66,17 +95,21 @@ approach_mapping = {
     "-g": "GPDR",
     "-gB": "GPDR (B-Eval)",
     "-g --gpdr-ats": "GPDR (ATS)",
-    "-gB --gpdr-ats": "GPDR (ATS + B-Eval)",
+    "-gB --gpdr-ats": "GPDR (ATS+B-Eval)",
     "-g --gpdr-smi": "GPDR (SMI)",
-    "-gB --gpdr-smi": "GPDR (SMI + B-Eval)",
-    "-g --gpdr-smi --gpdr-ats": "GPDR (SMI + ATS)",
-    "-gB --gpdr-smi --gpdr-ats": "GPDR (SMI + ATS + B-Eval)",       
+    "-gB --gpdr-smi": "GPDR (SMI+B-Eval)",
+    "-g --gpdr-smi --gpdr-ats": "GPDR (SMI+ATS)",
+    "-gB --gpdr-smi --gpdr-ats": "GPDR (SMI+ATS+B-Eval)",       
 }
 classification_labels = {
     "True Positive": "TP",
+    'True\xa0Positive': "TP",
     "True Negative": "TN",
+    'True\xa0Negative': "TN",
     "False Positive": "FP",
+    'False\xa0Positive': "FP",
     "False Negative": "FN",
+    'False\xa0Negative': "FN",
 }
 for (example_name, mode) in aggregated_results:
     if mode == "--warmup":
@@ -90,108 +123,104 @@ for (example_name, mode) in aggregated_results:
         elif aggregated_results[(example_name, mode)]['Safe'] == "NoResult":
             counts[approach_mapping[mode]]["NoResult"] += 1
         else:
-            print(f"Warning: Unknown classification for {example_name} in mode {mode}")
+            # print(f"Warning: Unknown classification for {example_name} in mode {mode}. Interpret as Crash.")
+            counts[approach_mapping[mode]]["Crash"] += 1
     elif aggregated_results[(example_name, mode)]['Classification'] in classification_labels:
         label = classification_labels[aggregated_results[(example_name, mode)]['Classification']]
         counts[approach_mapping[mode]][label] += 1
+        #if mode == "-p" and label == "FP":
+        #    print(f"Hoare False Positive: {example_name}")
     else:
         print(f"Warning: Unknown classification for {example_name} in mode {mode}")
 
 print(counts)
-exit(0)
-
 
 # Plot -----------------------------------------------------------------------
 import matplotlib.pyplot as plt
 import numpy as np
+import matplot2tikz
 
+def results_by_approach_for_metric(aggregated_results, metric):
+    bmc_results = {}
+    kind_results = {}
+    bmc_kind_results = {}
+    hoare_results = {}
+    gpdr_results = {}
+    gpdr_boolEval_results = {}
+    gpdr_ats_results = {}
+    gpdr_ats_boolEval_results = {}
+    gpdr_smi_results = {}
+    gpdr_smi_boolEval_results = {}
+    gpdr_smi_ats_results = {}
+    gpdr_smi_ats_boolEval_results = {}
+    for (example_name, mode) in aggregated_results:
+        if not aggregated_results[(example_name, mode)]['Classification'].startswith("True"):
+            continue
+        if mode == "-b":
+            bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-k":
+            kind_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == '-p':
+            hoare_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-bk":
+            bmc_kind_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-g":
+            gpdr_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-gB":
+            gpdr_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-g --gpdr-ats":
+            gpdr_ats_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-gB --gpdr-ats":
+            gpdr_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-g --gpdr-smi":
+            gpdr_smi_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-gB --gpdr-smi":
+            gpdr_smi_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-g --gpdr-smi --gpdr-ats":
+            gpdr_smi_ats_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-gB --gpdr-smi --gpdr-ats":
+            gpdr_smi_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
 
-# Wall clock time for number of examples run
+    results = {}
+    results["bmc"] = sorted(bmc_results.values())
+    results["kind"] = sorted(kind_results.values())
+    results["bmc_kind"] = sorted(bmc_kind_results.values())
+    results["hoare"] = sorted(hoare_results.values())
+
+    results["gpdr"] = sorted(gpdr_results.values())
+    results["gpdr_boolEval"] = sorted(gpdr_boolEval_results.values())
+    results["gpdr_ats"] = sorted(gpdr_ats_results.values())
+    results["gpdr_ats_boolEval"] = sorted(gpdr_ats_boolEval_results.values())
+    results["gpdr_smi"] = sorted(gpdr_smi_results.values())
+    results["gpdr_smi_boolEval"] = sorted(gpdr_smi_boolEval_results.values())
+    results["gpdr_smi_ats"] = sorted(gpdr_smi_ats_results.values())
+    results["gpdr_smi_ats_boolEval"] = sorted(gpdr_smi_ats_boolEval_results.values())
+    
+    return results
+
+# Wall clock time for number of examples run ---------------------------------------------------------
 plt.figure(figsize=(8, 6))
 plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
 
-bmc_results = {}
-kind_results = {}
-bmc_kind_results = {}
-hoare_results = {}
-gpdr_results = {}
-gpdr_boolEval_results = {}
-gpdr_ats_results = {}
-gpdr_ats_boolEval_results = {}
-gpdr_smi_results = {}
-gpdr_smi_boolEval_results = {}
-gpdr_smi_ats_results = {}
-gpdr_smi_ats_boolEval_results = {}
-for (example_name, mode) in aggregated_results:
-    if not aggregated_results[(example_name, mode)]['Classification'].startswith("True"):
-        continue
-    if mode == "-b":
-        bmc_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-k":
-        kind_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == '-p':
-        hoare_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-bk":
-        bmc_kind_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-g":
-        gpdr_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-gB":
-        gpdr_boolEval_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-g --gpdr-ats":
-        gpdr_ats_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-gB --gpdr-ats":
-        gpdr_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-g --gpdr-smi":
-        gpdr_smi_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-gB --gpdr-smi":
-        gpdr_smi_boolEval_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-g --gpdr-smi --gpdr-ats":
-        gpdr_smi_ats_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-    if mode == "-gB --gpdr-smi --gpdr-ats":
-        gpdr_smi_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)]['AvgUserTimeSec']
-
-
-# for (example_name, mode) in aggregated_results:
-#     if aggregated_results[(example_name, mode)]['Classification'].startswith("True"):
-#         continue
-#     if mode == "-k":
-#         print("UNSAFE:", example_name, aggregated_results[(example_name, mode)]['AvgUserTimeSec'])
-
-bmc = sorted(bmc_results.values())
-kind = sorted(kind_results.values())
-bmc_kind = sorted(bmc_kind_results.values())
-hoare = sorted(hoare_results.values())
-
-gpdr = sorted(gpdr_results.values())
-gpdr_boolEval = sorted(gpdr_boolEval_results.values())
-gpdr_ats = sorted(gpdr_ats_results.values())
-gpdr_ats_boolEval = sorted(gpdr_ats_boolEval_results.values())
-gpdr_smi = sorted(gpdr_smi_results.values())
-gpdr_smi_boolEval = sorted(gpdr_smi_boolEval_results.values())
-gpdr_smi_ats = sorted(gpdr_smi_ats_results.values())
-gpdr_smi_ats_boolEval = sorted(gpdr_smi_ats_boolEval_results.values())
-
-plt.plot(bmc, label="BMC")
-plt.plot(kind, label="Kind")
-plt.plot(bmc_kind, label="BMC + Kind")
-plt.plot(hoare, label="Hoare")
-plt.plot(gpdr, label="GPDR")
-plt.plot(gpdr_boolEval, label="GPDR (B-Eval)")
-plt.plot(gpdr_ats, label="GPDR (ATS)")
-plt.plot(gpdr_ats_boolEval, label="GPDR (ATS + B-Eval)")
-plt.plot(gpdr_smi, label="GPDR (SMI)")
-plt.plot(gpdr_smi_boolEval, label="GPDR (SMI + B-Eval)")
-plt.plot(gpdr_smi_ats, label="GPDR (SMI + ATS)")
-plt.plot(gpdr_smi_ats_boolEval, label="GPDR (SMI + ATS + B-Eval)")
-
-
-# Formatting -----------------------------------------------------------------
+results = results_by_approach_for_metric(aggregated_results, "AvgElapsedTime")
+plt.plot(results["bmc"], label="BMC")
+plt.plot(results["kind"], label="Kind")
+plt.plot(results["bmc_kind"], label="BMC + Kind")
+plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["gpdr"], label="GPDR")
+plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
+plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
+plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
+plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
+plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
+plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
+plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([1, 5, 10, 50], [1, 5, 10, 50])
 
-plt.xlabel("\# of Examples")
+plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
 
 #plt.title("Tool Performance by Number of Examples")
@@ -201,37 +230,100 @@ plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
           fancybox=True, ncol=4, fontsize=9)
 
 plt.tight_layout()
-plt.savefig("plots/wall_clock_time.png", dpi=300)
+plt.savefig("../ma-ImpCompVerificationMethods/plots/wall_clock_time.png", dpi=300)
 #plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/wall_clock_time.tex")
 
+# Number of SMT Calls for number of examples run ---------------------------------------------------------
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
 
-# Relevant numbers:
-# Total examples = 115
-# How many examples are (ground truth) safe/unsafe? -> Can be solved by Hoare / BMC?
-# How many examples do use arrays / pointers
+results = results_by_approach_for_metric(aggregated_results, "AvgNumSMTCalls")
+plt.plot(results["bmc"], label="BMC")
+plt.plot(results["kind"], label="Kind")
+plt.plot(results["bmc_kind"], label="BMC + Kind")
+plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["gpdr"], label="GPDR")
+plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
+plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
+plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
+plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
+plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
+plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
+plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
 
-# Build examples that show why (how and when) GPDR with SMI / ATS / Boolean Evaluation works / does not work. 
+plt.yscale("log")
+plt.grid(True, which="major", linestyle="--", alpha=0.5)
+plt.yticks([1, 5, 10, 50, 100, 500, 1000], [1, 5, 10, 50, 100, 500, 1000])
 
-# Plots
-# UserTime for number of examples run
-# NumSMTCalls for number of examples run (?)
-# MaxMemory for number of examples run
+plt.xlabel("# of Examples")
+plt.ylabel("Number of SMT Calls")
 
-# Tables
-# Classification (TP, TN, FP, FN) for each tool + Precision, Recall, F1-score + Timeouts / Neither
-# Appendix: All results in a big table
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
+          fancybox=True, ncol=4, fontsize=9)
 
-import matplot2tikz
-matplot2tikz.save("plots/wall_clock_time.tex")
+plt.tight_layout()
+plt.savefig("../ma-ImpCompVerificationMethods/plots/num_smt_calls.png", dpi=300)
+#plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/num_smt_calls.tex")
 
+# Memory usage for number of examples run ---------------------------------------------------------
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
 
+results = results_by_approach_for_metric(aggregated_results, "AvgMaxMemoryKB")
+plt.plot(results["bmc"], label="BMC")
+plt.plot(results["kind"], label="Kind")
+plt.plot(results["bmc_kind"], label="BMC + Kind")
+plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["gpdr"], label="GPDR")
+plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
+plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
+plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
+plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
+plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
+plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
+plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
 
-# Tables:
+plt.yscale("log")
+plt.grid(True, which="major", linestyle="--", alpha=0.5)
+plt.yticks([100000, 200000, 300000, 400000, 500000], [100, 200, 300, 400, 500])
 
+plt.xlabel("# of Examples")
+plt.ylabel("Max Memory Usage (MB)")
+
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
+          fancybox=True, ncol=4, fontsize=9)
+
+plt.tight_layout()
+plt.savefig("../ma-ImpCompVerificationMethods/plots/max_memory_usage.png", dpi=300)
+#plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/max_memory_usage.tex")
+
+# Tables -----------------------------------------------------------------
+
+# Classification table ---------------------------------------------------------
 from jinja2 import Template
-rows = [("BMC", 1,1,1,1,1,1,1,1,1,1)]
+rows = [(f"\\footnotesize {tool}", counts[tool]['TP'], counts[tool]['TN'], counts[tool]['FP'], counts[tool]['FN'],
+         counts[tool]['NoResult'], counts[tool]['Crash'], counts[tool]['Timeout'],
+         f"{(counts[tool]['TP'] / (counts[tool]['TP'] + counts[tool]['FP']) * 100):.1f}\\%" if (counts[tool]['TP'] + counts[tool]['FP']) > 0 else "N/A",
+         f"{(counts[tool]['TP'] / (counts[tool]['TP'] + counts[tool]['FN']) * 100):.1f}\\%" if (counts[tool]['TP'] + counts[tool]['FN']) > 0 else "N/A",
+         f"{(2 * counts[tool]['TP'] / (2 * counts[tool]['TP'] + counts[tool]['FP'] + counts[tool]['FN'])):.2f}" if (2 * counts[tool]['TP'] + counts[tool]['FP'] + counts[tool]['FN']) > 0 else "N/A"
+        ) for tool in counts]
 
 
-with open("tables/table_template.tex") as f:
+with open("table-templates/table_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/classifications.tex", "w") as out:
     template = Template(f.read())
-    print(template.render(rows=rows))
+    out.write(template.render(rows=rows))
+
+
+# Big results table for Appendix ---------------------------------------------------------
+# TODO: Is this necessary?
+
+
+# TODO: Research more interesting plots for the results

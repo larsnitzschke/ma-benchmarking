@@ -1,6 +1,6 @@
-\begin{tabular}{|l| |l|l|l|l| l|l|l| |l|l|l|}
+\begin{tabular}{|l| |r|r|r|r| r|r|r| |r|r|r|}
 \hline
-Approach & TP & TN & FP & FN & NoResult & Crash & Timeout & Recall & Precision & F1 \\
+Approach & TP & TN & FP & FN & NoR & Cr. & TOut. & Rec. & Prec. & F1 \\
 \hline
 {% for approach, tp, tn, fp, fn, no_result, crash, timeout, recall, precision, f1 in rows %}
 {{ approach }} & {{ tp }} & {{ tn }} & {{ fp }} & {{ fn }} & {{ no_result }} & {{ crash }} & {{ timeout }} & {{ recall }} & {{ precision }} & {{ f1 }} \\
