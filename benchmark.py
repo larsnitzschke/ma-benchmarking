@@ -78,7 +78,7 @@ with open(f"examples-list.txt", "r") as file:
 
 # Benchmarking: Warm-up, BMC, k-induction, BMC+k-ind, WPC-Proof, GPDR, GPDR with boolean evaluation, GPDR with ArrayTransitionSystems, GPDR with SubModelInterpolation
 #modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
-modes = ["--warmup", "-b", "-k", "-k --kInd-inv", "-bk", "-bk  --kInd-inv", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
+modes = ["--warmup", "-b", "-k", "-k --kInd-inv", "-bk", "-bk --kInd-inv", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
 limit_examples = None  # Set to an integer to limit number of examples for testing
 repititions = 5  # Number of repititions per example per mode
 timeout = 30 # Timeout in seconds per run
@@ -116,6 +116,10 @@ for example in examples[:limit_examples]:
                 break
 
             metrics = extract_metrics(stdout, stderr)
+            if metrics["verification_result"] == "-":
+                print(stdout)
+                print(stderr)
+                exit(1)
             if benchmarking_process.returncode == 124:  # Timeout return code 124
                 print(f"Timeout expired for example: {example.name} with mode: {mode}")
                 metrics["verification_result"] = "TIMEOUT"
