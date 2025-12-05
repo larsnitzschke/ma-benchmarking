@@ -116,10 +116,6 @@ for example in examples[:limit_examples]:
                 break
 
             metrics = extract_metrics(stdout, stderr)
-            if metrics["verification_result"] == "-":
-                print(stdout)
-                print(stderr)
-                exit(1)
             if benchmarking_process.returncode == 124:  # Timeout return code 124
                 print(f"Timeout expired for example: {example.name} with mode: {mode}")
                 metrics["verification_result"] = "TIMEOUT"
