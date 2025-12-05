@@ -1,0 +1,10 @@
+\begin{tabular}{|l| |r|r|r|r| |r|r|r|r| |r|r|r|}
+\hline
+Approach & \multicolumn{4}{c}{Safe} & \multicolumn{4}{c}{Unsafe} & & & \\
+         & TP & TN & FP & FN        & TP & TN & FP & FN          & Rec. & Prec. & F1 \\
+\hline
+{% for approach, tps, tns, fps, fns, tpu, tnu, fpu, fnu, recall, precision, f1 in rows %}
+{{ approach }} & {{ tps }} & {{ tns }} & {{ fps }} & {{ fns }} & {{ tpu }} & {{ tnu }} & {{ fpu }} & {{ fnu }} & {{ recall }} & {{ precision }} & {{ f1 }} \\
+{% endfor %}
+\hline
+\end{tabular}

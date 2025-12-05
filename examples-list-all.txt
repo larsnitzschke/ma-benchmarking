@@ -27,7 +27,7 @@ if/ex2.w If_Ex2 true
 pointer/ex1.w Pointer_Ex1 true pointer
 pointer/ex2.w Pointer_Ex2 true pointer
 pointer/ex3.w Pointer_Ex3 true pointer
-pointer/ex4.w Pointer_Ex4 false pointer
+pointer/ex4.w Pointer_Ex4 true pointer
 pointer/ex5.w Pointer_Ex5 true pointer
 sv-benchmarks-java/algorithms/BellmanFord01.w SvBenchmarksJava_Algorithms_BellmanFord01 true array,loop,havoc,assert
 sv-benchmarks-java/algorithms/insertionsort.w SvBenchmarksJava_Algorithms_Insertionsort true array,loop
@@ -105,6 +105,8 @@ sv-benchmarks-java/jpf-regression/ExSymExeTestAssigment_true.w SvBenchmarksJava_
 swap/ex1.w Swap_Ex1 true swap
 swap/ex2.w Swap_Ex2 false swap
 thesis-examples/bmc-example.w ThesisExamples_BmcExample false loop
+thesis-examples/k-ind.w ThesisExamples_KIndExample true loop
+thesis-examples/while-star-ex.w ThesisExamples_WhileStarExample true loop,havoc
 while/ackermann.w While_Ackermann true array,loop
 while/collatz.w While_Collatz true loop,havoc
 while/ex1.w While_Ex1 true loop,invariant

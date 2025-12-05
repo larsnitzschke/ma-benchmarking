@@ -28,13 +28,17 @@ def extract_metrics(stdout, stderr) -> dict:
     if match:
         num_smt_calls = match.group(1)
     verification_result = None
-    match = re.search(r"# Safe:\s*(\w+)", stdout)
-    if match:
-        verification_result = match.group(1)
+    safe_match = re.search(r"# Safe:\s*(\w+)", stdout)
+    oom_match = re.search(r"OutOfMemoryError", stderr)
+    error_match = re.search(r"Error", stdout)
+    if safe_match:
+        verification_result = safe_match.group(1)
+    elif oom_match:
+        verification_result = "OUTOFMEMORY"
+    elif error_match:
+        verification_result = "ERROR"
     else:
-        match = re.search(r"OutOfMemoryError", stderr)
-        if match:
-            verification_result = "OUTOFMEMORY"
+        verification_result = "-"        
 
     user_time = re.search(r"User time \(seconds\):\s*([\d.]+)", stderr)
     system_time = re.search(r"System time \(seconds\):\s*([\d.]+)", stderr)
@@ -68,12 +72,13 @@ with open(f"examples-list.txt", "r") as file:
     for line in file:
         line = line.strip()
         split = line.split(" ")
-        expeted_safety = split[2].lower() == "true"
+        expected_safety = split[2].lower() == "true"
         tags = split[3].split(",") if len(split) > 3 else []
-        examples.append(Example(f"{path_to_examples}/{split[0]}", split[1], expeted_safety, tags))
+        examples.append(Example(f"{path_to_examples}/{split[0]}", f"{split[1]}-{expected_safety}", expected_safety, tags))
 
 # Benchmarking: Warm-up, BMC, k-induction, BMC+k-ind, WPC-Proof, GPDR, GPDR with boolean evaluation, GPDR with ArrayTransitionSystems, GPDR with SubModelInterpolation
 modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
+# modes = ["--warmup", "-b", "-k", "-k --kInd-inv", "-bk", "-bk  --kInd-inv", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
 limit_examples = None  # Set to an integer to limit number of examples for testing
 repititions = 5  # Number of repititions per example per mode
 timeout = 30 # Timeout in seconds per run
@@ -82,7 +87,7 @@ timeout = 30 # Timeout in seconds per run
 csv_filename = f"benchmark_results_{datetime.now().strftime('%Y%m%d-%H%M%S')}.csv"
 with open(csv_filename, "a", newline="") as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["Example", "Mode", "Run Number", "Safe", "NumberOfSMTCalls",
+    writer.writerow(["Example", "Mode", "Run Number", "Ground Truth", "Safe", "NumberOfSMTCalls",
                      "UserTimeSec", "SystemTimeSec", "CPUPercent",
                      "ElapsedTime", "MaxMemoryKB", "Classification", "Tags"])
 
@@ -115,7 +120,7 @@ for example in examples[:limit_examples]:
                 print(f"Timeout expired for example: {example.name} with mode: {mode}")
                 metrics["verification_result"] = "TIMEOUT"
 
-            result_line = [example.name, mode, run_number,
+            result_line = [example.name, mode, run_number, example.expected_safety,
                             metrics["verification_result"], metrics["num_smt_calls"],
                             metrics["user_time_sec"], metrics["system_time_sec"],
                             metrics["cpu_percent"], metrics["elapsed_time"],

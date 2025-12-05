@@ -36,7 +36,7 @@ with open("benchmark-results.csv", "r") as csvfile:
     i = 0
     while i < len(results):
         block = results[i:i+repititions]
-        example_name = block[0]['Example']            
+        example_name = block[0]['Example']
         mode = block[0]['Mode']
         if block[0]['Safe'] != block[1]['Safe'] \
             or block[0]['Safe'] != block[2]['Safe'] \
@@ -58,6 +58,7 @@ with open("benchmark-results.csv", "r") as csvfile:
             or block[0]['Classification'] != block[4]['Classification']:
             print(f"Warning: Inconsistent classification for {example_name} in mode {mode}")
         classification = block[0]['Classification']
+        ground_truth = block[0]['Ground Truth']
         num_smt_calls = [int(row['NumberOfSMTCalls']) if row['NumberOfSMTCalls'].isnumeric() else 0 for row in block]
         aggregated_results[(f"{i // repititions}: {example_name}", mode)] = {
             'Safe': safe,
@@ -68,24 +69,25 @@ with open("benchmark-results.csv", "r") as csvfile:
             'AvgMaxMemoryKB': sum(max_memories) / repititions,
             'AvgNumSMTCalls': sum(num_smt_calls) / repititions,
             'Classification': classification,
+            'Ground Truth': ground_truth,
             'Tags': tags
         }
         i += repititions
 
 # Calculate Classification metrics
 counts = {
-    "BMC": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "KInd": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "BMC+KInd": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "WPC": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (ATS+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI+ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "GPDR (SMI+ATS+B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},       
+    "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
 }
 approach_mapping = {
     "-b": "BMC",
@@ -111,29 +113,56 @@ classification_labels = {
     "False Negative": "FN",
     'False\xa0Negative': "FN",
 }
+
+
 for (example_name, mode) in aggregated_results:
     if mode == "--warmup":
         continue
     if aggregated_results[(example_name, mode)]['Classification'] == "":
-        if aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
-            counts[approach_mapping[mode]]["Timeout"] += 1
-        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash":
+        if aggregated_results[(example_name, mode)]['Safe'] == "Proof":
+            counts[approach_mapping[mode]]["Proof"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
+            counts[approach_mapping[mode]]["Counterexample"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
             counts[approach_mapping[mode]]["Crash"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "NoResult":
             counts[approach_mapping[mode]]["NoResult"] += 1
+        
+        elif aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
+            counts[approach_mapping[mode]]["Timeout"] += 1
         else:
             # print(f"Warning: Unknown classification for {example_name} in mode {mode}. Interpret as Crash.")
             counts[approach_mapping[mode]]["Crash"] += 1
-    elif aggregated_results[(example_name, mode)]['Classification'] in classification_labels:
-        label = classification_labels[aggregated_results[(example_name, mode)]['Classification']]
-        counts[approach_mapping[mode]][label] += 1
-        #if mode == "-p" and label == "FP":
-        #    print(f"WPC False Positive: {example_name}")
+    elif aggregated_results[(example_name, mode)]['Ground Truth'] == "True":
+        if aggregated_results[(example_name, mode)]['Safe'] == "Proof":
+            counts[approach_mapping[mode]]["TPsafe"] += 1
+            counts[approach_mapping[mode]]["TNunsafe"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
+            counts[approach_mapping[mode]]["FNsafe"] += 1
+            counts[approach_mapping[mode]]["FPunsafe"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "NoResult" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+            counts[approach_mapping[mode]]["FNsafe"] += 1
+    elif aggregated_results[(example_name, mode)]['Ground Truth'] == "False":
+        if aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
+            counts[approach_mapping[mode]]["TNsafe"] += 1
+            counts[approach_mapping[mode]]["TPunsafe"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Proof":
+            counts[approach_mapping[mode]]["FPsafe"] += 1
+            counts[approach_mapping[mode]]["FNunsafe"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "NoResult" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
+            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+            counts[approach_mapping[mode]]["FNunsafe"] += 1
     else:
         print(f"Warning: Unknown classification for {example_name} in mode {mode}")
-
-print(counts)
 
 # Plot -----------------------------------------------------------------------
 import matplotlib.pyplot as plt
@@ -309,11 +338,11 @@ matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/max_memory_usage.tex")
 
 # Classification table ---------------------------------------------------------
 from jinja2 import Template
-rows = [(f"\\footnotesize {tool}", counts[tool]['TP'], counts[tool]['TN'], counts[tool]['FP'], counts[tool]['FN'],
+rows = [(f"\\footnotesize {tool}", counts[tool]['TPsafe'], counts[tool]['TPunsafe'], counts[tool]['FPsafe'], counts[tool]['FPunsafe'],
          counts[tool]['NoResult'], counts[tool]['Crash'], counts[tool]['Timeout'],
-         f"{(counts[tool]['TP'] / (counts[tool]['TP'] + counts[tool]['FP']) * 100):.1f}\\%" if (counts[tool]['TP'] + counts[tool]['FP']) > 0 else "N/A",
-         f"{(counts[tool]['TP'] / (counts[tool]['TP'] + counts[tool]['FN']) * 100):.1f}\\%" if (counts[tool]['TP'] + counts[tool]['FN']) > 0 else "N/A",
-         f"{(2 * counts[tool]['TP'] / (2 * counts[tool]['TP'] + counts[tool]['FP'] + counts[tool]['FN'])):.2f}" if (2 * counts[tool]['TP'] + counts[tool]['FP'] + counts[tool]['FN']) > 0 else "N/A"
+         f"{(counts[tool]['TPsafe'] / (counts[tool]['TPsafe'] + counts[tool]['FPsafe']) * 100):.1f}\\%" if (counts[tool]['TPsafe'] + counts[tool]['FPsafe']) > 0 else "N/A",
+         f"{(counts[tool]['TPsafe'] / (counts[tool]['TPsafe'] + counts[tool]['FPunsafe']) * 100):.1f}\\%" if (counts[tool]['TPsafe'] + counts[tool]['FPunsafe']) > 0 else "N/A",
+         f"{(2 * counts[tool]['TPsafe'] / (2 * counts[tool]['TPsafe'] + counts[tool]['FPsafe'] + counts[tool]['FPunsafe'])):.2f}" if (2 * counts[tool]['TPsafe'] + counts[tool]['FPsafe'] + counts[tool]['FPunsafe']) > 0 else "N/A"
         ) for tool in counts]
 
 
@@ -321,6 +350,22 @@ with open("table-templates/table_template.tex") as f, open("../ma-ImpCompVerific
     template = Template(f.read())
     out.write(template.render(rows=rows))
 
+rows = [(f"\\footnotesize {tool}", counts[tool]['Proof'], counts[tool]['Counterexample'],
+         counts[tool]['NoResult'], counts[tool]['Crash'], counts[tool]['Timeout']
+        ) for tool in counts]
+
+with open("table-templates/results_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/results.tex", "w") as out:
+    template = Template(f.read())
+    out.write(template.render(rows=rows))
+
+rows = [(f"\\footnotesize {tool}", counts[tool]['TPsafe'], counts[tool]['TNsafe'], counts[tool]['FPsafe'], counts[tool]['FNsafe'],
+        counts[tool]['TPunsafe'], counts[tool]['TNunsafe'], counts[tool]['FPunsafe'], counts[tool]['FNunsafe'],
+        0,0,0 # TODO: Rec, Prec, F1
+       ) for tool in counts]
+
+with open("table-templates/classification_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/detailed_classifications.tex", "w") as out:
+    template = Template(f.read())
+    out.write(template.render(rows=rows))
 
 # Big results table for Appendix ---------------------------------------------------------
 # TODO: Is this necessary?
