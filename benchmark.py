@@ -77,8 +77,8 @@ with open(f"examples-list.txt", "r") as file:
         examples.append(Example(f"{path_to_examples}/{split[0]}", f"{split[1]}-{expected_safety}", expected_safety, tags))
 
 # Benchmarking: Warm-up, BMC, k-induction, BMC+k-ind, WPC-Proof, GPDR, GPDR with boolean evaluation, GPDR with ArrayTransitionSystems, GPDR with SubModelInterpolation
-modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
-# modes = ["--warmup", "-b", "-k", "-k --kInd-inv", "-bk", "-bk  --kInd-inv", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
+#modes = ["--warmup", "-b", "-k", "-bk", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
+modes = ["--warmup", "-b", "-k", "-k --kInd-inv", "-bk", "-bk  --kInd-inv", "-p", "-g", "-gB", "-g --gpdr-smi", "-gB --gpdr-smi", "-g --gpdr-ats", "-gB --gpdr-ats", "-g --gpdr-smi --gpdr-ats", "-gB --gpdr-smi --gpdr-ats"]
 limit_examples = None  # Set to an integer to limit number of examples for testing
 repititions = 5  # Number of repititions per example per mode
 timeout = 30 # Timeout in seconds per run
