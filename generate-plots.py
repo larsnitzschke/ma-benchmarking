@@ -75,9 +75,9 @@ with open("benchmark-results.csv", "r") as csvfile:
 # Calculate Classification metrics
 counts = {
     "BMC": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "Kind": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "BMC+Kind": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
-    "Hoare": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "KInd": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "BMC+KInd": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
+    "WPC": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR (B-Eval)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
     "GPDR (ATS)": {"TP":0, "TN":0, "FP":0, "FN":0, "NoResult":0, "Crash":0, "Timeout":0},
@@ -89,9 +89,9 @@ counts = {
 }
 approach_mapping = {
     "-b": "BMC",
-    "-k": "Kind",
-    "-bk": "BMC+Kind",
-    "-p": "Hoare",
+    "-k": "KInd",
+    "-bk": "BMC+KInd",
+    "-p": "WPC",
     "-g": "GPDR",
     "-gB": "GPDR (B-Eval)",
     "-g --gpdr-ats": "GPDR (ATS)",
@@ -129,7 +129,7 @@ for (example_name, mode) in aggregated_results:
         label = classification_labels[aggregated_results[(example_name, mode)]['Classification']]
         counts[approach_mapping[mode]][label] += 1
         #if mode == "-p" and label == "FP":
-        #    print(f"Hoare False Positive: {example_name}")
+        #    print(f"WPC False Positive: {example_name}")
     else:
         print(f"Warning: Unknown classification for {example_name} in mode {mode}")
 
@@ -142,9 +142,9 @@ import matplot2tikz
 
 def results_by_approach_for_metric(aggregated_results, metric):
     bmc_results = {}
-    kind_results = {}
-    bmc_kind_results = {}
-    hoare_results = {}
+    kInd_results = {}
+    bmc_kInd_results = {}
+    wpc_results = {}
     gpdr_results = {}
     gpdr_boolEval_results = {}
     gpdr_ats_results = {}
@@ -159,11 +159,11 @@ def results_by_approach_for_metric(aggregated_results, metric):
         if mode == "-b":
             bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-k":
-            kind_results[example_name] = aggregated_results[(example_name, mode)][metric]
+            kInd_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == '-p':
-            hoare_results[example_name] = aggregated_results[(example_name, mode)][metric]
+            wpc_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-bk":
-            bmc_kind_results[example_name] = aggregated_results[(example_name, mode)][metric]
+            bmc_kInd_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-g":
             gpdr_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-gB":
@@ -183,9 +183,9 @@ def results_by_approach_for_metric(aggregated_results, metric):
 
     results = {}
     results["bmc"] = sorted(bmc_results.values())
-    results["kind"] = sorted(kind_results.values())
-    results["bmc_kind"] = sorted(bmc_kind_results.values())
-    results["hoare"] = sorted(hoare_results.values())
+    results["kInd"] = sorted(kInd_results.values())
+    results["bmc_kInd"] = sorted(bmc_kInd_results.values())
+    results["wpc"] = sorted(wpc_results.values())
 
     results["gpdr"] = sorted(gpdr_results.values())
     results["gpdr_boolEval"] = sorted(gpdr_boolEval_results.values())
@@ -204,9 +204,9 @@ plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.lin
 
 results = results_by_approach_for_metric(aggregated_results, "AvgElapsedTime")
 plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kind"], label="Kind")
-plt.plot(results["bmc_kind"], label="BMC + Kind")
-plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["kInd"], label="KInd")
+plt.plot(results["bmc_kInd"], label="BMC + KInd")
+plt.plot(results["wpc"], label="WPC")
 plt.plot(results["gpdr"], label="GPDR")
 plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
 plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
@@ -241,9 +241,9 @@ plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.lin
 
 results = results_by_approach_for_metric(aggregated_results, "AvgNumSMTCalls")
 plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kind"], label="Kind")
-plt.plot(results["bmc_kind"], label="BMC + Kind")
-plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["kInd"], label="KInd")
+plt.plot(results["bmc_kInd"], label="BMC + KInd")
+plt.plot(results["wpc"], label="WPC")
 plt.plot(results["gpdr"], label="GPDR")
 plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
 plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
@@ -276,9 +276,9 @@ plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.lin
 
 results = results_by_approach_for_metric(aggregated_results, "AvgMaxMemoryKB")
 plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kind"], label="Kind")
-plt.plot(results["bmc_kind"], label="BMC + Kind")
-plt.plot(results["hoare"], label="Hoare")
+plt.plot(results["kInd"], label="KInd")
+plt.plot(results["bmc_kInd"], label="BMC + KInd")
+plt.plot(results["wpc"], label="WPC")
 plt.plot(results["gpdr"], label="GPDR")
 plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
 plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
