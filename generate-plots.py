@@ -137,7 +137,7 @@ tool_labels = {
 for (example_name, mode) in aggregated_results:
     if mode == "--warmup":
         continue
-    if aggregated_results[(example_name, mode)]['Classification'] == "":
+    if True: #aggregated_results[(example_name, mode)]['Classification'] == "":
         if aggregated_results[(example_name, mode)]['Safe'] == "Proof":
             counts[approach_mapping[mode]]["Proof"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
@@ -154,7 +154,7 @@ for (example_name, mode) in aggregated_results:
         else:
             # print(f"Warning: Unknown classification for {example_name} in mode {mode}. Interpret as Crash.")
             counts[approach_mapping[mode]]["Crash"] += 1
-    elif aggregated_results[(example_name, mode)]['Ground Truth'] == "True":
+    if aggregated_results[(example_name, mode)]['Ground Truth'] == "True":
         if aggregated_results[(example_name, mode)]['Safe'] == "Proof":
             counts[approach_mapping[mode]]["TPsafe"] += 1
             counts[approach_mapping[mode]]["TNunsafe"] += 1

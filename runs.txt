@@ -4,3 +4,5 @@
 1: benchmark_results_20251128-004111.csv on 28.11.2025 was interrupted by user, ran for a total of 513.95 minutes
 2: benchmark_results_20251128-181115.csv on 28.11.2025 was interrupted by user, ran for a total of 957.17 minutes
 3: benchmark_results_20251129-121614.csv on 29.11.2025 finished, ran for a total of 247.65 minutes
+---
+1: benchmark_results_20251205-174136.csv on 05.12.2025 finished, ran for a total of ~29 hours
