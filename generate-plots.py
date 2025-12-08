@@ -32,10 +32,10 @@ aggregated_results = {}
 repititions = 5
 with open("benchmark-results.csv", "r") as csvfile:
     reader = csv.DictReader(csvfile)
-    results = [row for row in reader]
+    all_results = [row for row in reader]
     i = 0
-    while i < len(results):
-        block = results[i:i+repititions]
+    while i < len(all_results):
+        block = all_results[i:i+repititions]
         example_name = block[0]['Example']
         mode = block[0]['Mode']
         if block[0]['Safe'] != block[1]['Safe'] \
@@ -78,7 +78,9 @@ with open("benchmark-results.csv", "r") as csvfile:
 counts = {
     "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
     "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
     "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC+KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
     "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
     "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
     "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
@@ -92,7 +94,9 @@ counts = {
 approach_mapping = {
     "-b": "BMC",
     "-k": "KInd",
+    "-k --kInd-inv": "KInd (Inv)",
     "-bk": "BMC+KInd",
+    "-bk --kInd-inv": "BMC+KInd (Inv)",
     "-p": "WPC",
     "-g": "GPDR",
     "-gB": "GPDR (B-Eval)",
@@ -113,7 +117,22 @@ classification_labels = {
     "False Negative": "FN",
     'False\xa0Negative': "FN",
 }
-
+tool_labels = {
+    "bmc": "BMC",
+    "kInd": "KInd",
+    "kInd_inv": "KInd (Inv)",
+    "bmc_kInd": "BMC + KInd",
+    "bmc_kInd_inv": "BMC + KInd (Inv)",
+    "wpc": "WPC",
+    "gpdr": "GPDR",
+    "gpdr_boolEval": "GPDR (B-Eval)",
+    "gpdr_ats": "GPDR (ATS)",
+    "gpdr_ats_boolEval": "GPDR (ATS + B-Eval)",
+    "gpdr_smi": "GPDR (SMI)",
+    "gpdr_smi_boolEval": "GPDR (SMI + B-Eval)",
+    "gpdr_smi_ats": "GPDR (SMI + ATS)",
+    "gpdr_smi_ats_boolEval": "GPDR (SMI + ATS + B-Eval)",
+}
 
 for (example_name, mode) in aggregated_results:
     if mode == "--warmup":
@@ -172,7 +191,9 @@ import matplot2tikz
 def results_by_approach_for_metric(aggregated_results, metric):
     bmc_results = {}
     kInd_results = {}
+    kInd_inv_results = {}
     bmc_kInd_results = {}
+    bmc_kInd_inv_results = {}
     wpc_results = {}
     gpdr_results = {}
     gpdr_boolEval_results = {}
@@ -189,10 +210,14 @@ def results_by_approach_for_metric(aggregated_results, metric):
             bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-k":
             kInd_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-k --kInd-inv":
+            kInd_inv_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == '-p':
             wpc_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-bk":
             bmc_kInd_results[example_name] = aggregated_results[(example_name, mode)][metric]
+        if mode == "-bk --kInd-inv":
+            bmc_kInd_inv_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-g":
             gpdr_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-gB":
@@ -213,7 +238,9 @@ def results_by_approach_for_metric(aggregated_results, metric):
     results = {}
     results["bmc"] = sorted(bmc_results.values())
     results["kInd"] = sorted(kInd_results.values())
+    results["kInd_inv"] = sorted(kInd_inv_results.values())
     results["bmc_kInd"] = sorted(bmc_kInd_results.values())
+    results["bmc_kInd_inv"] = sorted(bmc_kInd_inv_results.values())
     results["wpc"] = sorted(wpc_results.values())
 
     results["gpdr"] = sorted(gpdr_results.values())
@@ -228,22 +255,13 @@ def results_by_approach_for_metric(aggregated_results, metric):
     return results
 
 # Wall clock time for number of examples run ---------------------------------------------------------
+color_cycle = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 14)))
 plt.figure(figsize=(8, 6))
-plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
+plt.rcParams['axes.prop_cycle'] = color_cycle
 
 results = results_by_approach_for_metric(aggregated_results, "AvgElapsedTime")
-plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kInd"], label="KInd")
-plt.plot(results["bmc_kInd"], label="BMC + KInd")
-plt.plot(results["wpc"], label="WPC")
-plt.plot(results["gpdr"], label="GPDR")
-plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
-plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
-plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
-plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
-plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
-plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
-plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
+for tool in results:
+    plt.plot(results[tool], label=tool_labels[tool])
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
@@ -266,21 +284,11 @@ matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/wall_clock_time.tex")
 
 # Number of SMT Calls for number of examples run ---------------------------------------------------------
 plt.figure(figsize=(8, 6))
-plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
+plt.rcParams['axes.prop_cycle'] = color_cycle
 
 results = results_by_approach_for_metric(aggregated_results, "AvgNumSMTCalls")
-plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kInd"], label="KInd")
-plt.plot(results["bmc_kInd"], label="BMC + KInd")
-plt.plot(results["wpc"], label="WPC")
-plt.plot(results["gpdr"], label="GPDR")
-plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
-plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
-plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
-plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
-plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
-plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
-plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
+for tool in results:
+    plt.plot(results[tool], label=tool_labels[tool])
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
@@ -301,21 +309,11 @@ matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/num_smt_calls.tex")
 
 # Memory usage for number of examples run ---------------------------------------------------------
 plt.figure(figsize=(8, 6))
-plt.rcParams['axes.prop_cycle'] = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 12)))
+plt.rcParams['axes.prop_cycle'] = color_cycle
 
 results = results_by_approach_for_metric(aggregated_results, "AvgMaxMemoryKB")
-plt.plot(results["bmc"], label="BMC")
-plt.plot(results["kInd"], label="KInd")
-plt.plot(results["bmc_kInd"], label="BMC + KInd")
-plt.plot(results["wpc"], label="WPC")
-plt.plot(results["gpdr"], label="GPDR")
-plt.plot(results["gpdr_boolEval"], label="GPDR (B-Eval)")
-plt.plot(results["gpdr_ats"], label="GPDR (ATS)")
-plt.plot(results["gpdr_ats_boolEval"], label="GPDR (ATS + B-Eval)")
-plt.plot(results["gpdr_smi"], label="GPDR (SMI)")
-plt.plot(results["gpdr_smi_boolEval"], label="GPDR (SMI + B-Eval)")
-plt.plot(results["gpdr_smi_ats"], label="GPDR (SMI + ATS)")
-plt.plot(results["gpdr_smi_ats_boolEval"], label="GPDR (SMI + ATS + B-Eval)")
+for tool in results:
+    plt.plot(results[tool], label=tool_labels[tool])
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
