@@ -161,11 +161,8 @@ for (example_name, mode) in aggregated_results:
         elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
             counts[approach_mapping[mode]]["FNsafe"] += 1
             counts[approach_mapping[mode]]["FPunsafe"] += 1
-        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "NoResult" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+        elif aggregated_results[(example_name, mode)]['Safe'] != "Proof" \
+            or aggregated_results[(example_name, mode)]['Safe'] != "Counterexample":
             counts[approach_mapping[mode]]["FNsafe"] += 1
     elif aggregated_results[(example_name, mode)]['Ground Truth'] == "False":
         if aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
@@ -174,11 +171,8 @@ for (example_name, mode) in aggregated_results:
         elif aggregated_results[(example_name, mode)]['Safe'] == "Proof":
             counts[approach_mapping[mode]]["FPsafe"] += 1
             counts[approach_mapping[mode]]["FNunsafe"] += 1
-        elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "NoResult" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+        elif aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" \
+            and aggregated_results[(example_name, mode)]['Safe'] != "Proof":
             counts[approach_mapping[mode]]["FNunsafe"] += 1
     else:
         print(f"Warning: Unknown classification for {example_name} in mode {mode}")
@@ -204,7 +198,7 @@ def results_by_approach_for_metric(aggregated_results, metric):
     gpdr_smi_ats_results = {}
     gpdr_smi_ats_boolEval_results = {}
     for (example_name, mode) in aggregated_results:
-        if not aggregated_results[(example_name, mode)]['Classification'].startswith("True"):
+        if aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
             continue
         if mode == "-b":
             bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
