@@ -1,0 +1,8 @@
+\begin{longtable}{|l|l| |l|l| |r|r|r|}
+\hline
+Example & Tool & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
+\hline
+{% for example, tool, safe, result, smt, time, memory in rows %}
+{{ example }} &  {{ tool }} & {{ safe }} & {{ result }} & {{ smt }} & {{ time }} & {{ memory }} \\{% endfor %}
+\hline
+\end{longtable}
