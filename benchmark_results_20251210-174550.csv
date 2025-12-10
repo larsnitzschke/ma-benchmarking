@@ -1,0 +1,151 @@
+Example,Mode,Run Number,Ground Truth,Safe,NumberOfSMTCalls,UserTimeSec,SystemTimeSec,CPUPercent,ElapsedTime,MaxMemoryKB,Classification,Tags
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,--warmup,0,True,-,,0.52,0.06,200,00.29,75140,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,--warmup,1,True,-,,0.51,0.06,195,00.30,75772,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,--warmup,2,True,-,,0.51,0.16,134,00.50,74836,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,--warmup,3,True,-,,0.5,0.09,167,00.35,75356,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,--warmup,4,True,-,,0.46,0.06,174,00.30,74320,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-b,0,True,NoResult,101,13.7,0.35,131,10.72,360332,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-b,1,True,NoResult,101,13.46,0.31,129,10.67,419056,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-b,2,True,NoResult,101,13.34,0.3,128,10.61,419376,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-b,3,True,NoResult,101,13.05,0.27,131,10.10,421280,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-b,4,True,NoResult,101,13.17,0.26,131,10.19,418356,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k,0,True,Proof,44,4.0,0.18,199,02.10,205588,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k,1,True,Proof,44,4.02,0.17,196,02.14,202508,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k,2,True,Proof,44,4.04,0.17,186,02.25,203664,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k,3,True,Proof,44,3.98,0.16,185,02.23,200240,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k,4,True,Proof,44,4.0,0.16,193,02.15,199000,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k --kInd-inv,0,True,Proof,44,3.98,0.16,192,02.15,201120,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k --kInd-inv,1,True,Proof,44,3.88,0.17,183,02.21,197316,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k --kInd-inv,2,True,Proof,44,3.84,0.17,189,02.12,195292,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k --kInd-inv,3,True,Proof,44,3.86,0.15,194,02.06,202280,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-k --kInd-inv,4,True,Proof,44,3.88,0.18,189,02.15,197520,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk,0,True,Proof,43,5.32,0.16,155,03.52,195844,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk,1,True,Proof,43,5.29,0.17,149,03.65,194608,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk,2,True,Proof,43,5.29,0.19,148,03.70,204848,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk,3,True,Proof,43,5.43,0.17,150,03.72,192112,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk,4,True,Proof,43,5.43,0.17,146,03.82,188924,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk --kInd-inv,0,True,Proof,43,5.25,0.17,146,03.71,190420,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk --kInd-inv,1,True,Proof,43,5.41,0.16,146,03.80,190116,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk --kInd-inv,2,True,Proof,43,5.69,0.17,145,04.04,190952,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk --kInd-inv,3,True,Proof,43,5.61,0.16,152,03.78,190412,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-bk --kInd-inv,4,True,Proof,43,5.15,0.16,150,03.52,189092,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-p,0,True,Proof,2,1.01,0.09,179,00.61,122264,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-p,1,True,Proof,2,1.0,0.09,170,00.64,120796,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-p,2,True,Proof,2,0.96,0.09,172,00.61,121252,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-p,3,True,Proof,2,1.04,0.08,174,00.65,121844,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-p,4,True,Proof,2,0.98,0.09,172,00.62,120732,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g,0,True,TIMEOUT,,32.64,1.07,112,30.04,297720,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g,1,True,TIMEOUT,,33.55,1.08,115,30.05,316080,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g,2,True,TIMEOUT,,33.4,1.13,114,30.03,360912,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g,3,True,TIMEOUT,,33.54,1.13,115,30.06,311280,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g,4,True,TIMEOUT,,33.44,1.11,115,30.04,311676,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB,0,True,Proof,6,1.13,0.11,171,00.73,126852,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB,1,True,Proof,6,1.1,0.12,153,00.79,125164,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB,2,True,Proof,6,1.12,0.1,170,00.71,123200,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB,3,True,Proof,6,1.15,0.11,170,00.74,124776,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB,4,True,Proof,6,1.14,0.13,166,00.76,122932,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi,0,True,TIMEOUT,,32.5,0.64,110,30.03,295528,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi,1,True,TIMEOUT,,32.55,0.3,109,30.03,296348,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi,2,True,TIMEOUT,,32.8,0.25,110,30.03,291404,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi,3,True,TIMEOUT,,33.01,0.25,110,30.03,297508,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi,4,True,TIMEOUT,,32.69,0.28,109,30.05,292420,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi,0,True,Proof,6,1.14,0.14,180,00.71,126068,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi,1,True,Proof,6,1.12,0.11,179,00.69,123252,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi,2,True,Proof,6,1.12,0.12,177,00.70,125056,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi,3,True,Proof,6,1.12,0.13,179,00.70,122412,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi,4,True,Proof,6,1.16,0.13,177,00.72,125652,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-ats,0,True,TIMEOUT,,33.66,1.13,115,30.05,302384,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-ats,1,True,TIMEOUT,,33.96,1.13,116,30.06,304940,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-ats,2,True,TIMEOUT,,33.85,1.07,116,30.06,307300,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-ats,3,True,TIMEOUT,,33.65,1.07,115,30.05,298916,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-ats,4,True,TIMEOUT,,33.8,1.09,116,30.03,301204,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-ats,0,True,TIMEOUT,,34.11,1.16,117,30.05,360980,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-ats,1,True,TIMEOUT,,34.36,1.22,118,30.06,305092,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-ats,2,True,TIMEOUT,,34.37,1.19,118,30.06,307080,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-ats,3,True,TIMEOUT,,34.3,1.1,117,30.05,352944,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-ats,4,True,TIMEOUT,,34.11,1.17,117,30.04,354440,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,33.32,0.29,111,30.05,280944,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,33.5,0.31,112,30.05,292132,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,33.39,0.28,112,30.04,288892,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,33.69,0.26,112,30.06,290484,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-g --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,33.53,0.26,112,30.03,287044,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,33.26,0.29,111,30.05,293704,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,33.32,0.28,111,30.05,296196,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,33.5,0.24,112,30.05,293408,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,33.13,0.26,111,30.02,290596,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe18-True,-gB --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,33.12,0.24,111,30.02,295096,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,--warmup,0,True,-,,0.52,0.06,168,00.34,73484,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,--warmup,1,True,-,,0.52,0.05,184,00.31,73752,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,--warmup,2,True,-,,0.55,0.05,154,00.39,73216,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,--warmup,3,True,-,,0.51,0.04,180,00.30,73632,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,--warmup,4,True,-,,0.5,0.04,157,00.35,73896,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-b,0,True,NoResult,101,12.76,0.34,134,09.75,466940,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-b,1,True,NoResult,101,12.08,0.31,136,09.09,504432,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-b,2,True,NoResult,101,12.52,0.3,137,09.30,487952,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-b,3,True,NoResult,101,12.87,0.35,132,09.98,483588,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-b,4,True,NoResult,101,12.27,0.33,138,09.12,579340,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k,0,True,Proof,59,4.46,0.17,200,02.31,216660,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k,1,True,Proof,59,4.38,0.2,204,02.24,218792,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k,2,True,Proof,59,4.54,0.18,204,02.31,217344,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k,3,True,Proof,59,4.57,0.18,212,02.24,214964,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k,4,True,Proof,59,4.44,0.18,211,02.19,217088,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k --kInd-inv,0,True,Proof,59,4.69,0.16,224,02.16,220876,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k --kInd-inv,1,True,Proof,59,4.66,0.19,198,02.44,211032,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k --kInd-inv,2,True,Proof,59,4.55,0.22,205,02.32,223584,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k --kInd-inv,3,True,Proof,59,4.62,0.18,210,02.28,224172,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-k --kInd-inv,4,True,Proof,59,4.48,0.21,202,02.32,215820,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk,0,True,Proof,58,4.4,0.15,184,02.47,213076,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk,1,True,Proof,58,4.91,0.17,191,02.65,222064,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk,2,True,Proof,58,4.53,0.21,190,02.49,225756,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk,3,True,Proof,58,4.58,0.2,192,02.48,227744,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk,4,True,Proof,58,4.52,0.2,191,02.46,225208,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk --kInd-inv,0,True,Proof,58,4.75,0.16,197,02.48,221448,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk --kInd-inv,1,True,Proof,58,4.57,0.19,191,02.49,218456,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk --kInd-inv,2,True,Proof,58,4.94,0.15,204,02.48,222868,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk --kInd-inv,3,True,Proof,58,4.8,0.18,199,02.49,222100,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-bk --kInd-inv,4,True,Proof,58,4.76,0.17,198,02.48,220780,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-p,0,True,Proof,2,1.02,0.11,174,00.65,121520,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-p,1,True,Proof,2,1.0,0.13,160,00.70,120796,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-p,2,True,Proof,2,1.07,0.11,168,00.70,121320,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-p,3,True,Proof,2,1.03,0.1,182,00.62,120892,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-p,4,True,Proof,2,1.0,0.11,176,00.63,120676,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g,0,True,TIMEOUT,,33.42,1.03,114,30.04,304224,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g,1,True,TIMEOUT,,33.15,1.06,113,30.06,306924,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g,2,True,TIMEOUT,,32.9,1.11,113,30.06,302936,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g,3,True,TIMEOUT,,33.06,1.2,114,30.05,297584,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g,4,True,TIMEOUT,,33.07,1.14,113,30.06,348996,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB,0,True,Proof,6,1.21,0.13,169,00.79,125524,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB,1,True,Proof,6,1.17,0.14,158,00.82,127388,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB,2,True,Proof,6,1.13,0.13,168,00.75,126244,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB,3,True,Proof,6,1.15,0.12,158,00.80,125712,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB,4,True,Proof,6,1.17,0.1,167,00.76,126000,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi,0,True,TIMEOUT,,32.95,0.43,111,30.06,305544,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi,1,True,TIMEOUT,,33.25,0.28,111,30.04,304812,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi,2,True,TIMEOUT,,33.18,0.25,111,30.03,306588,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi,3,True,TIMEOUT,,32.99,0.31,110,30.06,301052,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi,4,True,TIMEOUT,,33.42,0.25,112,30.03,299104,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi,0,True,Proof,6,1.16,0.12,187,00.68,126752,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi,1,True,Proof,6,1.15,0.11,181,00.69,122908,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi,2,True,Proof,6,1.18,0.12,187,00.69,126060,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi,3,True,Proof,6,1.15,0.11,182,00.69,126296,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi,4,True,Proof,6,1.16,0.14,185,00.70,125648,True Positive,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-ats,0,True,TIMEOUT,,34.23,1.09,117,30.04,307112,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-ats,1,True,TIMEOUT,,34.4,1.09,118,30.04,361616,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-ats,2,True,TIMEOUT,,33.99,1.04,116,30.07,309508,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-ats,3,True,TIMEOUT,,33.76,1.03,115,30.06,306960,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-ats,4,True,TIMEOUT,,34.11,1.07,117,30.06,306396,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-ats,0,True,TIMEOUT,,34.31,1.17,118,30.04,359404,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-ats,1,True,TIMEOUT,,34.36,1.18,118,30.03,357732,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-ats,2,True,TIMEOUT,,34.06,1.18,117,30.04,358172,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-ats,3,True,TIMEOUT,,34.57,1.12,118,30.05,367964,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-ats,4,True,TIMEOUT,,33.73,1.08,115,30.04,358856,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,33.9,0.34,113,30.06,310960,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,34.24,0.29,114,30.06,309128,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,33.96,0.29,114,30.03,309060,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,33.88,0.32,113,30.05,307348,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-g --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,33.95,0.33,114,30.06,308832,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,32.56,0.23,109,30.06,290908,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,32.46,0.26,108,30.05,287168,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,32.77,0.34,110,30.03,292276,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,32.55,0.33,109,30.06,286180,,assert
+SvBenchmarksJava_JpfRegression_ExSymExe25-True,-gB --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,32.13,0.28,107,30.06,286764,,assert
