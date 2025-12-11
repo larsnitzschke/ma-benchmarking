@@ -1,9 +1,9 @@
-\begin{tabular}{|l| |r|r|r|r| |r|}
+\begin{tabular}{|l| |r|r|r|r| |r|r|}
 \hline
-Approach & Proof & Counter-Ex. & NoR & Cr. & TOut. \\
+Approach & Proof & Counter-Ex. & NoR & Cr. & TOut. & OOM.\\
 \hline
-{% for approach, proof, counterex, no_result, crash, timeout in rows %}
-{{ approach }} & {{ proof }} & {{ counterex }} & {{ no_result }} & {{ crash }} & {{ timeout }} \\
+{% for approach, proof, counterex, no_result, crash, timeout, oom in rows %}
+{{ approach }} & {{ proof }} & {{ counterex }} & {{ no_result }} & {{ crash }} & {{ timeout }} & {{ oom }} \\
 {% endfor %}
 \hline
 \end{tabular}

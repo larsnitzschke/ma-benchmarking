@@ -76,20 +76,20 @@ with open("benchmark-results.csv", "r") as csvfile:
 
 # Calculate Classification metrics
 counts = {
-    "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "BMC+KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC+KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "GPDR (SMI+ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
 }
 approach_mapping = {
     "-b": "BMC",
@@ -143,9 +143,10 @@ for (example_name, mode) in aggregated_results:
         elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
             counts[approach_mapping[mode]]["Counterexample"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "Crash" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR" \
-            or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+            or aggregated_results[(example_name, mode)]['Safe'] == "ERROR":  # Caught by approaches vs. not caught
             counts[approach_mapping[mode]]["Crash"] += 1
+        elif aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+            counts[approach_mapping[mode]]["OOM"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "NoResult":
             counts[approach_mapping[mode]]["NoResult"] += 1
             if mode == "-k":
@@ -232,6 +233,14 @@ def results_by_approach_for_metric(aggregated_results, metric):
         if mode == "-gB --gpdr-smi --gpdr-ats":
             gpdr_smi_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
 
+    print_plot_data = True
+    if print_plot_data: # and metric == "AvgElapsedTime":
+        results = gpdr_ats_boolEval_results
+        approach = "-gB --gpdr-ats"
+        data = sorted(results, key = results.get)
+        for i, res in enumerate(data):
+            print(f"result {i}: {results[res]:.2f} seconds/calls/kb | safe: {aggregated_results[(res, approach)]['Safe']} {res}")
+    
     results = {}
     results["bmc"] = sorted(bmc_results.values())
     results["kInd"] = sorted(kInd_results.values())
@@ -263,6 +272,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([1, 5, 10, 50], [1, 5, 10, 50])
+plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
@@ -290,6 +300,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([1, 5, 10, 50, 100, 500, 1000], [1, 5, 10, 50, 100, 500, 1000])
+plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Number of SMT Calls")
@@ -314,7 +325,8 @@ for tool in results:
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
-plt.yticks([100000, 200000, 300000, 400000, 500000], [100, 200, 300, 400, 500])
+plt.yticks([100000, 200000, 300000, 400000, 500000, 1000000, 4000000], [100, 200, 300, 400, 500, 1000, 4000])
+plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Max Memory Usage (MB)")
@@ -346,7 +358,7 @@ with open("table-templates/table_template.tex") as f, open("../ma-ImpCompVerific
 
 # Results: # of Proofs, Counterexamples, NoResults, Crashes, Timeouts
 rows = [(f"\\footnotesize {tool}", counts[tool]['Proof'], counts[tool]['Counterexample'],
-         counts[tool]['NoResult'], counts[tool]['Crash'], counts[tool]['Timeout']
+         counts[tool]['NoResult'], counts[tool]['Crash'], counts[tool]['Timeout'], counts[tool]['OOM']
         ) for tool in counts]
 with open("table-templates/results_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/results.tex", "w") as out:
     template = Template(f.read())
