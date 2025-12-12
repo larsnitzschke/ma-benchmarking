@@ -228,10 +228,12 @@ def results_by_approach_for_metric(aggregated_results, metric, complexity = Fals
     gpdr_smi_ats_results = {}
     gpdr_smi_ats_boolEval_results = {}
     for (example_name, mode) in aggregated_results:
+        #if aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY":
+        #    print(f"OOM for example {example_name} in mode {mode}. Max memory: {aggregated_results[(example_name, mode)]['AvgMaxMemoryKB'] / 1000} MB")
         if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
-        #    continue
-        #if aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT": # or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY"):
             continue
+        #if aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT": # or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY"):
+        #    continue
         if mode == "-b":
             bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
         if mode == "-k":
@@ -271,7 +273,6 @@ def results_by_approach_for_metric(aggregated_results, metric, complexity = Fals
     
     results = {}
     results["bmc"] = sorted(bmc_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(bmc_results.items(), key= lambda item: locs_per_example.get(item[0]))]
-    print(results["bmc"] if complexity else "")
     results["kInd"] = sorted(kInd_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(kInd_results.items(), key= lambda item: locs_per_example.get(item[0]))]
     results["kInd_inv"] = sorted(kInd_inv_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(kInd_inv_results.items(), key= lambda item: locs_per_example.get(item[0]))]
     results["bmc_kInd"] = sorted(bmc_kInd_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(bmc_kInd_results.items(), key= lambda item: locs_per_example.get(item[0]))]
@@ -302,7 +303,7 @@ for tool in results:
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
-plt.yticks([1, 5, 10, 50], [1, 5, 10, 50])
+plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
 plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
@@ -380,7 +381,7 @@ for tool in results:
 
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
-plt.yticks([100000, 200000, 300000, 400000, 500000, 1000000, 4000000], [100, 200, 300, 400, 500, 1000, 4000])
+plt.yticks([100000, 150000, 200000, 300000, 400000, 500000, 600000], [100, 150, 200, 300, 400, 500, 600])
 plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
