@@ -1,3 +1,29 @@
+from dataclasses import dataclass
+
+from matplotlib.lines import Line2D
+@dataclass
+class Example:
+    path: str
+    name: str
+    expected_safety: bool
+    tags: list[str] = None
+    loc: int = None
+# Path configurations
+path_to_whilestar = "../whilestar"
+wvm_gradle = f"{path_to_whilestar}/gradlew"
+mode = "-k"
+path_to_examples = f"{path_to_whilestar}/examples"
+example = f"{path_to_examples}/array/ex1.w"
+
+# Get LOCs per example
+with open(f"examples-list.txt", "r") as file:
+    locs_per_example = {}
+    for line in file:
+        line = line.strip()
+        split = line.split(" ")
+        with open(f"{path_to_examples}/{split[0]}", "r") as example_file:
+            locs_per_example[f"{split[1]}-{split[2].lower() == "true"}"] = len(example_file.readlines())
+
 # Get relevant numbers from ground truth data
 with open("examples-list-all.txt", "r") as f:
     lines = f.readlines()
@@ -186,7 +212,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplot2tikz
 
-def results_by_approach_for_metric(aggregated_results, metric):
+def results_by_approach_for_metric(aggregated_results, metric, complexity = False):
     bmc_results = {}
     kInd_results = {}
     kInd_inv_results = {}
@@ -202,7 +228,9 @@ def results_by_approach_for_metric(aggregated_results, metric):
     gpdr_smi_ats_results = {}
     gpdr_smi_ats_boolEval_results = {}
     for (example_name, mode) in aggregated_results:
-        if aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
+        if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+        #    continue
+        #if aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT": # or aggregated_results[(example_name, mode)]['Safe'] == "OUTOFMEMORY"):
             continue
         if mode == "-b":
             bmc_results[example_name] = aggregated_results[(example_name, mode)][metric]
@@ -233,7 +261,7 @@ def results_by_approach_for_metric(aggregated_results, metric):
         if mode == "-gB --gpdr-smi --gpdr-ats":
             gpdr_smi_ats_boolEval_results[example_name] = aggregated_results[(example_name, mode)][metric]
 
-    print_plot_data = True
+    print_plot_data = False
     if print_plot_data: # and metric == "AvgElapsedTime":
         results = gpdr_ats_boolEval_results
         approach = "-gB --gpdr-ats"
@@ -242,26 +270,29 @@ def results_by_approach_for_metric(aggregated_results, metric):
             print(f"result {i}: {results[res]:.2f} seconds/calls/kb | safe: {aggregated_results[(res, approach)]['Safe']} {res}")
     
     results = {}
-    results["bmc"] = sorted(bmc_results.values())
-    results["kInd"] = sorted(kInd_results.values())
-    results["kInd_inv"] = sorted(kInd_inv_results.values())
-    results["bmc_kInd"] = sorted(bmc_kInd_results.values())
-    results["bmc_kInd_inv"] = sorted(bmc_kInd_inv_results.values())
-    results["wpc"] = sorted(wpc_results.values())
+    results["bmc"] = sorted(bmc_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(bmc_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    print(results["bmc"] if complexity else "")
+    results["kInd"] = sorted(kInd_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(kInd_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["kInd_inv"] = sorted(kInd_inv_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(kInd_inv_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["bmc_kInd"] = sorted(bmc_kInd_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(bmc_kInd_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["bmc_kInd_inv"] = sorted(bmc_kInd_inv_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(bmc_kInd_inv_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["wpc"] = sorted(wpc_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(wpc_results.items(), key= lambda item: locs_per_example.get(item[0]))]
 
-    results["gpdr"] = sorted(gpdr_results.values())
-    results["gpdr_boolEval"] = sorted(gpdr_boolEval_results.values())
-    results["gpdr_ats"] = sorted(gpdr_ats_results.values())
-    results["gpdr_ats_boolEval"] = sorted(gpdr_ats_boolEval_results.values())
-    results["gpdr_smi"] = sorted(gpdr_smi_results.values())
-    results["gpdr_smi_boolEval"] = sorted(gpdr_smi_boolEval_results.values())
-    results["gpdr_smi_ats"] = sorted(gpdr_smi_ats_results.values())
-    results["gpdr_smi_ats_boolEval"] = sorted(gpdr_smi_ats_boolEval_results.values())
+    results["gpdr"] = sorted(gpdr_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_boolEval"] = sorted(gpdr_boolEval_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_boolEval_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_ats"] = sorted(gpdr_ats_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_ats_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_ats_boolEval"] = sorted(gpdr_ats_boolEval_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_ats_boolEval_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_smi"] = sorted(gpdr_smi_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_smi_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_smi_boolEval"] = sorted(gpdr_smi_boolEval_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_smi_boolEval_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_smi_ats"] = sorted(gpdr_smi_ats_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_smi_ats_results.items(), key= lambda item: locs_per_example.get(item[0]))]
+    results["gpdr_smi_ats_boolEval"] = sorted(gpdr_smi_ats_boolEval_results.values()) if not complexity else [(locs_per_example[k], v) for k, v in sorted(gpdr_smi_ats_boolEval_results.items(), key= lambda item: locs_per_example.get(item[0]))]
     
     return results
 
 # Wall clock time for number of examples run ---------------------------------------------------------
 color_cycle = plt.cycler(color = plt.cm.nipy_spectral(np.linspace(1, 0, 14)))
+empty1 = Line2D([], [], linestyle="None", label=" ")
+empty2 = Line2D([], [], linestyle="None", label=" ")
 plt.figure(figsize=(8, 6))
 plt.rcParams['axes.prop_cycle'] = color_cycle
 
@@ -277,17 +308,41 @@ plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
 
-#plt.title("Tool Performance by Number of Examples")
-#plt.legend(ncol=2, fontsize=9)
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
-          fancybox=True, ncol=4, fontsize=9)
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9),
 
 plt.tight_layout()
 plt.savefig("../ma-ImpCompVerificationMethods/plots/wall_clock_time.png", dpi=300)
 #plt.show()
 plt.xlabel("\\# of Examples")
 matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/wall_clock_time.tex")
+
+# Complexity: Wall clock time per LOC --------------------------------------------------------------------
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = color_cycle
+
+results = results_by_approach_for_metric(aggregated_results, "AvgElapsedTime", complexity=True)
+for tool in results:
+    plt.plot(*zip(*results[tool]), label=tool_labels[tool])
+
+plt.yscale("log")
+plt.grid(True, which="major", linestyle="--", alpha=0.5)
+
+#plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
+
+plt.xlabel("# of LOC")
+plt.ylabel("Wall Clock Time (s)")
+
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9)
+
+plt.tight_layout()
+plt.savefig("../ma-ImpCompVerificationMethods/plots/wall_clock_time_per_loc.png", dpi=300)
+#plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/wall_clock_time_per_loc.tex")
 
 # Number of SMT Calls for number of examples run ---------------------------------------------------------
 plt.figure(figsize=(8, 6))
@@ -303,11 +358,11 @@ plt.yticks([1, 5, 10, 50, 100, 500, 1000], [1, 5, 10, 50, 100, 500, 1000])
 plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 
 plt.xlabel("# of Examples")
-plt.ylabel("Number of SMT Calls")
+plt.ylabel("# of SMT Calls")
 
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
-          fancybox=True, ncol=4, fontsize=9)
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9)
 
 plt.tight_layout()
 plt.savefig("../ma-ImpCompVerificationMethods/plots/num_smt_calls.png", dpi=300)
@@ -331,9 +386,9 @@ plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
 plt.xlabel("# of Examples")
 plt.ylabel("Max Memory Usage (MB)")
 
-plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15),
-          fancybox=True, ncol=4, fontsize=9)
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9)
 
 plt.tight_layout()
 plt.savefig("../ma-ImpCompVerificationMethods/plots/max_memory_usage.png", dpi=300)
