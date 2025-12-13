@@ -1,0 +1,76 @@
+Example,Mode,Run Number,Ground Truth,Safe,NumberOfSMTCalls,UserTimeSec,SystemTimeSec,CPUPercent,ElapsedTime,MaxMemoryKB,Classification,Tags
+ThesisExamples_KIndInvariantExample-True,--warmup,0,True,-,,0.5,0.05,187,00.29,75660,,loop invariant
+ThesisExamples_KIndInvariantExample-True,--warmup,1,True,-,,0.55,0.04,210,00.28,75436,,loop invariant
+ThesisExamples_KIndInvariantExample-True,--warmup,2,True,-,,0.53,0.04,186,00.31,75688,,loop invariant
+ThesisExamples_KIndInvariantExample-True,--warmup,3,True,-,,0.52,0.04,196,00.29,75256,,loop invariant
+ThesisExamples_KIndInvariantExample-True,--warmup,4,True,-,,0.51,0.06,189,00.30,75760,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-b,0,True,NoResult,101,8.54,0.29,149,05.91,290104,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-b,1,True,NoResult,101,8.27,0.21,144,05.86,287576,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-b,2,True,NoResult,101,8.41,0.24,145,05.95,295524,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-b,3,True,NoResult,101,8.17,0.22,146,05.74,292284,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-b,4,True,NoResult,101,8.35,0.23,145,05.91,296044,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k,0,True,NoResult,500,32.82,0.25,114,28.99,307996,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k,1,True,NoResult,500,32.03,0.25,110,29.08,300876,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k,2,True,NoResult,500,32.05,0.24,113,28.56,301460,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k,3,True,NoResult,500,32.39,0.3,115,28.33,307732,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k,4,True,NoResult,500,31.45,0.27,112,28.07,301856,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k --kInd-inv,0,True,Proof,14,1.37,0.12,180,00.82,131244,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k --kInd-inv,1,True,Proof,14,1.36,0.13,178,00.83,130380,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k --kInd-inv,2,True,Proof,14,1.33,0.11,167,00.86,130220,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k --kInd-inv,3,True,Proof,14,1.36,0.11,173,00.85,130220,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-k --kInd-inv,4,True,Proof,14,1.35,0.13,178,00.83,129996,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk,0,True,TIMEOUT,,33.97,0.25,113,30.06,311072,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk,1,True,TIMEOUT,,33.7,0.24,112,30.13,306208,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk,2,True,TIMEOUT,,34.15,0.24,114,30.11,306144,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk,3,True,TIMEOUT,,33.73,0.3,113,30.07,311092,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk,4,True,TIMEOUT,,33.79,0.26,113,30.12,310460,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk --kInd-inv,0,True,Proof,15,1.36,0.13,176,00.84,131100,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk --kInd-inv,1,True,Proof,15,1.42,0.11,182,00.84,130408,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk --kInd-inv,2,True,Proof,15,1.36,0.13,174,00.85,130556,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk --kInd-inv,3,True,Proof,15,1.42,0.11,180,00.85,131148,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-bk --kInd-inv,4,True,Proof,15,1.38,0.1,178,00.84,129588,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-p,0,True,Proof,3,1.01,0.11,178,00.63,121648,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-p,1,True,Proof,3,1.0,0.09,175,00.63,122236,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-p,2,True,Proof,3,0.98,0.12,169,00.65,121440,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-p,3,True,Proof,3,0.98,0.12,171,00.64,121728,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-p,4,True,Proof,3,1.02,0.09,175,00.64,122116,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g,0,True,TIMEOUT,,32.81,1.25,113,30.03,292588,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g,1,True,TIMEOUT,,32.37,1.32,112,30.05,291608,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g,2,True,TIMEOUT,,33.09,1.29,114,30.05,303268,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g,3,True,TIMEOUT,,32.79,1.32,113,30.03,292856,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g,4,True,TIMEOUT,,33.2,1.29,114,30.03,303868,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB,0,True,Proof,39,1.99,0.15,174,01.23,139840,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB,1,True,Proof,39,1.92,0.16,169,01.23,139576,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB,2,True,Proof,39,1.99,0.13,172,01.23,139552,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB,3,True,Proof,39,1.93,0.15,168,01.23,139700,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB,4,True,Proof,39,1.98,0.14,173,01.22,140764,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi,0,True,TIMEOUT,,32.38,0.26,108,30.05,279288,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi,1,True,TIMEOUT,,32.15,0.28,107,30.05,280056,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi,2,True,TIMEOUT,,32.29,0.28,108,30.03,276232,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi,3,True,TIMEOUT,,32.19,0.31,108,30.05,277844,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi,4,True,TIMEOUT,,31.99,0.43,107,30.03,273876,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi,0,True,Proof,26,1.5,0.13,155,01.05,138948,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi,1,True,Proof,26,1.54,0.13,151,01.10,138872,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi,2,True,Proof,26,1.59,0.14,155,01.11,138564,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi,3,True,Proof,26,1.55,0.13,146,01.15,138692,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi,4,True,Proof,26,1.54,0.13,154,01.08,138376,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-ats,0,True,TIMEOUT,,33.5,1.21,115,30.05,298784,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-ats,1,True,TIMEOUT,,33.49,1.23,115,30.04,300292,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-ats,2,True,TIMEOUT,,32.93,1.21,113,30.05,298616,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-ats,3,True,TIMEOUT,,33.27,1.22,114,30.05,291528,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-ats,4,True,TIMEOUT,,33.61,1.2,115,30.04,297564,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-ats,0,True,Proof,25,1.73,0.15,170,01.10,131832,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-ats,1,True,Proof,25,1.74,0.14,163,01.15,132720,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-ats,2,True,Proof,25,1.68,0.13,169,01.07,132684,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-ats,3,True,Proof,25,1.67,0.12,172,01.04,131752,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-ats,4,True,Proof,25,1.74,0.14,176,01.06,134636,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,32.73,0.28,109,30.04,280412,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,33.04,0.34,111,30.03,285884,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,32.93,0.33,110,30.03,281652,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,32.71,0.34,110,30.03,280024,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-g --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,32.8,0.24,110,30.04,277880,,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi --gpdr-ats,0,True,Proof,31,1.71,0.13,161,01.14,130816,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi --gpdr-ats,1,True,Proof,31,1.69,0.13,156,01.16,129864,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi --gpdr-ats,2,True,Proof,31,1.7,0.11,159,01.14,131116,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi --gpdr-ats,3,True,Proof,31,1.7,0.13,160,01.14,131312,True Positive,loop invariant
+ThesisExamples_KIndInvariantExample-True,-gB --gpdr-smi --gpdr-ats,4,True,Proof,31,1.76,0.12,162,01.16,130708,True Positive,loop invariant

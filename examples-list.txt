@@ -20,8 +20,8 @@ gpdr-examples/ex3-infinite.w GpdrExamples_Ex3Infinite true
 gpdr-examples/ex3.w GpdrExamples_Ex3 true
 havoc/ex1.w Havoc_Ex1 true havoc
 havoc/ex2.w Havoc_Ex2 false havoc
-hoare/ex1.w Hoare_Ex1 true
-hoare/ex2.w Hoare_Ex2 true
+hoare/ex1.w Hoare_Ex1 true array
+hoare/ex2.w Hoare_Ex2 true array
 if/ex1.w If_Ex1 true
 if/ex2.w If_Ex2 true
 pointer/ex1.w Pointer_Ex1 true pointer
@@ -106,6 +106,7 @@ swap/ex1.w Swap_Ex1 true swap
 swap/ex2.w Swap_Ex2 false swap
 thesis-examples/bmc-example.w ThesisExamples_BmcExample false loop
 thesis-examples/k-ind.w ThesisExamples_KIndExample true loop
+thesis-examples/k-ind-inv.w ThesisExamples_KIndInvariantExample true loop,invariant
 thesis-examples/while-star-ex.w ThesisExamples_WhileStarExample true loop,havoc
 while/ackermann.w While_Ackermann true array,loop
 while/collatz.w While_Collatz true loop,havoc
