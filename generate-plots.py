@@ -100,6 +100,15 @@ with open("benchmark-results.csv", "r") as csvfile:
         }
         i += repititions
 
+with open("aggregated-results.csv", "w", newline='') as csvfile:
+    fieldnames = ['Example', 'Mode', 'Safe', 'AvgUserTimeSec', 'AvgSystemTimeSec', 'AvgCPUPercent', 'AvgElapsedTime', 'AvgMaxMemoryKB', 'AvgNumSMTCalls', 'Classification', 'Ground Truth', 'Tags']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for (example_name, mode) in aggregated_results:
+        row = {'Example': example_name, 'Mode': mode}
+        row.update(aggregated_results[(example_name, mode)])
+        writer.writerow(row)
+
 # Calculate Classification metrics
 counts = {
     "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
@@ -304,7 +313,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
-plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
+plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
@@ -330,7 +339,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 
-#plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
+#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
 
 plt.xlabel("# of LOC")
 plt.ylabel("Wall Clock Time (s)")
@@ -356,7 +365,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([1, 5, 10, 50, 100, 500, 1000], [1, 5, 10, 50, 100, 500, 1000])
-plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
+plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
 
 plt.xlabel("# of Examples")
 plt.ylabel("# of SMT Calls")
@@ -382,7 +391,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([100000, 150000, 200000, 300000, 400000, 500000, 600000], [100, 150, 200, 300, 400, 500, 600])
-plt.xticks([-1, 19, 39, 59, 79, 99, 116], [0, 20, 40, 60, 80, 100, 117])
+plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Max Memory Usage (MB)")
