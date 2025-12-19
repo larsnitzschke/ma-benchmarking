@@ -1,8 +1,18 @@
-\begin{longtable}{|l|l| |l|l| |r|r|r|}
+\begin{longtable}{|l| |l|l| |r|r|r|}
 \hline
-Example & Tool & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
+Example & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
 \hline
-{% for example, tool, safe, result, smt, time, memory in rows %}
-{{ example }} &  {{ tool }} & {{ safe }} & {{ result }} & {{ smt }} & {{ time }} & {{ memory }} \\{% endfor %}
+\endfirsthead
+
 \hline
+Example & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
+\hline
+\endhead
+
+\hline
+\caption{ {{ caption }} }
+\endfoot
+
+{% for example, safe, result, smt, time, memory in rows %}
+{{ example }} & {{ safe }} & {{ result }} & {{ smt }} & {{ time }} & {{ memory }} \\{% endfor %}
 \end{longtable}

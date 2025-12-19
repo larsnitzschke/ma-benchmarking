@@ -16,7 +16,7 @@ path_to_examples = f"{path_to_whilestar}/examples"
 example = f"{path_to_examples}/array/ex1.w"
 
 # Get LOCs per example
-with open(f"examples-list.txt", "r") as file:
+with open(f"examples-list-all.txt", "r") as file:
     locs_per_example = {}
     for line in file:
         line = line.strip()
@@ -169,6 +169,28 @@ tool_labels = {
     "gpdr_smi_ats_boolEval": "GPDR (SMI + ATS + B-Eval)",
 }
 
+for (ex1, m1) in aggregated_results:
+    if m1 != "-gB":
+        continue
+    for (ex2, m2) in aggregated_results:
+        if m2 != "-gB --gpdr-smi":
+            continue
+        if ex1 == ex2:
+            if aggregated_results[(ex1, m1)]['Safe'] != aggregated_results[(ex2, m2)]['Safe']:
+                print(f"Warning: Different results for {ex1} in modes {m1} and {m2}: {aggregated_results[(ex1, m1)]['Safe']} vs. {aggregated_results[(ex2, m2)]['Safe']}")
+
+for (ex, m) in aggregated_results:
+    if m == "-k":
+        if aggregated_results[(ex, m)]['Safe'] == "NoResult":
+            print(f"Warning: NoResult for {ex} in mode {m} --> TODO: Why?")
+    #if aggregated_results[(ex, m)]['Safe'] == "OUTOFMEMORY":
+    #    print(f"Warning: OOM for {ex} in mode {m} --> Max memory: {aggregated_results[(ex, m)]['AvgMaxMemoryKB'] / 1000} MB")
+    if aggregated_results[(ex, m)]['Safe'] == "TIMEOUT":
+        if m in ["-b", "-k", "-bk", "-k --kInd-inv", "-bk --kInd-inv"]:
+            print(f"Warning: TIMEOUT for {ex} in mode {m} --> Elapsed time: {aggregated_results[(ex, m)]['AvgElapsedTime']} seconds")
+    if m == "-g":
+        if aggregated_results[(ex, m)]['Safe'] == "Proof" or aggregated_results[(ex, m)]['Safe'] == "Counterexample":
+            print(f"--Warning: Result {aggregated_results[(ex, m)]['Safe']} for {ex} in mode {m} --> TODO: Why?")
 for (example_name, mode) in aggregated_results:
     if mode == "--warmup":
         continue
@@ -184,8 +206,6 @@ for (example_name, mode) in aggregated_results:
             counts[approach_mapping[mode]]["OOM"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "NoResult":
             counts[approach_mapping[mode]]["NoResult"] += 1
-            if mode == "-k":
-                print(f"Warning: NoResult for {example_name} in mode {mode} --> TODO: Why?")
         elif aggregated_results[(example_name, mode)]['Safe'] == "TIMEOUT":
             counts[approach_mapping[mode]]["Timeout"] += 1
         else:
@@ -450,15 +470,17 @@ with open("table-templates/classification_template.tex") as f, open("../ma-ImpCo
     out.write(template.render(rows=rows))
 
 # Big results table for Appendix
-rows = [(f"{example_name}".replace("_", "\\_").replace("SvBenchmarksJava\\_", ""),
-         approach_mapping[mode], 
-         aggregated_results[(example_name, mode)]['Ground Truth'],
-         aggregated_results[(example_name, mode)]['Safe'], aggregated_results[(example_name, mode)]['AvgNumSMTCalls'],
-         f"{aggregated_results[(example_name, mode)]['AvgElapsedTime']:.2f}",
-         f"{aggregated_results[(example_name, mode)]['AvgMaxMemoryKB'] / 1000:.2f}"
-         ) for (example_name, mode) in aggregated_results if mode != "--warmup"]
-with open("table-templates/aggregated_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/aggregated_results.tex", "w") as out:
-    template = Template(f.read())
-    out.write(template.render(rows=rows))
+# BMC
+for k, v in approach_mapping.items():
+    rows = [(f"{example_name}".replace("_", "\\_").replace("SvBenchmarksJava\\_", ""),
+            #approach_mapping[mode], 
+            aggregated_results[(example_name, mode)]['Ground Truth'],
+            aggregated_results[(example_name, mode)]['Safe'], aggregated_results[(example_name, mode)]['AvgNumSMTCalls'],
+            f"{aggregated_results[(example_name, mode)]['AvgElapsedTime']:.2f}",
+            f"{aggregated_results[(example_name, mode)]['AvgMaxMemoryKB'] / 1000:.2f}"
+            ) for (example_name, mode) in aggregated_results if mode == k]
+    with open("table-templates/aggregated_template.tex") as f, open(f"../ma-ImpCompVerificationMethods/tables/results/aggregated_results_{v}.tex", "w") as out:
+        template = Template(f.read())
+        out.write(template.render(rows=rows, caption=f"{v} average results"))
 
-# TODO: Research more interesting plots for the results
+
