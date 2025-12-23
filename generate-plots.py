@@ -111,20 +111,20 @@ with open("aggregated-results.csv", "w", newline='') as csvfile:
 
 # Calculate Classification metrics
 counts = {
-    "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "BMC+KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
-    "GPDR (SMI+ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0},
+    "BMC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "BMC+KInd": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "BMC+KInd (Inv)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "WPC": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (SMI)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (SMI+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (SMI+ATS)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
+    "GPDR (SMI+ATS+B-Eval)": {"Proof":0, "Counterexample":0, "NoResult":0, "Crash":0, "Timeout":0, "OOM":0, "TPsafe":0, "TNsafe":0, "FPsafe":0, "FNsafe":0, "TPunsafe":0, "TNunsafe":0, "FPunsafe":0, "FNunsafe":0, "TSec":0, "TInsec":0, "TInsecSOAP":0, "FSec":0, "FInsec":0, "FInsecSOAP":0},
 }
 approach_mapping = {
     "-b": "BMC",
@@ -215,24 +215,32 @@ for (example_name, mode) in aggregated_results:
         if aggregated_results[(example_name, mode)]['Safe'] == "Proof":
             counts[approach_mapping[mode]]["TPsafe"] += 1
             counts[approach_mapping[mode]]["TNunsafe"] += 1
+            counts[approach_mapping[mode]]["TSec"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
             counts[approach_mapping[mode]]["FNsafe"] += 1
             counts[approach_mapping[mode]]["FPunsafe"] += 1
+            counts[approach_mapping[mode]]["FInsec"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] != "Proof" \
-            or aggregated_results[(example_name, mode)]['Safe'] != "Counterexample":
+            and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample":
             counts[approach_mapping[mode]]["FNsafe"] += 1
+            counts[approach_mapping[mode]]["FInsec"] += 1
+            counts[approach_mapping[mode]]["FInsecSOAP"] += 1
     elif aggregated_results[(example_name, mode)]['Ground Truth'] == "False":
         if aggregated_results[(example_name, mode)]['Safe'] == "Counterexample":
             counts[approach_mapping[mode]]["TNsafe"] += 1
             counts[approach_mapping[mode]]["TPunsafe"] += 1
+            counts[approach_mapping[mode]]["TInsec"] += 1
         elif aggregated_results[(example_name, mode)]['Safe'] == "Proof":
             counts[approach_mapping[mode]]["FPsafe"] += 1
             counts[approach_mapping[mode]]["FNunsafe"] += 1
+            counts[approach_mapping[mode]]["FSec"] += 1
             if mode == "-p":
                 print(f"Warning: False Proof for {example_name} in mode {mode} --> TODO: Why?")
         elif aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" \
             and aggregated_results[(example_name, mode)]['Safe'] != "Proof":
             counts[approach_mapping[mode]]["FNunsafe"] += 1
+            counts[approach_mapping[mode]]["TInsec"] += 1
+            counts[approach_mapping[mode]]["TInsecSOAP"] += 1
     else:
         print(f"Warning: Unknown classification for {example_name} in mode {mode}")
 
@@ -466,6 +474,28 @@ rows = [(
             if (2 * (counts[tool]['TPsafe'] + counts[tool]['TPunsafe']) + counts[tool]['FPsafe'] + counts[tool]['FPunsafe'] + counts[tool]['FNsafe'] + counts[tool]['FNunsafe']) > 0 else "N/A",
        ) for tool in counts]
 with open("table-templates/classification_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/detailed_classifications.tex", "w") as out:
+    template = Template(f.read())
+    out.write(template.render(rows=rows))
+
+# Classification results SOAPed (= Safely Over-Approximated)
+rows_sec = [( # Tool, TP, TN, FP, FN, Precision, Recall, F1-Score
+    f"\\footnotesize {tool}",
+    f"{counts[tool]['TSec']}", f"{counts[tool]['TInsec']}", f"({counts[tool]['TInsecSOAP']})",
+    f"{counts[tool]['FSec']}", f"{counts[tool]['FInsec']}", f"({counts[tool]['FInsecSOAP']})",
+    f"{(counts[tool]['TSec'] / (counts[tool]['TSec'] + counts[tool]['FSec']) * 100):.1f}\\%" if (counts[tool]['TSec'] + counts[tool]['FSec']) > 0 else "N/A",
+    f"{(counts[tool]['TSec'] / (counts[tool]['TSec'] + counts[tool]['FInsec']) * 100):.1f}\\%" if (counts[tool]['TSec'] + counts[tool]['FInsec']) > 0 else "N/A",
+    f"{(2 * counts[tool]['TSec'] / (2 * counts[tool]['TSec'] + counts[tool]['FSec'] + counts[tool]['FInsec'])):.2f}" if (2 * counts[tool]['TPsafe'] + counts[tool]['FPsafe'] + counts[tool]['FNsafe']) > 0 else "N/A"
+    ) for tool in counts]
+rows_insec = [( # Tool, TP, TN, FP, FN, Precision, Recall, F1-Score
+    f"\\footnotesize {tool}",
+    f"{counts[tool]['TSec']}", f"{counts[tool]['TInsec']}", f"({counts[tool]['TInsecSOAP']})",
+    f"{counts[tool]['FSec']}", f"{counts[tool]['FInsec']}", f"({counts[tool]['FInsecSOAP']})",
+    f"{(counts[tool]['TInsec'] / (counts[tool]['TInsec'] + counts[tool]['FInsec']) * 100):.1f}\\%" if (counts[tool]['TInsec'] + counts[tool]['FInsec']) > 0 else "N/A",
+    f"{(counts[tool]['TInsec'] / (counts[tool]['TInsec'] + counts[tool]['FSec']) * 100):.1f}\\%" if (counts[tool]['TInsec'] + counts[tool]['FSec']) > 0 else "N/A",
+    f"{(2 * counts[tool]['TInsec'] / (2 * counts[tool]['TInsec'] + counts[tool]['FSec'] + counts[tool]['FInsec'])):.2f}" if (2 * counts[tool]['TInsec'] + counts[tool]['FSec'] + counts[tool]['FInsec']) > 0 else "N/A"
+    ) for tool in counts]
+rows = rows_sec
+with open("table-templates/soap_results_template.tex") as f, open("../ma-ImpCompVerificationMethods/tables/soap_classifications.tex", "w") as out:
     template = Template(f.read())
     out.write(template.render(rows=rows))
 
