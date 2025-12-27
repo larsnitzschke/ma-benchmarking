@@ -71,6 +71,11 @@ with open("benchmark-results.csv", "r") as csvfile:
             print(f"Warning: Inconsistent results for {example_name} in mode {mode}")
             if block[0]['Safe'] != "OUTOFMEMORY" and block[0]['Safe'] != "TIMEOUT":
                 exit(1)
+            if block[0]['Safe'] != "OUTOFMEMORY" \
+                and (block[1]['Safe'] == "OUTOFMEMORY" or block[2]['Safe'] == "OUTOFMEMORY" \
+                  or block[3]['Safe'] == "OUTOFMEMORY" or block[4]['Safe'] == "OUTOFMEMORY"):
+                block[0]['Safe'] = "OUTOFMEMORY"
+                print(f"Info: Setting result for {example_name} in mode {mode} to OUTOFMEMORY because one of the runs resulted in OOM.")
         safe = block[0]['Safe']
         user_times = [float(row['UserTimeSec']) for row in block]
         system_times = [float(row['SystemTimeSec']) for row in block]
@@ -513,4 +518,4 @@ for k, v in approach_mapping.items():
         template = Template(f.read())
         out.write(template.render(rows=rows, caption=f"{v} average results"))
 
-
+print("Done")
