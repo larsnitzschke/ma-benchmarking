@@ -1,0 +1,6 @@
+Example,Mode,Run Number,Ground Truth,Safe,NumberOfSMTCalls,UserTimeSec,SystemTimeSec,CPUPercent,ElapsedTime,MaxMemoryKB,Classification,Tags
+SvBenchmarksJava_JpfRegression_ExSymExe20-False,-gB --gpdr-smi,0,False,Proof,1810,27.73,0.25,112,24.93,307340,False Positive,assert haovc
+SvBenchmarksJava_JpfRegression_ExSymExe20-False,-gB --gpdr-smi,1,False,Proof,1810,27.51,0.23,111,24.89,303656,False Positive,assert haovc
+SvBenchmarksJava_JpfRegression_ExSymExe20-False,-gB --gpdr-smi,2,False,Proof,1810,28.15,0.25,112,25.34,305388,False Positive,assert haovc
+SvBenchmarksJava_JpfRegression_ExSymExe20-False,-gB --gpdr-smi,3,False,Proof,1810,27.32,0.22,109,25.06,302396,False Positive,assert haovc
+SvBenchmarksJava_JpfRegression_ExSymExe20-False,-gB --gpdr-smi,4,False,Proof,1810,28.85,0.23,110,26.40,299692,False Positive,assert haovc
