@@ -24,7 +24,20 @@ with open(f"examples-list-all.txt", "r") as file:
         with open(f"{path_to_examples}/{split[0]}", "r") as example_file:
             locs_per_example[f"{split[1]}-{split[2].lower() == "true"}"] = len(example_file.readlines())
 
+# Get examples with if:
+# with open(f"examples-list-all.txt", "r") as file:
+#     for line in file:
+#         line = line.strip()
+#         split = line.split(" ")
+#         with open(f"{path_to_examples}/{split[0]}", "r") as example_file:
+#             lines = example_file.readlines()
+#             for l in lines:
+#                 if "if" in l:
+#                     print(f"Example {split[1]} has an if statement.")
+#                     break
+
 # Get relevant numbers from ground truth data
+tags_per_example = {}
 with open("examples-list-all.txt", "r") as f:
     lines = f.readlines()
     total_examples = 0
@@ -33,6 +46,8 @@ with open("examples-list-all.txt", "r") as f:
     pointer_examples = 0
     array_examples = 0
     array_or_pointer_examples = 0
+    loop_examples = 0
+    if_examples = 0
     for line in lines:
         total_examples += 1
         safe = line.strip().split(" ")[2].lower()
@@ -42,24 +57,31 @@ with open("examples-list-all.txt", "r") as f:
             unsafe_examples += 1
         split = line.strip().split(" ")
         tags = split[3].split(",") if len(split) > 3 else []
+        tags_per_example[f"{split[1]}-{True if safe == "true" else False}"] = tags
         if "array" in tags:
             array_examples += 1
         if "pointer" in tags:
             pointer_examples += 1
         if "array" in tags or "pointer" in tags:
             array_or_pointer_examples += 1
+        if "loop" in tags:
+            loop_examples += 1
+        if "if" in tags:
+            if_examples += 1
 
-print(f"Total examples: {total_examples}, Safe: {safe_examples}, Unsafe: {unsafe_examples}, Arrays: {array_examples}, Pointers: {pointer_examples}, Arrays or Pointers: {array_or_pointer_examples}")
+print(f"Total examples: {total_examples}, Safe: {safe_examples}, Unsafe: {unsafe_examples}, Arrays: {array_examples}, Pointers: {pointer_examples}, Arrays or Pointers: {array_or_pointer_examples}, Loops: {loop_examples}, Ifs: {if_examples}")
 
 # Read results and aggregate them
 import csv
 
 aggregated_results = {}
 repititions = 5
-with open("benchmark-results.csv", "r") as csvfile:
+with open("benchmark-results.csv", "r") as csvfile, open("benchmark-results-new-tags.csv", "w", newline='') as outfile:
     reader = csv.DictReader(csvfile)
     all_results = [row for row in reader]
     i = 0
+    writer = csv.DictWriter(outfile, fieldnames=all_results[0].keys())
+    writer.writeheader()
     while i < len(all_results):
         block = all_results[i:i+repititions]
         example_name = block[0]['Example']
@@ -83,6 +105,12 @@ with open("benchmark-results.csv", "r") as csvfile:
         elapsed_times = [float(row['ElapsedTime']) for row in block]
         max_memories = [int(row['MaxMemoryKB']) for row in block]
         tags = block[0]['Tags']
+        tags = tags_per_example.get(example_name, [])
+        block[0]['Tags'] = " ".join(tags)
+        block[1]['Tags'] = " ".join(tags)
+        block[2]['Tags'] = " ".join(tags)
+        block[3]['Tags'] = " ".join(tags)
+        block[4]['Tags'] = " ".join(tags)
         if block[0]['Classification'] != block[1]['Classification'] \
             or block[0]['Classification'] != block[2]['Classification'] \
             or block[0]['Classification'] != block[3]['Classification'] \
@@ -97,16 +125,22 @@ with open("benchmark-results.csv", "r") as csvfile:
             'AvgSystemTimeSec': sum(system_times) / repititions,
             'AvgCPUPercent': sum(cpu_percents) / repititions,
             'AvgElapsedTime': sum(elapsed_times) / repititions,
+            'StdElapsedTime': () if repititions < 2 else (sum((x - (sum(elapsed_times) / repititions)) ** 2 for x in elapsed_times) / (repititions - 1)) ** 0.5,
             'AvgMaxMemoryKB': sum(max_memories) / repititions,
+            'StdMaxMemoryKB': () if repititions < 2 else (sum((x - (sum(max_memories) / repititions)) ** 2 for x in max_memories) / (repititions - 1)) ** 0.5,
             'AvgNumSMTCalls': sum(num_smt_calls) / repititions,
             'Classification': classification,
             'Ground Truth': ground_truth,
-            'Tags': tags
+            'Tags': " ".join(tags)
         }
         i += repititions
+    # Write results with changed tags to new file:
+        
+        for row in block:
+            writer.writerow(row)
 
 with open("aggregated-results.csv", "w", newline='') as csvfile:
-    fieldnames = ['Example', 'Mode', 'Safe', 'AvgUserTimeSec', 'AvgSystemTimeSec', 'AvgCPUPercent', 'AvgElapsedTime', 'AvgMaxMemoryKB', 'AvgNumSMTCalls', 'Classification', 'Ground Truth', 'Tags']
+    fieldnames = ['Example', 'Mode', 'Safe', 'AvgUserTimeSec', 'AvgSystemTimeSec', 'AvgCPUPercent', 'AvgElapsedTime', 'StdElapsedTime', 'AvgMaxMemoryKB', 'StdMaxMemoryKB', 'AvgNumSMTCalls', 'Classification', 'Ground Truth', 'Tags']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     for (example_name, mode) in aggregated_results:
@@ -161,17 +195,17 @@ tool_labels = {
     "bmc": "BMC",
     "kInd": "KInd",
     "kInd_inv": "KInd (Inv)",
-    "bmc_kInd": "BMC + KInd",
-    "bmc_kInd_inv": "BMC + KInd (Inv)",
+    "bmc_kInd": "BMC+KInd",
+    "bmc_kInd_inv": "BMC+KInd (Inv)",
     "wpc": "WPC",
     "gpdr": "GPDR",
     "gpdr_boolEval": "GPDR (B-Eval)",
     "gpdr_ats": "GPDR (ATS)",
-    "gpdr_ats_boolEval": "GPDR (ATS + B-Eval)",
+    "gpdr_ats_boolEval": "GPDR (ATS+B-Eval)",
     "gpdr_smi": "GPDR (SMI)",
-    "gpdr_smi_boolEval": "GPDR (SMI + B-Eval)",
-    "gpdr_smi_ats": "GPDR (SMI + ATS)",
-    "gpdr_smi_ats_boolEval": "GPDR (SMI + ATS + B-Eval)",
+    "gpdr_smi_boolEval": "GPDR (SMI+B-Eval)",
+    "gpdr_smi_ats": "GPDR (SMI+ATS)",
+    "gpdr_smi_ats_boolEval": "GPDR (SMI+ATS+B-Eval)",
 }
 
 for (ex1, m1) in aggregated_results:
@@ -361,6 +395,48 @@ plt.savefig("../ma-ImpCompVerificationMethods/plots/wall_clock_time.png", dpi=30
 plt.xlabel("\\# of Examples")
 matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/wall_clock_time.tex")
 
+# Wall clock time for safe and unsafe examples seperately ---------------------------------------------------------
+for safety in ["safe", "unsafe"]:
+    plt.figure(figsize=(8, 6))
+    plt.rcParams['axes.prop_cycle'] = color_cycle
+
+    results = {}
+    for tool in tool_labels:
+        filtered_results = {}
+        for (example_name, mode) in aggregated_results:
+            if safety == "safe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "True":
+                continue
+            if safety == "unsafe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "False":
+                continue
+            if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+                continue
+            if tool_labels[tool] != approach_mapping[mode]:
+                continue
+            filtered_results[example_name] = aggregated_results[(example_name, mode)]["AvgElapsedTime"]
+        results[tool] = sorted(filtered_results.values())
+
+    for tool in results:
+        plt.plot(results[tool], label=tool_labels[tool])
+
+    plt.yscale("log")
+    plt.grid(True, which="major", linestyle="--", alpha=0.5)
+    plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
+    plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])    
+
+    plt.xlabel("# of Examples")
+    plt.ylabel("Wall Clock Time (s)")
+
+    plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+               loc='upper center', bbox_to_anchor=(0.5, -0.15),
+               fancybox=True, ncol=4, fontsize=9)
+
+    plt.tight_layout()
+    plt.savefig(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/wall_clock_time_{safety}.png", dpi=300)
+    #plt.show()
+    plt.xlabel("\\# of Examples")
+    matplot2tikz.save(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/wall_clock_time_{safety}.tex")
+
+
 # Complexity: Wall clock time per LOC --------------------------------------------------------------------
 plt.figure(figsize=(8, 6))
 plt.rcParams['axes.prop_cycle'] = color_cycle
@@ -413,6 +489,47 @@ plt.savefig("../ma-ImpCompVerificationMethods/plots/num_smt_calls.png", dpi=300)
 plt.xlabel("\\# of Examples")
 matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/num_smt_calls.tex")
 
+# Num of SMT Queries for safe and unsafe examples seperately ---------------------------------------------------------
+for safety in ["safe", "unsafe"]:
+    plt.figure(figsize=(8, 6))
+    plt.rcParams['axes.prop_cycle'] = color_cycle
+
+    results = {}
+    for tool in tool_labels:
+        filtered_results = {}
+        for (example_name, mode) in aggregated_results:
+            if safety == "safe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "True":
+                continue
+            if safety == "unsafe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "False":
+                continue
+            if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+                continue
+            if tool_labels[tool] != approach_mapping[mode]:
+                continue
+            filtered_results[example_name] = aggregated_results[(example_name, mode)]["AvgNumSMTCalls"]
+        results[tool] = sorted(filtered_results.values())
+
+    for tool in results:
+        plt.plot(results[tool], label=tool_labels[tool])
+
+    plt.yscale("log")
+    plt.grid(True, which="major", linestyle="--", alpha=0.5)
+    plt.yticks([1, 5, 10, 50, 100, 500, 1000], [1, 5, 10, 50, 100, 500, 1000])
+    plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])    
+
+    plt.xlabel("# of Examples")
+    plt.ylabel("# of SMT Calls")
+
+    plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+               loc='upper center', bbox_to_anchor=(0.5, -0.15),
+               fancybox=True, ncol=4, fontsize=9)
+
+    plt.tight_layout()
+    plt.savefig(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/num_smt_calls_{safety}.png", dpi=300)
+    #plt.show()
+    plt.xlabel("\\# of Examples")
+    matplot2tikz.save(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/num_smt_calls_{safety}.tex")
+
 # Memory usage for number of examples run ---------------------------------------------------------
 plt.figure(figsize=(8, 6))
 plt.rcParams['axes.prop_cycle'] = color_cycle
@@ -438,6 +555,123 @@ plt.savefig("../ma-ImpCompVerificationMethods/plots/max_memory_usage.png", dpi=3
 #plt.show()
 plt.xlabel("\\# of Examples")
 matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/max_memory_usage.tex")
+
+# Memory usage for safe and unsafe examples seperately ---------------------------------------------------------
+for safety in ["safe", "unsafe"]:
+    plt.figure(figsize=(8, 6))
+    plt.rcParams['axes.prop_cycle'] = color_cycle
+
+    results = {}
+    for tool in tool_labels:
+        filtered_results = {}
+        for (example_name, mode) in aggregated_results:
+            if safety == "safe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "True":
+                continue
+            if safety == "unsafe" and aggregated_results[(example_name, mode)]['Ground Truth'] != "False":
+                continue
+            if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+                continue
+            if tool_labels[tool] != approach_mapping[mode]:
+                continue
+            filtered_results[example_name] = aggregated_results[(example_name, mode)]["AvgMaxMemoryKB"]
+        results[tool] = sorted(filtered_results.values())
+
+    for tool in results:
+        plt.plot(results[tool], label=tool_labels[tool])
+
+    plt.yscale("log")
+    plt.grid(True, which="major", linestyle="--", alpha=0.5)
+    plt.yticks([100000, 150000, 200000, 300000, 400000, 500000, 600000], [100, 150, 200, 300, 400, 500, 600])
+    plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+
+    plt.xlabel("# of Examples")
+    plt.ylabel("Max Memory Usage (MB)")
+
+    plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+               loc='upper center', bbox_to_anchor=(0.5, -0.15),
+               fancybox=True, ncol=4, fontsize=9)
+
+    plt.tight_layout()
+    plt.savefig(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/max_memory_usage_{safety}.png", dpi=300)
+    #plt.show()
+    plt.xlabel("\\# of Examples")
+    matplot2tikz.save(f"../ma-ImpCompVerificationMethods/plots/safe-unsafe/max_memory_usage_{safety}.tex")
+
+# Complexity: Running times of only loop programs.
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = color_cycle
+
+results = {}
+for tool in tool_labels:
+    filtered_results = {}
+    for (example_name, mode) in aggregated_results:
+        if "loop" not in aggregated_results[(example_name, mode)]['Tags']:
+            continue
+        if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+            continue
+        if tool_labels[tool] != approach_mapping[mode]:
+            continue
+        filtered_results[example_name] = aggregated_results[(example_name, mode)]["AvgElapsedTime"]
+    results[tool] = sorted(filtered_results.values())
+
+for tool in results:
+    plt.plot(results[tool], label=tool_labels[tool])
+
+plt.yscale("log")
+plt.grid(True, which="major", linestyle="--", alpha=0.5)
+plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
+#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+
+plt.xlabel("# of Examples")
+plt.ylabel("Wall Clock Time (s)")
+
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9),
+
+plt.tight_layout()
+plt.savefig("../ma-ImpCompVerificationMethods/plots/complexity/wall_clock_time_loops.png", dpi=300)
+#plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/complexity/wall_clock_time_loops.tex")
+
+# Running times of only if-programs
+plt.figure(figsize=(8, 6))
+plt.rcParams['axes.prop_cycle'] = color_cycle
+
+results = {}
+for tool in tool_labels:
+    filtered_results = {}
+    for (example_name, mode) in aggregated_results:
+        if "if" not in aggregated_results[(example_name, mode)]['Tags']:
+            continue
+        if aggregated_results[(example_name, mode)]['Safe'] != "Proof" and aggregated_results[(example_name, mode)]['Safe'] != "Counterexample" and aggregated_results[(example_name, mode)]['Safe'] != "NoResult":
+            continue
+        if tool_labels[tool] != approach_mapping[mode]:
+            continue
+        filtered_results[example_name] = aggregated_results[(example_name, mode)]["AvgElapsedTime"]
+    results[tool] = sorted(filtered_results.values())
+
+for tool in results:
+    plt.plot(results[tool], label=tool_labels[tool])
+
+plt.yscale("log")
+plt.grid(True, which="major", linestyle="--", alpha=0.5)
+plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
+#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+
+plt.xlabel("# of Examples")
+plt.ylabel("Wall Clock Time (s)")
+
+plt.legend(handles=plt.gca().get_legend_handles_labels()[0][:6] + [empty1, empty2] + plt.gca().get_legend_handles_labels()[0][6:],
+           loc='upper center', bbox_to_anchor=(0.5, -0.15),
+           fancybox=True, ncol=4, fontsize=9),
+
+plt.tight_layout()
+plt.savefig("../ma-ImpCompVerificationMethods/plots/complexity/wall_clock_time_ifs.png", dpi=300)
+#plt.show()
+plt.xlabel("\\# of Examples")
+matplot2tikz.save("../ma-ImpCompVerificationMethods/plots/complexity/wall_clock_time_ifs.tex")
 
 # Tables -----------------------------------------------------------------
 
@@ -510,9 +744,12 @@ for k, v in approach_mapping.items():
     rows = [(f"{example_name}".replace("_", "\\_").replace("SvBenchmarksJava\\_", ""),
             #approach_mapping[mode], 
             aggregated_results[(example_name, mode)]['Ground Truth'],
-            aggregated_results[(example_name, mode)]['Safe'], aggregated_results[(example_name, mode)]['AvgNumSMTCalls'],
+            f"{aggregated_results[(example_name, mode)]['Safe']}".replace("-", "Crash [BM]"),
             f"{aggregated_results[(example_name, mode)]['AvgElapsedTime']:.2f}",
-            f"{aggregated_results[(example_name, mode)]['AvgMaxMemoryKB'] / 1000:.2f}"
+            f"{aggregated_results[(example_name, mode)]['StdElapsedTime']:.2f}",
+            f"{aggregated_results[(example_name, mode)]['AvgNumSMTCalls']:.0f}" if aggregated_results[(example_name, mode)]['AvgNumSMTCalls'] != 0 else "",
+            f"{aggregated_results[(example_name, mode)]['AvgMaxMemoryKB'] / 1000:.2f}",
+            f"{aggregated_results[(example_name, mode)]['StdMaxMemoryKB'] / 1000:.2f}"
             ) for (example_name, mode) in aggregated_results if mode == k]
     with open("table-templates/aggregated_template.tex") as f, open(f"../ma-ImpCompVerificationMethods/tables/results/aggregated_results_{v}.tex", "w") as out:
         template = Template(f.read())
