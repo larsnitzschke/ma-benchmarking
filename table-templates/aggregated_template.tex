@@ -1,11 +1,11 @@
-\begin{longtable}{|l| |l|l| |r|r|r|}
+\begin{longtable}{|l| |l|l| |r|r|r|r|r|}
 \hline
-Example & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
+\textbf{Example} & \textbf{Safe} & \textbf{Result} & \textbf{Avg. WCT (s)} & \textbf{Std. WCT (s)} & \textbf{\#SMT-Calls} &  \textbf{Avg. maxMem (MB)} & \textbf{Std. maxMem (MB)} \\
 \hline
 \endfirsthead
 
 \hline
-Example & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max Memory (MB) \\
+\textbf{Example} & \textbf{Safe} & \textbf{Result} & \textbf{Avg. WCT (s)} & \textbf{Std. WCT (s)} & \textbf{\#SMT-Calls} &  \textbf{Avg. maxMem (MB)} & \textbf{Std. maxMem (MB)} \\
 \hline
 \endhead
 
@@ -13,6 +13,6 @@ Example & Safe & Result & Avg. \#SMT-Calls & Avg. Wall clock time (s) & Avg. Max
 \caption{ {{ caption }} }
 \endfoot
 
-{% for example, safe, result, smt, time, memory in rows %}
-{{ example }} & {{ safe }} & {{ result }} & {{ smt }} & {{ time }} & {{ memory }} \\{% endfor %}
+{% for example, safe, result, timeavg, timestd, smt, memoryavg, memorystd in rows %}
+{{ example }} & {{ safe }} & {{ result }} & {{ timeavg }} & {{ timestd }} & {{ smt }} & {{ memoryavg }} & {{ memorystd }} \\{% endfor %}
 \end{longtable}
