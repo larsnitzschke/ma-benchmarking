@@ -207,7 +207,7 @@ tool_labels = {
     "gpdr_smi_ats": "GPDR (SMI+ATS)",
     "gpdr_smi_ats_boolEval": "GPDR (SMI+ATS+B-Eval)",
 }
-
+a = b = 0
 for (ex1, m1) in aggregated_results:
     if m1 != "-gB":
         continue
@@ -216,7 +216,18 @@ for (ex1, m1) in aggregated_results:
             continue
         if ex1 == ex2:
             if aggregated_results[(ex1, m1)]['Safe'] != aggregated_results[(ex2, m2)]['Safe']:
-                print(f"Warning: Different results for {ex1} in modes {m1} and {m2}: {aggregated_results[(ex1, m1)]['Safe']} vs. {aggregated_results[(ex2, m2)]['Safe']}")
+                pass
+                #print(f"Warning: Different results for {ex1} in modes {m1} and {m2}: {aggregated_results[(ex1, m1)]['Safe']} vs. {aggregated_results[(ex2, m2)]['Safe']}")
+            if (aggregated_results[(ex1, m1)]['Safe'] == "Proof" and aggregated_results[(ex2, m2)]['Safe'] == "Proof") or ( \
+                aggregated_results[(ex1, m1)]['Safe'] == "Counterexample" and aggregated_results[(ex2, m2)]['Safe'] == "Counterexample" \
+            ):
+                #print("Proof for both.")
+                if aggregated_results[(ex1, m1)]['AvgElapsedTime'] > aggregated_results[(ex2, m2)]['AvgElapsedTime']:
+                    #print(f"without SMI slower: {aggregated_results[(ex1, m1)]['AvgElapsedTime']}s vs. {aggregated_results[(ex2, m2)]['AvgElapsedTime']}s")
+                    a += 1
+                else:
+                    b += 1
+print(f"SMI faster in {a} cases, without SMI faster in {b} cases.")
 
 for (ex, m) in aggregated_results:
     if m == "-k":
@@ -224,9 +235,9 @@ for (ex, m) in aggregated_results:
             print(f"Warning: NoResult for {ex} in mode {m} --> TODO: Why?")
     #if aggregated_results[(ex, m)]['Safe'] == "OUTOFMEMORY":
     #    print(f"Warning: OOM for {ex} in mode {m} --> Max memory: {aggregated_results[(ex, m)]['AvgMaxMemoryKB'] / 1000} MB")
-    if aggregated_results[(ex, m)]['Safe'] == "TIMEOUT":
-        if m in ["-b", "-k", "-bk", "-k --kInd-inv", "-bk --kInd-inv"]:
-            print(f"Warning: TIMEOUT for {ex} in mode {m} --> Elapsed time: {aggregated_results[(ex, m)]['AvgElapsedTime']} seconds")
+    #if aggregated_results[(ex, m)]['Safe'] == "TIMEOUT":
+    #    if m in ["-b", "-k", "-bk", "-k --kInd-inv", "-bk --kInd-inv"]:
+    #        print(f"Warning: TIMEOUT for {ex} in mode {m} --> Elapsed time: {aggregated_results[(ex, m)]['AvgElapsedTime']} seconds")
     if m == "-g":
         if aggregated_results[(ex, m)]['Safe'] == "Proof" or aggregated_results[(ex, m)]['Safe'] == "Counterexample":
             print(f"--Warning: Result {aggregated_results[(ex, m)]['Safe']} for {ex} in mode {m} --> TODO: Why?")
@@ -448,7 +459,8 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 
-#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+plt.yticks([1, 10, 50], [1, 10, 50])
+plt.xticks([-1, 19, 39, 59], [0, 20, 40, 60])
 
 plt.xlabel("# of LOC")
 plt.ylabel("Wall Clock Time (s)")
@@ -620,7 +632,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
-#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+plt.xticks([-1, 4, 9, 14, 19, 21], [0, 5, 10, 15, 20, 22])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
@@ -658,7 +670,7 @@ for tool in results:
 plt.yscale("log")
 plt.grid(True, which="major", linestyle="--", alpha=0.5)
 plt.yticks([0.5, 1, 5, 10, 50], [0.5, 1, 5, 10, 50])
-#plt.xticks([-1, 19, 39, 59, 79, 99, total_examples-1], [0, 20, 40, 60, 80, 100, total_examples])
+plt.xticks([-1, 19, 39, 59, 79, 85], [0, 20, 40, 60, 80, 86])
 
 plt.xlabel("# of Examples")
 plt.ylabel("Wall Clock Time (s)")
