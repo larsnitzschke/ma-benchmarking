@@ -1349,81 +1349,81 @@ GpdrExamples_Ex2-False,-gB --gpdr-smi --gpdr-ats,1,False,Counterexample,135,4.36
 GpdrExamples_Ex2-False,-gB --gpdr-smi --gpdr-ats,2,False,Counterexample,135,4.12,0.14,179,02.37,163240,True Negative,
 GpdrExamples_Ex2-False,-gB --gpdr-smi --gpdr-ats,3,False,Counterexample,135,3.98,0.13,168,02.43,155940,True Negative,
 GpdrExamples_Ex2-False,-gB --gpdr-smi --gpdr-ats,4,False,Counterexample,135,4.37,0.14,183,02.45,167440,True Negative,
-GpdrExamples_Ex3Infinite-True,--warmup,0,True,-,,0.48,0.06,198,00.28,74556,,havoc
-GpdrExamples_Ex3Infinite-True,--warmup,1,True,-,,0.5,0.06,200,00.28,75552,,havoc
-GpdrExamples_Ex3Infinite-True,--warmup,2,True,-,,0.52,0.06,210,00.28,73924,,havoc
-GpdrExamples_Ex3Infinite-True,--warmup,3,True,-,,0.54,0.05,205,00.28,74328,,havoc
-GpdrExamples_Ex3Infinite-True,--warmup,4,True,-,,0.53,0.05,205,00.28,73712,,havoc
-GpdrExamples_Ex3Infinite-True,-b,0,True,NoResult,101,8.51,0.25,144,06.06,297120,,
-GpdrExamples_Ex3Infinite-True,-b,1,True,NoResult,101,7.95,0.19,141,05.76,288532,,
-GpdrExamples_Ex3Infinite-True,-b,2,True,NoResult,101,8.48,0.22,142,06.10,298028,,
-GpdrExamples_Ex3Infinite-True,-b,3,True,NoResult,101,8.68,0.24,141,06.32,293704,,
-GpdrExamples_Ex3Infinite-True,-b,4,True,NoResult,101,8.66,0.21,148,05.99,298132,,
-GpdrExamples_Ex3Infinite-True,-k,0,True,Proof,29,1.89,0.13,157,01.28,132200,True Positive,
-GpdrExamples_Ex3Infinite-True,-k,1,True,Proof,29,1.89,0.14,150,01.35,132396,True Positive,
-GpdrExamples_Ex3Infinite-True,-k,2,True,Proof,29,1.97,0.14,178,01.19,131856,True Positive,
-GpdrExamples_Ex3Infinite-True,-k,3,True,Proof,29,1.83,0.15,163,01.21,132992,True Positive,
-GpdrExamples_Ex3Infinite-True,-k,4,True,Proof,29,1.91,0.12,183,01.10,132920,True Positive,
-GpdrExamples_Ex3Infinite-True,-k --kInd-inv,0,True,Proof,29,1.79,0.12,159,01.20,132672,True Positive,
-GpdrExamples_Ex3Infinite-True,-k --kInd-inv,1,True,Proof,29,1.82,0.14,155,01.26,132292,True Positive,
-GpdrExamples_Ex3Infinite-True,-k --kInd-inv,2,True,Proof,29,1.91,0.13,175,01.16,132212,True Positive,
-GpdrExamples_Ex3Infinite-True,-k --kInd-inv,3,True,Proof,29,1.89,0.11,178,01.12,132688,True Positive,
-GpdrExamples_Ex3Infinite-True,-k --kInd-inv,4,True,Proof,29,1.83,0.14,162,01.21,132788,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk,0,True,Proof,30,1.99,0.14,152,01.40,137944,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk,1,True,Proof,30,2.04,0.16,168,01.30,137540,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk,2,True,Proof,30,1.95,0.13,174,01.19,138392,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk,3,True,Proof,30,1.91,0.14,166,01.24,134308,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk,4,True,Proof,30,1.98,0.14,166,01.27,138296,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk --kInd-inv,0,True,Proof,30,1.96,0.13,172,01.21,137644,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk --kInd-inv,1,True,Proof,30,2.04,0.11,177,01.21,141192,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk --kInd-inv,2,True,Proof,30,2.02,0.15,145,01.49,137272,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk --kInd-inv,3,True,Proof,30,2.11,0.13,150,01.49,137180,True Positive,
-GpdrExamples_Ex3Infinite-True,-bk --kInd-inv,4,True,Proof,30,2.01,0.14,148,01.45,133476,True Positive,
-GpdrExamples_Ex3Infinite-True,-p,0,True,Proof,3,1.04,0.11,153,00.76,120956,True Positive,
-GpdrExamples_Ex3Infinite-True,-p,1,True,Proof,3,0.99,0.14,145,00.78,120764,True Positive,
-GpdrExamples_Ex3Infinite-True,-p,2,True,Proof,3,0.95,0.13,170,00.63,121616,True Positive,
-GpdrExamples_Ex3Infinite-True,-p,3,True,Proof,3,1.04,0.11,144,00.80,120876,True Positive,
-GpdrExamples_Ex3Infinite-True,-p,4,True,Proof,3,1.1,0.13,153,00.80,121316,True Positive,
-GpdrExamples_Ex3Infinite-True,-g,0,True,TIMEOUT,,33.31,1.41,115,30.05,290420,,
-GpdrExamples_Ex3Infinite-True,-g,1,True,TIMEOUT,,33.58,1.37,116,30.06,295468,,
-GpdrExamples_Ex3Infinite-True,-g,2,True,TIMEOUT,,33.39,1.49,116,30.05,295040,,
-GpdrExamples_Ex3Infinite-True,-g,3,True,TIMEOUT,,33.19,1.38,115,30.03,291252,,
-GpdrExamples_Ex3Infinite-True,-g,4,True,TIMEOUT,,33.41,1.39,115,30.04,296148,,
-GpdrExamples_Ex3Infinite-True,-gB,0,True,Proof,1089,19.04,0.63,122,16.02,288612,True Positive,
-GpdrExamples_Ex3Infinite-True,-gB,1,True,Proof,1089,19.3,0.62,122,16.31,296372,True Positive,
-GpdrExamples_Ex3Infinite-True,-gB,2,True,Proof,1089,19.13,0.64,122,16.09,298076,True Positive,
-GpdrExamples_Ex3Infinite-True,-gB,3,True,Proof,1089,19.06,0.62,123,15.99,300344,True Positive,
-GpdrExamples_Ex3Infinite-True,-gB,4,True,Proof,1089,19.24,0.6,124,15.99,298160,True Positive,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi,0,True,TIMEOUT,,32.82,0.25,110,30.05,281356,,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi,1,True,TIMEOUT,,32.78,0.25,109,30.05,277168,,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi,2,True,TIMEOUT,,33.11,0.25,111,30.02,289156,,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi,3,True,TIMEOUT,,32.88,0.25,110,30.03,282324,,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi,4,True,TIMEOUT,,32.73,0.26,109,30.05,281412,,
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi,0,True,TIMEOUT,,32.27,0.28,108,30.05,285096,,
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi,1,True,TIMEOUT,,32.18,0.31,108,30.05,284612,,
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi,2,True,TIMEOUT,,32.33,0.28,108,30.05,284816,,
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi,3,True,TIMEOUT,,32.41,0.31,108,30.06,288572,,
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi,4,True,TIMEOUT,,32.33,0.29,108,30.05,284692,,
-GpdrExamples_Ex3Infinite-True,-g --gpdr-ats,0,True,TIMEOUT,,34.33,1.33,118,30.03,307332,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-ats,1,True,TIMEOUT,,34.09,1.29,117,30.03,300404,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-ats,2,True,TIMEOUT,,33.69,1.37,116,30.06,303428,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-ats,3,True,TIMEOUT,,33.84,1.3,116,30.05,299864,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-ats,4,True,TIMEOUT,,34.07,1.3,117,30.06,304664,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-ats,0,True,-,,2.44,0.16,206,01.26,155244,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-ats,1,True,-,,2.4,0.14,202,01.25,146252,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-ats,2,True,-,,2.39,0.15,204,01.25,145904,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-ats,3,True,-,,2.36,0.15,201,01.25,145628,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-ats,4,True,-,,2.42,0.16,202,01.27,146956,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,32.8,0.29,110,30.05,287012,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,33.45,0.49,112,30.05,286340,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,33.66,0.26,112,30.06,287860,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,31.98,0.31,107,30.05,288232,,havoc
-GpdrExamples_Ex3Infinite-True,-g --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,33.57,0.23,112,30.03,295724,,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi --gpdr-ats,0,True,Proof,1865,28.76,0.3,112,25.80,294212,True Positive,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi --gpdr-ats,1,True,Proof,1865,28.21,0.23,112,25.35,278536,True Positive,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi --gpdr-ats,2,True,Proof,1865,27.99,0.21,112,25.08,280032,True Positive,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi --gpdr-ats,3,True,Proof,1865,28.77,0.25,111,26.14,280024,True Positive,havoc
-GpdrExamples_Ex3Infinite-True,-gB --gpdr-smi --gpdr-ats,4,True,Proof,1865,27.78,0.29,112,24.94,283024,True Positive,havoc
+GpdrExamples_Ex3Hard-True,--warmup,0,True,-,,0.48,0.06,198,00.28,74556,,havoc
+GpdrExamples_Ex3Hard-True,--warmup,1,True,-,,0.5,0.06,200,00.28,75552,,havoc
+GpdrExamples_Ex3Hard-True,--warmup,2,True,-,,0.52,0.06,210,00.28,73924,,havoc
+GpdrExamples_Ex3Hard-True,--warmup,3,True,-,,0.54,0.05,205,00.28,74328,,havoc
+GpdrExamples_Ex3Hard-True,--warmup,4,True,-,,0.53,0.05,205,00.28,73712,,havoc
+GpdrExamples_Ex3Hard-True,-b,0,True,NoResult,101,8.51,0.25,144,06.06,297120,,
+GpdrExamples_Ex3Hard-True,-b,1,True,NoResult,101,7.95,0.19,141,05.76,288532,,
+GpdrExamples_Ex3Hard-True,-b,2,True,NoResult,101,8.48,0.22,142,06.10,298028,,
+GpdrExamples_Ex3Hard-True,-b,3,True,NoResult,101,8.68,0.24,141,06.32,293704,,
+GpdrExamples_Ex3Hard-True,-b,4,True,NoResult,101,8.66,0.21,148,05.99,298132,,
+GpdrExamples_Ex3Hard-True,-k,0,True,Proof,29,1.89,0.13,157,01.28,132200,True Positive,
+GpdrExamples_Ex3Hard-True,-k,1,True,Proof,29,1.89,0.14,150,01.35,132396,True Positive,
+GpdrExamples_Ex3Hard-True,-k,2,True,Proof,29,1.97,0.14,178,01.19,131856,True Positive,
+GpdrExamples_Ex3Hard-True,-k,3,True,Proof,29,1.83,0.15,163,01.21,132992,True Positive,
+GpdrExamples_Ex3Hard-True,-k,4,True,Proof,29,1.91,0.12,183,01.10,132920,True Positive,
+GpdrExamples_Ex3Hard-True,-k --kInd-inv,0,True,Proof,29,1.79,0.12,159,01.20,132672,True Positive,
+GpdrExamples_Ex3Hard-True,-k --kInd-inv,1,True,Proof,29,1.82,0.14,155,01.26,132292,True Positive,
+GpdrExamples_Ex3Hard-True,-k --kInd-inv,2,True,Proof,29,1.91,0.13,175,01.16,132212,True Positive,
+GpdrExamples_Ex3Hard-True,-k --kInd-inv,3,True,Proof,29,1.89,0.11,178,01.12,132688,True Positive,
+GpdrExamples_Ex3Hard-True,-k --kInd-inv,4,True,Proof,29,1.83,0.14,162,01.21,132788,True Positive,
+GpdrExamples_Ex3Hard-True,-bk,0,True,Proof,30,1.99,0.14,152,01.40,137944,True Positive,
+GpdrExamples_Ex3Hard-True,-bk,1,True,Proof,30,2.04,0.16,168,01.30,137540,True Positive,
+GpdrExamples_Ex3Hard-True,-bk,2,True,Proof,30,1.95,0.13,174,01.19,138392,True Positive,
+GpdrExamples_Ex3Hard-True,-bk,3,True,Proof,30,1.91,0.14,166,01.24,134308,True Positive,
+GpdrExamples_Ex3Hard-True,-bk,4,True,Proof,30,1.98,0.14,166,01.27,138296,True Positive,
+GpdrExamples_Ex3Hard-True,-bk --kInd-inv,0,True,Proof,30,1.96,0.13,172,01.21,137644,True Positive,
+GpdrExamples_Ex3Hard-True,-bk --kInd-inv,1,True,Proof,30,2.04,0.11,177,01.21,141192,True Positive,
+GpdrExamples_Ex3Hard-True,-bk --kInd-inv,2,True,Proof,30,2.02,0.15,145,01.49,137272,True Positive,
+GpdrExamples_Ex3Hard-True,-bk --kInd-inv,3,True,Proof,30,2.11,0.13,150,01.49,137180,True Positive,
+GpdrExamples_Ex3Hard-True,-bk --kInd-inv,4,True,Proof,30,2.01,0.14,148,01.45,133476,True Positive,
+GpdrExamples_Ex3Hard-True,-p,0,True,Proof,3,1.04,0.11,153,00.76,120956,True Positive,
+GpdrExamples_Ex3Hard-True,-p,1,True,Proof,3,0.99,0.14,145,00.78,120764,True Positive,
+GpdrExamples_Ex3Hard-True,-p,2,True,Proof,3,0.95,0.13,170,00.63,121616,True Positive,
+GpdrExamples_Ex3Hard-True,-p,3,True,Proof,3,1.04,0.11,144,00.80,120876,True Positive,
+GpdrExamples_Ex3Hard-True,-p,4,True,Proof,3,1.1,0.13,153,00.80,121316,True Positive,
+GpdrExamples_Ex3Hard-True,-g,0,True,TIMEOUT,,33.31,1.41,115,30.05,290420,,
+GpdrExamples_Ex3Hard-True,-g,1,True,TIMEOUT,,33.58,1.37,116,30.06,295468,,
+GpdrExamples_Ex3Hard-True,-g,2,True,TIMEOUT,,33.39,1.49,116,30.05,295040,,
+GpdrExamples_Ex3Hard-True,-g,3,True,TIMEOUT,,33.19,1.38,115,30.03,291252,,
+GpdrExamples_Ex3Hard-True,-g,4,True,TIMEOUT,,33.41,1.39,115,30.04,296148,,
+GpdrExamples_Ex3Hard-True,-gB,0,True,Proof,1089,19.04,0.63,122,16.02,288612,True Positive,
+GpdrExamples_Ex3Hard-True,-gB,1,True,Proof,1089,19.3,0.62,122,16.31,296372,True Positive,
+GpdrExamples_Ex3Hard-True,-gB,2,True,Proof,1089,19.13,0.64,122,16.09,298076,True Positive,
+GpdrExamples_Ex3Hard-True,-gB,3,True,Proof,1089,19.06,0.62,123,15.99,300344,True Positive,
+GpdrExamples_Ex3Hard-True,-gB,4,True,Proof,1089,19.24,0.6,124,15.99,298160,True Positive,
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi,0,True,TIMEOUT,,32.82,0.25,110,30.05,281356,,
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi,1,True,TIMEOUT,,32.78,0.25,109,30.05,277168,,
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi,2,True,TIMEOUT,,33.11,0.25,111,30.02,289156,,
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi,3,True,TIMEOUT,,32.88,0.25,110,30.03,282324,,
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi,4,True,TIMEOUT,,32.73,0.26,109,30.05,281412,,
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi,0,True,TIMEOUT,,32.27,0.28,108,30.05,285096,,
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi,1,True,TIMEOUT,,32.18,0.31,108,30.05,284612,,
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi,2,True,TIMEOUT,,32.33,0.28,108,30.05,284816,,
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi,3,True,TIMEOUT,,32.41,0.31,108,30.06,288572,,
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi,4,True,TIMEOUT,,32.33,0.29,108,30.05,284692,,
+GpdrExamples_Ex3Hard-True,-g --gpdr-ats,0,True,TIMEOUT,,34.33,1.33,118,30.03,307332,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-ats,1,True,TIMEOUT,,34.09,1.29,117,30.03,300404,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-ats,2,True,TIMEOUT,,33.69,1.37,116,30.06,303428,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-ats,3,True,TIMEOUT,,33.84,1.3,116,30.05,299864,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-ats,4,True,TIMEOUT,,34.07,1.3,117,30.06,304664,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-ats,0,True,-,,2.44,0.16,206,01.26,155244,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-ats,1,True,-,,2.4,0.14,202,01.25,146252,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-ats,2,True,-,,2.39,0.15,204,01.25,145904,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-ats,3,True,-,,2.36,0.15,201,01.25,145628,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-ats,4,True,-,,2.42,0.16,202,01.27,146956,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi --gpdr-ats,0,True,TIMEOUT,,32.8,0.29,110,30.05,287012,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi --gpdr-ats,1,True,TIMEOUT,,33.45,0.49,112,30.05,286340,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi --gpdr-ats,2,True,TIMEOUT,,33.66,0.26,112,30.06,287860,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi --gpdr-ats,3,True,TIMEOUT,,31.98,0.31,107,30.05,288232,,havoc
+GpdrExamples_Ex3Hard-True,-g --gpdr-smi --gpdr-ats,4,True,TIMEOUT,,33.57,0.23,112,30.03,295724,,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi --gpdr-ats,0,True,Proof,1865,28.76,0.3,112,25.80,294212,True Positive,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi --gpdr-ats,1,True,Proof,1865,28.21,0.23,112,25.35,278536,True Positive,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi --gpdr-ats,2,True,Proof,1865,27.99,0.21,112,25.08,280032,True Positive,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi --gpdr-ats,3,True,Proof,1865,28.77,0.25,111,26.14,280024,True Positive,havoc
+GpdrExamples_Ex3Hard-True,-gB --gpdr-smi --gpdr-ats,4,True,Proof,1865,27.78,0.29,112,24.94,283024,True Positive,havoc
 GpdrExamples_Ex3-True,--warmup,0,True,-,,0.52,0.06,208,00.28,74692,,havoc
 GpdrExamples_Ex3-True,--warmup,1,True,-,,0.51,0.06,208,00.27,74704,,havoc
 GpdrExamples_Ex3-True,--warmup,2,True,-,,0.49,0.04,203,00.26,74748,,havoc

@@ -16,7 +16,7 @@ assignment/ex3-false.w Assignment_Ex3False false
 assignment/ex4.w Assignment_Ex4 true
 gpdr-examples/ex1.w GpdrExamples_Ex1 true
 gpdr-examples/ex2.w GpdrExamples_Ex2 false
-gpdr-examples/ex3-infinite.w GpdrExamples_Ex3Infinite true
+gpdr-examples/ex3-hard.w GpdrExamples_Ex3Hard true
 gpdr-examples/ex3.w GpdrExamples_Ex3 true
 havoc/ex1.w Havoc_Ex1 true havoc
 havoc/ex2.w Havoc_Ex2 false havoc
